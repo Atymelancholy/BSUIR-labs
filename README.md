@@ -10,10 +10,9 @@ RU: В данном репозитории представлены лабора
 
 **PS:** Все авторские права на предоставленные ниже условия лабораторных работ принадлежат Белорусскому Государственному Университету Информатики и Радиоэлектроники БГУИР, BSUIR  
 
-</div>
 ## 4 term (4 семестр):
 
-- [Programming in assembly language](/https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)  
+- [Programming in assembly language](./4-term/ПНАЯ)
   **RU:** Программирование на языке ассемблера 
   **Type:** Лабораторные работы (Laboratory works)  
 
@@ -32,3 +31,4 @@ RU: В данном репозитории представлены лабора
 - [Circuit Design](/Circuit-Design)  
   **RU:** Схемотехника  
   **Type:** Лабораторные работы (Laboratory works)  
+</div>
