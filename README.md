@@ -11,3 +11,24 @@ RU: В данном репозитории представлены лабора
 **PS:** Все авторские права на предоставленные ниже условия лабораторных работ принадлежат Белорусскому Государственному Университету Информатики и Радиоэлектроники БГУИР, BSUIR  
 
 </div>
+# 4 term (4 семестр):
+
+- [Programming in assembly language](/Programming in assembly language)  
+  **RU:** Программирование на языке ассемблера 
+  **Type:** Лабораторные работы (Laboratory works)  
+
+- [Personal Computer Architecture_C_C++_Assembly](/Personal-Computer-Architecture_C_C++_Assembly)  
+  **RU:** Архитектура персональных компьютеров  
+  **Type:** Лабораторные работы (Laboratory works)  
+
+- [Operating systems and system programming_C](/Operating systems and system programming_C)  
+  **RU:** Операционные системы и системное программирование  
+  **Type:** Лабораторные работы (Laboratory works)  
+
+- [Operating systems and system programming_C](/Operating systems and system programming_C) 
+  **RU:** Операционные системы и системное программирование 
+  **Type:** Курсовой проект (Course project)  
+
+- [Circuit Design](/Circuit-Design)  
+  **RU:** Схемотехника  
+  **Type:** Лабораторные работы (Laboratory works)  
