@@ -20,6 +20,6 @@ RU: В данном репозитории представлены лабора
 
 - [Операционные системы и системное программирование, КП_C](/Operating systems and system programming_C) 
 
-- [Схемотехника](/Circuit-Design)  
+- [Схемотехника](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%A1%D1%85%D0%B5%D0%BC%D0%A2)  
 
 
