@@ -12,7 +12,7 @@ RU: В данном репозитории представлены лабора
 </div>
 ## 4 term (4 семестр):
 
-- [Programming in assembly language](./4 term/ПНАЯ)
+- [Programming in assembly language](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
   **RU:** Программирование на языке ассемблера 
   **Type:** Лабораторные работы (Laboratory works)  
 
