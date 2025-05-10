@@ -12,24 +12,14 @@ RU: В данном репозитории представлены лабора
 </div>
 ## 4 term (4 семестр):
 
-- [Programming in assembly language](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
-- 
-  **RU:** Программирование на языке ассемблера 
-  **Type:** Лабораторные работы (Laboratory works)  
+- [Программирование на языке ассемблера](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
+ 
+- [Архитектура персональных компьютеров_C_C++_Assembly](/Personal-Computer-Architecture_C_C++_Assembly)   
 
-- [Personal Computer Architecture_C_C++_Assembly](/Personal-Computer-Architecture_C_C++_Assembly)  
-  **RU:** Архитектура персональных компьютеров  
-  **Type:** Лабораторные работы (Laboratory works)  
+- [Операционные системы и системное программирование_C](/Operating systems and system programming_C)  
 
-- [Operating systems and system programming_C](/Operating systems and system programming_C)  
-  **RU:** Операционные системы и системное программирование  
-  **Type:** Лабораторные работы (Laboratory works)  
+- [Операционные системы и системное программирование, КП_C](/Operating systems and system programming_C) 
 
-- [Operating systems and system programming_C](/Operating systems and system programming_C) 
-  **RU:** Операционные системы и системное программирование 
-  **Type:** Курсовой проект (Course project)  
+- [Схемотехника](/Circuit-Design)  
 
-- [Circuit Design](/Circuit-Design)  
-  **RU:** Схемотехника  
-  **Type:** Лабораторные работы (Laboratory works)  
 
