@@ -1,4 +1,4 @@
-🎓 Belarusian State University of Informatics and Radioelectronics
+#🎓 Belarusian State University of Informatics and Radioelectronics
 (BSUIR) - БГУИР
 Faculty of Computer Systems and Networks (FKSiS) - ФКСиС
 Specialty of Computing Machines, Systems and Networks (VMSiS) - ВМСиС
