@@ -16,7 +16,7 @@ RU: В данном репозитории представлены лабора
 
 ## 4 term (4 семестр):
 - [Программирование на языках высокого уровня_Java](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%90%D0%AF%D0%92%D0%A3)
-- 
+ 
 - [Программирование на языке ассемблера](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
  
 - [Архитектура персональных компьютеров_C_C++_Assembly](/Personal-Computer-Architecture_C_C++_Assembly)   
