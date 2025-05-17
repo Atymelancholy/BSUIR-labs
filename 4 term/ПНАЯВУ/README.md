@@ -20,6 +20,3 @@
 - Bulk-операция
 - Unit-тесты
 - Ассихронный вызов сервиса
-
-# Ссылка на Sonar
-https://sonarcloud.io/project/overview?id=Atymelancholy_Java
