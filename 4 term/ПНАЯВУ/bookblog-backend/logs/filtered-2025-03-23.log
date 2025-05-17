@@ -1,0 +1,360 @@
+2025-03-23 16:52:54 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 14188 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 16:52:54 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 16:52:54 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 16:52:54 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 16:52:55 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 16:52:55 - INFO - Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2025-03-23 16:52:56 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 16:52:56 - INFO - Starting service [Tomcat]
+2025-03-23 16:52:56 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 16:52:56 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 16:52:56 - INFO - Root WebApplicationContext: initialization completed in 2151 ms
+2025-03-23 16:52:56 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 16:52:57 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 16:52:57 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 16:52:57 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 16:52:57 - INFO - HikariPool-1 - Starting...
+2025-03-23 16:52:57 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23809c9a
+2025-03-23 16:52:57 - INFO - HikariPool-1 - Start completed.
+2025-03-23 16:52:57 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 16:52:57 - INFO - HHH10001005: Database info:
+2025-03-23 16:52:58 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 16:52:58 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 16:52:59 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 16:53:00 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 16:53:00 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 16:53:01 - INFO - LiveReload server is running on port 35729
+2025-03-23 16:53:01 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 16:53:01 - INFO - Started BookBlogApplication in 7.576 seconds (process running for 9.346)
+2025-03-23 16:53:07 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 16:53:07 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 16:53:07 - INFO - Completed initialization in 0 ms
+2025-03-23 16:53:08 - INFO - Init duration for springdoc-openapi is: 460 ms
+2025-03-23 17:03:28 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-23 17:03:28 - INFO - Graceful shutdown complete
+2025-03-23 17:03:28 - INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:03:29 - INFO - HikariPool-1 - Shutdown initiated...
+2025-03-23 17:03:29 - INFO - HikariPool-1 - Shutdown completed.
+2025-03-23 17:03:36 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 22052 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 17:03:36 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 17:03:37 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 17:03:37 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 17:03:37 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 17:03:38 - INFO - Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2025-03-23 17:03:38 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 17:03:38 - INFO - Starting service [Tomcat]
+2025-03-23 17:03:38 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 17:03:38 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 17:03:38 - INFO - Root WebApplicationContext: initialization completed in 1908 ms
+2025-03-23 17:03:39 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 17:03:39 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 17:03:39 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 17:03:39 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 17:03:39 - INFO - HikariPool-1 - Starting...
+2025-03-23 17:03:39 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b914ca2
+2025-03-23 17:03:39 - INFO - HikariPool-1 - Start completed.
+2025-03-23 17:03:39 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 17:03:39 - INFO - HHH10001005: Database info:
+2025-03-23 17:03:40 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 17:03:41 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:03:41 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 17:03:42 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 17:03:43 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 17:03:43 - INFO - LiveReload server is running on port 35729
+2025-03-23 17:03:43 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 17:03:43 - INFO - Started BookBlogApplication in 7.546 seconds (process running for 8.706)
+2025-03-23 17:03:57 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 17:03:57 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 17:03:57 - INFO - Completed initialization in 0 ms
+2025-03-23 17:03:57 - INFO - Вход в метод контроллера: BookController.deleteBook(..) с аргументами: [10]
+2025-03-23 17:03:57 - INFO - Выход из метода контроллера: BookController.deleteBook(..) с результатом: <404 NOT_FOUND Not Found,[]>
+2025-03-23 17:04:13 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@369408e1]
+2025-03-23 17:04:13 - INFO - Registering new category: 
+2025-03-23 17:04:13 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <400 BAD_REQUEST Bad Request,Category with this name already exists!,[]>
+2025-03-23 17:04:35 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@271c0f99]
+2025-03-23 17:04:35 - INFO - Registering new category: 
+2025-03-23 17:04:35 - INFO - Операция с кэшем: InMemoryCache.put(..) с аргументами: [7, com.example.bookblog.dto.CategoryWithUsersDto@370a453b]
+2025-03-23 17:04:35 - INFO - Добавление в кэш: InMemoryCache.put(..) с аргументами: [7, com.example.bookblog.dto.CategoryWithUsersDto@370a453b]
+2025-03-23 17:04:35 - INFO - Category registered and cached with ID: 7
+2025-03-23 17:04:35 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <200 OK OK,Category added,[]>
+2025-03-23 17:07:12 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-23 17:07:12 - INFO - Graceful shutdown complete
+2025-03-23 17:07:12 - INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:07:12 - INFO - HikariPool-1 - Shutdown initiated...
+2025-03-23 17:07:13 - INFO - HikariPool-1 - Shutdown completed.
+2025-03-23 17:07:19 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 15712 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 17:07:19 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 17:07:19 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 17:07:19 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 17:07:20 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 17:07:20 - INFO - Finished Spring Data repository scanning in 78 ms. Found 4 JPA repository interfaces.
+2025-03-23 17:07:21 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 17:07:21 - INFO - Starting service [Tomcat]
+2025-03-23 17:07:21 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 17:07:22 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 17:07:22 - INFO - Root WebApplicationContext: initialization completed in 2539 ms
+2025-03-23 17:07:22 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 17:07:22 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 17:07:22 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 17:07:22 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 17:07:22 - INFO - HikariPool-1 - Starting...
+2025-03-23 17:07:23 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@714506f4
+2025-03-23 17:07:23 - INFO - HikariPool-1 - Start completed.
+2025-03-23 17:07:23 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 17:07:23 - INFO - HHH10001005: Database info:
+2025-03-23 17:07:24 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 17:07:24 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:07:25 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 17:07:26 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 17:07:26 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 17:07:27 - INFO - LiveReload server is running on port 35729
+2025-03-23 17:07:27 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 17:07:27 - INFO - Started BookBlogApplication in 9.013 seconds (process running for 10.078)
+2025-03-23 17:07:33 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 17:07:33 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 17:07:33 - INFO - Completed initialization in 1 ms
+2025-03-23 17:07:33 - INFO - Вход в метод контроллера: BookController.createBook(..) с аргументами: [com.example.bookblog.entity.Book@420279a1]
+2025-03-23 17:07:33 - INFO - Выход из метода контроллера: BookController.createBook(..) с результатом: <200 OK OK,Book added successfully,[]>
+2025-03-23 17:11:26 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-23 17:11:26 - INFO - Graceful shutdown complete
+2025-03-23 17:11:26 - INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:11:26 - INFO - HikariPool-1 - Shutdown initiated...
+2025-03-23 17:11:26 - INFO - HikariPool-1 - Shutdown completed.
+2025-03-23 17:11:32 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 19436 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 17:11:32 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 17:11:33 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 17:11:33 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 17:11:34 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 17:11:34 - INFO - Finished Spring Data repository scanning in 69 ms. Found 4 JPA repository interfaces.
+2025-03-23 17:11:35 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 17:11:35 - INFO - Starting service [Tomcat]
+2025-03-23 17:11:35 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 17:11:35 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 17:11:35 - INFO - Root WebApplicationContext: initialization completed in 2352 ms
+2025-03-23 17:11:35 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 17:11:35 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 17:11:35 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 17:11:36 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 17:11:36 - INFO - HikariPool-1 - Starting...
+2025-03-23 17:11:36 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@714506f4
+2025-03-23 17:11:36 - INFO - HikariPool-1 - Start completed.
+2025-03-23 17:11:36 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 17:11:36 - INFO - HHH10001005: Database info:
+2025-03-23 17:11:37 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 17:11:38 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:11:38 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 17:11:40 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 17:11:40 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 17:11:41 - INFO - LiveReload server is running on port 35729
+2025-03-23 17:11:41 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 17:11:41 - INFO - Started BookBlogApplication in 9.191 seconds (process running for 10.267)
+2025-03-23 17:11:51 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 17:11:51 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 17:11:51 - INFO - Completed initialization in 1 ms
+2025-03-23 17:11:51 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@36b2c0c7]
+2025-03-23 17:11:51 - INFO - Registering new category: 
+2025-03-23 17:11:51 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <400 BAD_REQUEST Bad Request,Category with this name already exists!,[]>
+2025-03-23 17:12:12 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@77b1e050]
+2025-03-23 17:12:12 - INFO - Registering new category: 
+2025-03-23 17:12:12 - INFO - Операция с кэшем: InMemoryCache.put(..) с аргументами: [8, com.example.bookblog.dto.CategoryWithUsersDto@4fed0b7]
+2025-03-23 17:12:12 - INFO - Добавление в кэш: InMemoryCache.put(..) с аргументами: [8, com.example.bookblog.dto.CategoryWithUsersDto@4fed0b7]
+2025-03-23 17:12:12 - INFO - Category registered and cached with ID: 8
+2025-03-23 17:12:12 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <200 OK OK,Category added,[]>
+2025-03-23 17:12:17 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@335178ad]
+2025-03-23 17:12:17 - INFO - Registering new category:  
+2025-03-23 17:12:17 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <400 BAD_REQUEST Bad Request,Category with this name already exists!,[]>
+2025-03-23 17:15:54 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-23 17:15:54 - INFO - Graceful shutdown complete
+2025-03-23 17:15:54 - INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:15:54 - INFO - HikariPool-1 - Shutdown initiated...
+2025-03-23 17:15:54 - INFO - HikariPool-1 - Shutdown completed.
+2025-03-23 17:16:00 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 20528 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 17:16:00 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 17:16:00 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 17:16:00 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 17:16:01 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 17:16:02 - INFO - Finished Spring Data repository scanning in 77 ms. Found 4 JPA repository interfaces.
+2025-03-23 17:16:03 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 17:16:03 - INFO - Starting service [Tomcat]
+2025-03-23 17:16:03 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 17:16:03 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 17:16:03 - INFO - Root WebApplicationContext: initialization completed in 2260 ms
+2025-03-23 17:16:03 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 17:16:03 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 17:16:03 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 17:16:03 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 17:16:03 - INFO - HikariPool-1 - Starting...
+2025-03-23 17:16:04 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6025ba28
+2025-03-23 17:16:04 - INFO - HikariPool-1 - Start completed.
+2025-03-23 17:16:04 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 17:16:04 - INFO - HHH10001005: Database info:
+2025-03-23 17:16:05 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 17:16:05 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:16:05 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 17:16:07 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 17:16:07 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 17:16:08 - INFO - LiveReload server is running on port 35729
+2025-03-23 17:16:08 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 17:16:08 - INFO - Started BookBlogApplication in 7.823 seconds (process running for 8.859)
+2025-03-23 17:16:12 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 17:16:12 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 17:16:12 - INFO - Completed initialization in 2 ms
+2025-03-23 17:16:12 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@75b905ee]
+2025-03-23 17:16:12 - INFO - Registering new category:  
+2025-03-23 17:16:12 - INFO - Операция с кэшем: InMemoryCache.put(..) с аргументами: [9, com.example.bookblog.dto.CategoryWithUsersDto@4e8b03a1]
+2025-03-23 17:16:12 - INFO - Добавление в кэш: InMemoryCache.put(..) с аргументами: [9, com.example.bookblog.dto.CategoryWithUsersDto@4e8b03a1]
+2025-03-23 17:16:12 - INFO - Category registered and cached with ID: 9
+2025-03-23 17:16:12 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <200 OK OK,Category added,[]>
+2025-03-23 17:16:36 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@60dcaf83]
+2025-03-23 17:16:36 - INFO - Registering new category: 
+2025-03-23 17:16:36 - INFO - Операция с кэшем: InMemoryCache.put(..) с аргументами: [10, com.example.bookblog.dto.CategoryWithUsersDto@384fd30a]
+2025-03-23 17:16:36 - INFO - Добавление в кэш: InMemoryCache.put(..) с аргументами: [10, com.example.bookblog.dto.CategoryWithUsersDto@384fd30a]
+2025-03-23 17:16:36 - INFO - Category registered and cached with ID: 10
+2025-03-23 17:16:36 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <200 OK OK,Category added,[]>
+2025-03-23 17:16:39 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@64451388]
+2025-03-23 17:16:39 - INFO - Registering new category: 
+2025-03-23 17:16:39 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <400 BAD_REQUEST Bad Request,Category with this name already exists!,[]>
+2025-03-23 17:19:35 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-23 17:19:35 - INFO - Graceful shutdown complete
+2025-03-23 17:19:35 - INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:19:35 - INFO - HikariPool-1 - Shutdown initiated...
+2025-03-23 17:19:35 - INFO - HikariPool-1 - Shutdown completed.
+2025-03-23 17:19:42 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 9756 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 17:19:42 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 17:19:42 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 17:19:42 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 17:19:43 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 17:19:43 - INFO - Finished Spring Data repository scanning in 70 ms. Found 4 JPA repository interfaces.
+2025-03-23 17:19:44 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 17:19:44 - INFO - Starting service [Tomcat]
+2025-03-23 17:19:44 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 17:19:44 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 17:19:44 - INFO - Root WebApplicationContext: initialization completed in 2278 ms
+2025-03-23 17:19:44 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 17:19:44 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 17:19:44 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 17:19:45 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 17:19:45 - INFO - HikariPool-1 - Starting...
+2025-03-23 17:19:45 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52009a46
+2025-03-23 17:19:45 - INFO - HikariPool-1 - Start completed.
+2025-03-23 17:19:45 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 17:19:45 - INFO - HHH10001005: Database info:
+2025-03-23 17:19:46 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 17:19:46 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:19:47 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 17:19:49 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 17:19:49 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 17:19:50 - INFO - LiveReload server is running on port 35729
+2025-03-23 17:19:50 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 17:19:50 - INFO - Started BookBlogApplication in 8.681 seconds (process running for 9.726)
+2025-03-23 17:19:54 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 17:19:54 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 17:19:54 - INFO - Completed initialization in 0 ms
+2025-03-23 17:19:54 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@2024383c, org.springframework.validation.BeanPropertyBindingResult: 0 errors]
+2025-03-23 17:19:54 - INFO - Registering new category: 
+2025-03-23 17:19:54 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <400 BAD_REQUEST Bad Request,Category with this name already exists!,[]>
+2025-03-23 17:20:07 - INFO - Вход в метод контроллера: CategoryController.registrationGroup(..) с аргументами: [com.example.bookblog.entity.Category@7d794a74, org.springframework.validation.BeanPropertyBindingResult: 0 errors]
+2025-03-23 17:20:07 - INFO - Registering new category: 
+2025-03-23 17:20:07 - INFO - Операция с кэшем: InMemoryCache.put(..) с аргументами: [11, com.example.bookblog.dto.CategoryWithUsersDto@70b9901d]
+2025-03-23 17:20:07 - INFO - Добавление в кэш: InMemoryCache.put(..) с аргументами: [11, com.example.bookblog.dto.CategoryWithUsersDto@70b9901d]
+2025-03-23 17:20:07 - INFO - Category registered and cached with ID: 11
+2025-03-23 17:20:07 - INFO - Выход из метода контроллера: CategoryController.registrationGroup(..) с результатом: <200 OK OK,Category added,[]>
+2025-03-23 17:21:39 - INFO - Вход в метод контроллера: CategoryController.deleteGroup(..) с аргументами: [3]
+2025-03-23 17:21:39 - INFO - Deleting category with ID: 3
+2025-03-23 17:21:39 - INFO - Выход из метода контроллера: CategoryController.deleteGroup(..) с результатом: <404 NOT_FOUND Not Found,[]>
+2025-03-23 17:29:41 - WARN - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource ogs/generate.]
+2025-03-23 17:29:47 - WARN - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource ogs/generate.]
+2025-03-23 17:29:58 - WARN - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource ogs/generate.]
+2025-03-23 17:30:00 - WARN - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource ogs/generate.]
+2025-03-23 17:31:09 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-23 17:31:09 - INFO - Graceful shutdown complete
+2025-03-23 17:31:09 - INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:31:09 - INFO - HikariPool-1 - Shutdown initiated...
+2025-03-23 17:31:09 - INFO - HikariPool-1 - Shutdown completed.
+2025-03-23 17:31:16 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 8080 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 17:31:16 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 17:31:16 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 17:31:16 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 17:31:17 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 17:31:17 - INFO - Finished Spring Data repository scanning in 75 ms. Found 4 JPA repository interfaces.
+2025-03-23 17:31:18 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 17:31:18 - INFO - Starting service [Tomcat]
+2025-03-23 17:31:18 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 17:31:18 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 17:31:18 - INFO - Root WebApplicationContext: initialization completed in 2369 ms
+2025-03-23 17:31:18 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 17:31:18 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 17:31:19 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 17:31:19 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 17:31:19 - INFO - HikariPool-1 - Starting...
+2025-03-23 17:31:19 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ce1c1a5
+2025-03-23 17:31:19 - INFO - HikariPool-1 - Start completed.
+2025-03-23 17:31:19 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 17:31:19 - INFO - HHH10001005: Database info:
+2025-03-23 17:31:21 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 17:31:21 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:31:22 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 17:31:23 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 17:31:23 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 17:31:24 - INFO - LiveReload server is running on port 35729
+2025-03-23 17:31:24 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 17:31:24 - INFO - Started BookBlogApplication in 8.833 seconds (process running for 9.903)
+2025-03-23 17:31:37 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 17:31:37 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 17:31:37 - INFO - Completed initialization in 0 ms
+2025-03-23 17:31:37 - WARN - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource ogs/generate.]
+2025-03-23 17:32:57 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:32:57 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@741256e6,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:33:07 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-23]
+2025-03-23 17:33:07 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@305a457a,[Content-Disposition:"attachment; filename=filtered-2025-03-23.log"]>
+2025-03-23 17:33:16 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:33:16 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@108d81f5,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:33:20 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:33:20 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@1f8f6d8b,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:33:22 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:33:22 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@45199a49,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:33:24 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:33:24 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@160a0b5d,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:33:25 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:33:26 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@18c2a723,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:33:27 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:33:27 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@24e9b410,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:33:29 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-22]
+2025-03-23 17:33:29 - INFO - Выход из метода контроллера: LogController.generateLogFile(..) с результатом: <200 OK OK,[B@27b26393,[Content-Disposition:"attachment; filename=filtered-2025-03-22.log"]>
+2025-03-23 17:37:13 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-23 17:37:13 - INFO - Graceful shutdown complete
+2025-03-23 17:37:13 - INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:37:13 - INFO - HikariPool-1 - Shutdown initiated...
+2025-03-23 17:37:14 - INFO - HikariPool-1 - Shutdown completed.
+2025-03-23 17:37:18 - INFO - Starting BookBlogApplication using Java 23.0.1 with PID 12668 (C:\Users\atyme\IdeaProjects\BookBlogT\target\classes started by atyme in C:\Users\atyme\IdeaProjects\BookBlogT)
+2025-03-23 17:37:18 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-03-23 17:37:19 - INFO - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-23 17:37:19 - INFO - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-23 17:37:20 - INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-23 17:37:20 - INFO - Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+2025-03-23 17:37:21 - INFO - Tomcat initialized with port 8080 (http)
+2025-03-23 17:37:21 - INFO - Starting service [Tomcat]
+2025-03-23 17:37:21 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-23 17:37:21 - INFO - Initializing Spring embedded WebApplicationContext
+2025-03-23 17:37:21 - INFO - Root WebApplicationContext: initialization completed in 2617 ms
+2025-03-23 17:37:21 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-23 17:37:22 - INFO - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-03-23 17:37:22 - INFO - HHH000026: Second-level cache disabled
+2025-03-23 17:37:22 - INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-23 17:37:22 - INFO - HikariPool-1 - Starting...
+2025-03-23 17:37:22 - INFO - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bc58afc
+2025-03-23 17:37:22 - INFO - HikariPool-1 - Start completed.
+2025-03-23 17:37:22 - WARN - HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-23 17:37:22 - INFO - HHH10001005: Database info:
+2025-03-23 17:37:23 - INFO - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-23 17:37:23 - INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-23 17:37:24 - INFO - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-23 17:37:25 - WARN - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-23 17:37:25 - INFO - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-23 17:37:26 - INFO - LiveReload server is running on port 35729
+2025-03-23 17:37:26 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-03-23 17:37:26 - INFO - Started BookBlogApplication in 8.458 seconds (process running for 9.751)
+2025-03-23 17:37:44 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-23 17:37:44 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-03-23 17:37:44 - INFO - Completed initialization in 1 ms
+2025-03-23 17:37:44 - INFO - Вход в метод контроллера: LogController.generateLogFile(..) с аргументами: [2025-03-23]

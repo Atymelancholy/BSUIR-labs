@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный профиль</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .bio {
+            font-size: 14px;
+            color: gray;
+            margin-bottom: 15px;
+        }
+        .works-list {
+            list-style: none;
+            padding: 0;
+        }
+        .works-list li {
+            background: #ddd;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .contacts {
+            margin-top: 15px;
+        }
+        .contacts a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="profile-container">
+    <img src="https://via.placeholder.com/100" alt="Фото профиля" class="profile-img">
+    <div class="username">Имя пользователя</div>
+    <div class="bio">Краткая информация о пользователе</div>
+    <h3>Мои работы</h3>
+    <ul class="works-list">
+        <li>Название работы 1</li>
+        <li>Название работы 2</li>
+        <li>Название работы 3</li>
+    </ul>
+    <div class="contacts">
+        <a href="#">Связаться</a>
+    </div>
+</div>
+</body>
+</html>

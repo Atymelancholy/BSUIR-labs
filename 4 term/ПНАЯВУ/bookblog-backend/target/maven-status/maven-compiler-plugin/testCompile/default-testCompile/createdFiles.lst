@@ -1,0 +1,7 @@
+com\example\bookblog\BookBlogApplicationTests.class
+com\example\bookblog\testservice\UserServiceTest.class
+com\example\bookblog\testservice\CategoryServiceTest.class
+com\example\bookblog\testservice\ResponseServiceTest.class
+com\example\bookblog\testservice\VisitServiceImplTest.class
+com\example\bookblog\GlobalExceptionHandlerTest.class
+com\example\bookblog\testservice\BookServiceTest.class

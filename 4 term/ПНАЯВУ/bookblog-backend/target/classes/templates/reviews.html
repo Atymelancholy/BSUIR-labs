@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Форум обсуждения книги</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .book-info {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .book-info img {
+            max-width: 200px;
+            margin-right: 20px;
+        }
+        .book-info .description {
+            max-width: 600px;
+        }
+        .reviews {
+            margin-top: 20px;
+        }
+        .review {
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            resize: vertical;
+        }
+        .review-form button {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .review-form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Форум обсуждения книги</h1>
+</header>
+
+<div class="container">
+    <div class="book-info">
+        <img src="book-cover.jpg" alt="Обложка книги">
+        <div class="description">
+            <h2>Название книги</h2>
+            <p><strong>Автор:</strong> Имя автора</p>
+            <p><strong>Жанр:</strong> Жанр книги</p>
+            <p><strong>Описание:</strong> Краткое описание содержания книги, не больше 3-4 предложений.</p>
+        </div>
+    </div>
+
+    <div class="reviews">
+        <h3>Отзывы</h3>
+
+        <div class="review">
+            <p><strong>Иван:</strong> Отличная книга! Очень увлекательный сюжет и неожиданные повороты.</p>
+        </div>
+
+        <div class="review">
+            <p><strong>Мария:</strong> Мне не хватило глубокого раскрытия персонажей, но в целом понравилось.</p>
+        </div>
+
+        <div class="review-form">
+            <h3>Добавить отзыв</h3>
+            <textarea placeholder="Ваш отзыв..." rows="5"></textarea><br>
+            <button type="button">Отправить отзыв</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
