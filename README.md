@@ -10,8 +10,13 @@ RU: В данном репозитории представлены лабора
 
 **PS:** Все авторские права на предоставленные ниже условия лабораторных работ принадлежат Белорусскому Государственному Университету Информатики и Радиоэлектроники БГУИР, BSUIR  
 </div>
-## 4 term (4 семестр):
 
+## 3 term (3 семестр)
+- [Программирование на языках высокого уровня_C++](https://github.com/Atymelancholy/BSUIR-labs/tree/main/3%20term/%D0%9F%D0%9D%D0%90%D0%AF%D0%92%D0%A3)
+
+## 4 term (4 семестр):
+- [Программирование на языках высокого уровня_Java](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%90%D0%AF%D0%92%D0%A3)
+ 
 - [Программирование на языке ассемблера](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
  
 - [Архитектура персональных компьютеров_C_C++_Assembly](/Personal-Computer-Architecture_C_C++_Assembly)   
