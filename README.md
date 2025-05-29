@@ -19,7 +19,7 @@ RU: В данном репозитории представлены лабора
  
 - [Программирование на языке ассемблера](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
 
-- [Операционные системы и системное программирование_C](/Operating systems and system programming_C)  
+- [Операционные системы и системное программирование_C](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9E%D0%A1%D0%98%D0%A1%D0%9F)  
 
 - [Операционные системы и системное программирование, КП_C](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9E%D0%A1%D0%98%D0%A1%D0%9F%20%D0%9A%D0%9F) 
 
