@@ -26,3 +26,4 @@ RU: В данном репозитории представлены лабора
 ## 5 term (4 семестр):
 
 - [Жизненый цикл разработки программного обеспечения](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%96%D0%A6%D0%A0%D0%9F%D0%9E)
+- [Базы данных](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%91%D0%94)
