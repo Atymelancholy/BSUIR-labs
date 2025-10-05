@@ -30,7 +30,7 @@ RU: В данном репозитории представлены лабора
 - [Схемотехника](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%A1%D1%85%D0%B5%D0%BC%D0%A2)
 - [Схемотехника_КП](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%A1%D1%85%D0%B5%D0%BC%D0%A2%20%D0%9A%D0%9F)
 - [Структурная и функциональная организация вычислительных машин](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%A1%D0%B8%D0%A4%D0%9E%D0%92%D0%9C)
-- [Основы компьютерных сетей]
+- [Основы компьютерных сетей](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%9E%D0%9A%D0%A1)
 - [Интерфейсы и устройства вычислительных машин]
 - [Контроль и диагностика средств вычислительной техники]
 
