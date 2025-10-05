@@ -1,0 +1,596 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+7
+3500
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+74163
+# storage
+db|Block1_1.(1).cnf
+db|Block1_1.(1).cnf
+# case_insensitive
+# source_file
+|altera|91|quartus|libraries|others|maxplus2|74163.tdf
+7b6eab8239cb61d11fdf639ae0d920
+7
+# user_parameter {
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+QD
+-1
+3
+QC
+-1
+3
+QB
+-1
+3
+QA
+-1
+3
+LDN
+-1
+3
+CLK
+-1
+3
+D
+-1
+1
+C
+-1
+1
+B
+-1
+1
+A
+-1
+1
+ENT
+-1
+2
+ENP
+-1
+2
+CLRN
+-1
+2
+}
+# hierarchies {
+Block1_1:inst|74163:inst
+Block1_2:inst1|74163:inst11
+Block1_2:inst1|74163:inst2
+}
+# macro_sequence
+
+# end
+# entity
+f74163
+# storage
+db|Block1_1.(2).cnf
+db|Block1_1.(2).cnf
+# case_insensitive
+# source_file
+|altera|91|quartus|libraries|others|maxplus2|f74163.bdf
+9cc9fa2c3e7f5da9d94821209d4efe
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+Block1_1:inst|74163:inst|f74163:sub
+Block1_2:inst1|74163:inst11|f74163:sub
+Block1_2:inst1|74163:inst2|f74163:sub
+74163:inst3|f74163:sub
+Block1_3:inst2|74163:inst2|f74163:sub
+}
+# macro_sequence
+
+# end
+# entity
+74154
+# storage
+db|Block1_1.(5).cnf
+db|Block1_1.(5).cnf
+# case_insensitive
+# source_file
+|altera|91|quartus|libraries|others|maxplus2|74154.bdf
+c116bfcaf5621bfe715a74ebcf6f4a28
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+Block1_3:inst2|74154:inst5
+}
+# macro_sequence
+
+# end
+# entity
+74163
+# storage
+db|Block1_1.(6).cnf
+db|Block1_1.(6).cnf
+# case_insensitive
+# source_file
+|altera|91|quartus|libraries|others|maxplus2|74163.tdf
+7b6eab8239cb61d11fdf639ae0d920
+7
+# user_parameter {
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+QD
+-1
+3
+QC
+-1
+3
+QB
+-1
+3
+QA
+-1
+3
+CLK
+-1
+3
+D
+-1
+1
+C
+-1
+1
+B
+-1
+1
+A
+-1
+1
+ENT
+-1
+2
+ENP
+-1
+2
+CLRN
+-1
+2
+}
+# hierarchies {
+Block1_3:inst2|74163:inst2
+}
+# macro_sequence
+
+# end
+# entity
+Block1_3
+# storage
+db|Block1_1.(4).cnf
+db|Block1_1.(4).cnf
+# case_insensitive
+# source_file
+block1_3.bdf
+cb19f243ceeb5c9a8cae63d23869c8a
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+Block1_3:inst2
+}
+# macro_sequence
+
+# end
+# entity
+lpm_counter0
+# storage
+db|Block1_1.(3).cnf
+db|Block1_1.(3).cnf
+# case_insensitive
+# source_file
+lpm_counter0.tdf
+6a25b75bddc08785dbf32b32dd5b49d
+7
+# used_port {
+q8
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+clock
+-1
+3
+}
+# include_file {
+lpm_counter.inc
+c5cfeeabc5f2ab60b3453f6abbc42b41
+}
+# macro_sequence
+
+# end
+# entity
+lpm_counter
+# storage
+db|Block1_1.(8).cnf
+db|Block1_1.(8).cnf
+# case_insensitive
+# source_file
+|altera|91|quartus|libraries|megafunctions|lpm_counter.tdf
+ea80917e5f6a67b6043b433538e1f4b
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+LPM_WIDTH
+9
+PARAMETER_UNKNOWN
+USR
+LPM_DIRECTION
+UP
+PARAMETER_UNKNOWN
+USR
+LPM_MODULUS
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_AVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+LPM_SVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+LPM_PORT_UPDOWN
+PORT_UNUSED
+PARAMETER_UNKNOWN
+USR
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN_LENGTH
+48
+CARRY_CHAIN_LENGTH
+USR
+NOT_GATE_PUSH_BACK
+ON
+NOT_GATE_PUSH_BACK
+USR
+CARRY_CNT_EN
+SMART
+PARAMETER_UNKNOWN
+DEF
+LABWIDE_SCLR
+ON
+PARAMETER_UNKNOWN
+DEF
+USE_NEW_VERSION
+TRUE
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+cntr_vlh
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+q8
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+clock
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+cntr_vlh
+# storage
+db|Block1_1.(9).cnf
+db|Block1_1.(9).cnf
+# case_insensitive
+# source_file
+db|cntr_vlh.tdf
+28139f8d9523e71c51d108b69457654
+7
+# used_port {
+q8
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+clock
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+Block1_1
+# storage
+db|Block1_1.(0).cnf
+db|Block1_1.(0).cnf
+# case_insensitive
+# source_file
+block1_1.bdf
+3fa8e72f9fff4e74fb75d1ff267b31f9
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+Block1_1:inst
+}
+# macro_sequence
+
+# end
+# entity
+Block1_2
+# storage
+db|Block1_1.(10).cnf
+db|Block1_1.(10).cnf
+# case_insensitive
+# source_file
+block1_2.bdf
+e29b6a1f14b7c7f8bf6bd0963c6d1c3
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+Block1_2:inst1
+}
+# macro_sequence
+
+# end
+# entity
+74163
+# storage
+db|Block1_1.(11).cnf
+db|Block1_1.(11).cnf
+# case_insensitive
+# source_file
+|altera|91|quartus|libraries|others|maxplus2|74163.tdf
+7b6eab8239cb61d11fdf639ae0d920
+7
+# user_parameter {
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+QD
+-1
+3
+QC
+-1
+3
+QB
+-1
+3
+QA
+-1
+3
+LDN
+-1
+3
+D
+-1
+3
+CLK
+-1
+3
+C
+-1
+3
+B
+-1
+3
+A
+-1
+3
+ENT
+-1
+2
+ENP
+-1
+2
+CLRN
+-1
+2
+}
+# hierarchies {
+74163:inst3
+}
+# macro_sequence
+
+# end
+# entity
+Block1_4
+# storage
+db|Block1_1.(7).cnf
+db|Block1_1.(7).cnf
+# case_insensitive
+# source_file
+block1_4.bdf
+63bbfc9889e449ab1fa732846d32fa
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+
