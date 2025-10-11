@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.179 ns
+From           : write
+To             : Block1:inst9|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[2]
+From Clock     : --
+To Clock       : inclock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.492 ns
+From           : lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[2]
+To             : Data[2]
+From Clock     : outclock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.948 ns
+From           : rom_ram
+To             : Data[2]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.933 ns
+From           : address[3]
+To             : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|ram_block1a0~porta_address_reg3
+From Clock     : --
+To Clock       : rom_ram
+Failed Paths   : 0
+
+Type           : Clock Setup: 'inclock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 229.25 MHz ( period = 4.362 ns )
+From           : Block1:inst9|lpm_counter1:inst44|lpm_counter:lpm_counter_component|cntr_5ai:auto_generated|safe_q[2]
+To             : Block1:inst9|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[1]
+From Clock     : inclock
+To Clock       : inclock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'rom_ram'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 444.44 MHz ( period = 2.250 ns )
+From           : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|ram_block1a0~porta_address_reg7
+To             : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|q_a[7]
+From Clock     : rom_ram
+To Clock       : rom_ram
+Failed Paths   : 0
+
+Type           : Clock Hold: 'inclock'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : Block1:inst9|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]
+To             : lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a0~porta_datain_reg0
+From Clock     : inclock
+To Clock       : inclock
+Failed Paths   : 62
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 62
+
+--------------------------------------------------------------------------------------
+
