@@ -40,6 +40,7 @@ SUBDESIGN lpm_counter1
 (
 	clk_en	 : INPUT;
 	clock	 : INPUT;
+	sclr	 : INPUT;
 	q[2..0]	 : OUTPUT;
 )
 
@@ -56,6 +57,7 @@ BEGIN
 
 	q[2..0] = lpm_counter_component.q[2..0];
 	lpm_counter_component.clk_en = clk_en;
+	lpm_counter_component.sclr = sclr;
 	lpm_counter_component.clock = clock;
 END;
 
@@ -76,7 +78,7 @@ END;
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Stratix II"
 -- Retrieval info: PRIVATE: ModulusCounter NUMERIC "0"
 -- Retrieval info: PRIVATE: ModulusValue NUMERIC "0"
--- Retrieval info: PRIVATE: SCLR NUMERIC "0"
+-- Retrieval info: PRIVATE: SCLR NUMERIC "1"
 -- Retrieval info: PRIVATE: SLOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
@@ -89,9 +91,11 @@ END;
 -- Retrieval info: USED_PORT: clk_en 0 0 0 0 INPUT NODEFVAL clk_en
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL clock
 -- Retrieval info: USED_PORT: q 0 0 3 0 OUTPUT NODEFVAL q[2..0]
+-- Retrieval info: USED_PORT: sclr 0 0 0 0 INPUT NODEFVAL sclr
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 3 0 @q 0 0 3 0
 -- Retrieval info: CONNECT: @clk_en 0 0 0 0 clk_en 0 0 0 0
+-- Retrieval info: CONNECT: @sclr 0 0 0 0 sclr 0 0 0 0
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter1.tdf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter1.inc TRUE

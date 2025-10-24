@@ -5,7 +5,8 @@
 	eq3_sig,
 	eq4_sig,
 	eq5_sig,
-	eq6_sig
+	eq6_sig,
+	eq7_sig
 ) = lpm_decode5	(
 	.data[] = data_sig[]
 )
@@ -16,5 +17,6 @@ RETURNS (
 	.eq3,
 	.eq4,
 	.eq5,
-	.eq6
+	.eq6,
+	.eq7
 );

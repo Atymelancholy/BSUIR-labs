@@ -9,19 +9,24 @@ Data[6] <= gdfx_temp0[6].DB_MAX_OUTPUT_PORT_TYPE
 Data[7] <= gdfx_temp0[7].DB_MAX_OUTPUT_PORT_TYPE
 rom_ram => inst12.IN0
 rom_ram => inst13.IN0
-rom_ram => inst10.IN1
 rom_ram => inst16.IN1
+rom_ram => inst10.IN1
 read => inst14.IN1
-read => Block1:inst9.Write
+read => inst3.IN1
+read => Block1:inst7.Write
+read => inst1.IN0
 read => inst13.IN1
+read => inst19.IN1
+outclock => inst3.IN2
+outclock => inst19.IN0
+inclock => inst2.IN0
+inclock => inst21.IN0
+inclock => inst18.IN0
+write => inst2.IN1
 write => inst15.IN1
-write => lpm_bustri0:inst30.enabledt
-write => Block1:inst9.Read
-inclock => inst11.IN0
-inclock => Block1:inst9.clk
-inclock => inst10.IN0
-outclock => inst17.IN1
-outclock => inst16.IN0
+write => inst1.IN1
+write => Block1:inst7.Read
+write => inst18.IN1
 address[0] => LPM_RAM_DQ:inst20.address[0]
 address[0] => LPM_ROM:inst.address[0]
 address[1] => LPM_RAM_DQ:inst20.address[1]
@@ -110,6 +115,135 @@ result[4] <= din[4].DB_MAX_OUTPUT_PORT_TYPE
 result[5] <= din[5].DB_MAX_OUTPUT_PORT_TYPE
 result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sifo33|lpm_decode5:inst8
+data[0] => lpm_decode:lpm_decode_component.data[0]
+data[1] => lpm_decode:lpm_decode_component.data[1]
+data[2] => lpm_decode:lpm_decode_component.data[2]
+eq0 <= lpm_decode:lpm_decode_component.eq[0]
+eq1 <= lpm_decode:lpm_decode_component.eq[1]
+eq2 <= lpm_decode:lpm_decode_component.eq[2]
+eq3 <= lpm_decode:lpm_decode_component.eq[3]
+eq4 <= lpm_decode:lpm_decode_component.eq[4]
+eq5 <= lpm_decode:lpm_decode_component.eq[5]
+eq6 <= lpm_decode:lpm_decode_component.eq[6]
+eq7 <= lpm_decode:lpm_decode_component.eq[7]
+
+
+|sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component
+data[0] => decode_u7f:auto_generated.data[0]
+data[1] => decode_u7f:auto_generated.data[1]
+data[2] => decode_u7f:auto_generated.data[2]
+enable => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+eq[0] <= decode_u7f:auto_generated.eq[0]
+eq[1] <= decode_u7f:auto_generated.eq[1]
+eq[2] <= decode_u7f:auto_generated.eq[2]
+eq[3] <= decode_u7f:auto_generated.eq[3]
+eq[4] <= decode_u7f:auto_generated.eq[4]
+eq[5] <= decode_u7f:auto_generated.eq[5]
+eq[6] <= decode_u7f:auto_generated.eq[6]
+eq[7] <= decode_u7f:auto_generated.eq[7]
+
+
+|sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated
+data[0] => w_anode19w[1].IN1
+data[0] => w_anode1w[1]~2.IN0
+data[0] => w_anode30w[1]~1.IN0
+data[0] => w_anode41w[1].IN1
+data[0] => w_anode52w[1]~1.IN0
+data[0] => w_anode63w[1].IN1
+data[0] => w_anode74w[1]~0.IN0
+data[0] => w_anode85w[1].IN1
+data[1] => w_anode19w[2]~1.IN0
+data[1] => w_anode1w[2]~1.IN0
+data[1] => w_anode30w[2].IN1
+data[1] => w_anode41w[2].IN1
+data[1] => w_anode52w[2]~0.IN0
+data[1] => w_anode63w[2]~0.IN0
+data[1] => w_anode74w[2].IN1
+data[1] => w_anode85w[2].IN1
+data[2] => w_anode19w[3]~0.IN0
+data[2] => w_anode1w[3]~0.IN0
+data[2] => w_anode30w[3]~0.IN0
+data[2] => w_anode41w[3]~0.IN0
+data[2] => w_anode52w[3].IN1
+data[2] => w_anode63w[3].IN1
+data[2] => w_anode74w[3].IN1
+data[2] => w_anode85w[3].IN1
+eq[0] <= w_anode1w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[1] <= w_anode19w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[2] <= w_anode30w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[3] <= w_anode41w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[4] <= w_anode52w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[5] <= w_anode63w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[6] <= w_anode74w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[7] <= w_anode85w[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sifo33|lpm_counter1:inst6
+clk_en => lpm_counter:lpm_counter_component.clk_en
+clock => lpm_counter:lpm_counter_component.clock
+sclr => lpm_counter:lpm_counter_component.sclr
+q[0] <= lpm_counter:lpm_counter_component.q[0]
+q[1] <= lpm_counter:lpm_counter_component.q[1]
+q[2] <= lpm_counter:lpm_counter_component.q[2]
+
+
+|sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component
+clock => cntr_poi:auto_generated.clock
+clk_en => cntr_poi:auto_generated.clk_en
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => cntr_poi:auto_generated.sclr
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_poi:auto_generated.q[0]
+q[1] <= cntr_poi:auto_generated.q[1]
+q[2] <= cntr_poi:auto_generated.q[2]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated
+clk_en => counter_reg_bit1a[2]~3.IN0
+clock => counter_reg_bit1a[2].CLK
+clock => counter_reg_bit1a[1].CLK
+clock => counter_reg_bit1a[0].CLK
+q[0] <= counter_reg_bit1a[0].REGOUT
+q[1] <= counter_reg_bit1a[1].REGOUT
+q[2] <= counter_reg_bit1a[2].REGOUT
+sclr => _~7.IN1
+sclr => counter_reg_bit1a[2].SCLR
+sclr => counter_reg_bit1a[1].SCLR
+sclr => counter_reg_bit1a[0].SCLR
 
 
 |sifo33|LPM_RAM_DQ:inst20
@@ -329,79 +463,7 @@ wren_a => ram_block1a6.PORTAWE
 wren_a => ram_block1a7.PORTAWE
 
 
-|sifo33|lpm_bustri0:inst30
-data[0] => lpm_bustri:lpm_bustri_component.data[0]
-data[1] => lpm_bustri:lpm_bustri_component.data[1]
-data[2] => lpm_bustri:lpm_bustri_component.data[2]
-data[3] => lpm_bustri:lpm_bustri_component.data[3]
-data[4] => lpm_bustri:lpm_bustri_component.data[4]
-data[5] => lpm_bustri:lpm_bustri_component.data[5]
-data[6] => lpm_bustri:lpm_bustri_component.data[6]
-data[7] => lpm_bustri:lpm_bustri_component.data[7]
-enabledt => lpm_bustri:lpm_bustri_component.enabledt
-enabletr => lpm_bustri:lpm_bustri_component.enabletr
-result[0] <= lpm_bustri:lpm_bustri_component.result[0]
-result[1] <= lpm_bustri:lpm_bustri_component.result[1]
-result[2] <= lpm_bustri:lpm_bustri_component.result[2]
-result[3] <= lpm_bustri:lpm_bustri_component.result[3]
-result[4] <= lpm_bustri:lpm_bustri_component.result[4]
-result[5] <= lpm_bustri:lpm_bustri_component.result[5]
-result[6] <= lpm_bustri:lpm_bustri_component.result[6]
-result[7] <= lpm_bustri:lpm_bustri_component.result[7]
-tridata[0] <> lpm_bustri:lpm_bustri_component.tridata[0]
-tridata[1] <> lpm_bustri:lpm_bustri_component.tridata[1]
-tridata[2] <> lpm_bustri:lpm_bustri_component.tridata[2]
-tridata[3] <> lpm_bustri:lpm_bustri_component.tridata[3]
-tridata[4] <> lpm_bustri:lpm_bustri_component.tridata[4]
-tridata[5] <> lpm_bustri:lpm_bustri_component.tridata[5]
-tridata[6] <> lpm_bustri:lpm_bustri_component.tridata[6]
-tridata[7] <> lpm_bustri:lpm_bustri_component.tridata[7]
-
-
-|sifo33|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component
-tridata[0] <> dout[0]
-tridata[1] <> dout[1]
-tridata[2] <> dout[2]
-tridata[3] <> dout[3]
-tridata[4] <> dout[4]
-tridata[5] <> dout[5]
-tridata[6] <> dout[6]
-tridata[7] <> dout[7]
-data[0] => dout[0].DATAIN
-data[1] => dout[1].DATAIN
-data[2] => dout[2].DATAIN
-data[3] => dout[3].DATAIN
-data[4] => dout[4].DATAIN
-data[5] => dout[5].DATAIN
-data[6] => dout[6].DATAIN
-data[7] => dout[7].DATAIN
-enabletr => din[7].OE
-enabletr => din[6].OE
-enabletr => din[5].OE
-enabletr => din[4].OE
-enabletr => din[3].OE
-enabletr => din[2].OE
-enabletr => din[1].OE
-enabletr => din[0].OE
-enabledt => dout[7].OE
-enabledt => dout[6].OE
-enabledt => dout[5].OE
-enabledt => dout[4].OE
-enabledt => dout[3].OE
-enabledt => dout[2].OE
-enabledt => dout[1].OE
-enabledt => dout[0].OE
-result[0] <= din[0].DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= din[1].DB_MAX_OUTPUT_PORT_TYPE
-result[2] <= din[2].DB_MAX_OUTPUT_PORT_TYPE
-result[3] <= din[3].DB_MAX_OUTPUT_PORT_TYPE
-result[4] <= din[4].DB_MAX_OUTPUT_PORT_TYPE
-result[5] <= din[5].DB_MAX_OUTPUT_PORT_TYPE
-result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
-result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|sifo33|Block1:inst9
+|sifo33|Block1:inst7
 dout[0] <= dout~7.DB_MAX_OUTPUT_PORT_TYPE
 dout[1] <= dout~6.DB_MAX_OUTPUT_PORT_TYPE
 dout[2] <= dout~5.DB_MAX_OUTPUT_PORT_TYPE
@@ -410,16 +472,16 @@ dout[4] <= dout~3.DB_MAX_OUTPUT_PORT_TYPE
 dout[5] <= dout~2.DB_MAX_OUTPUT_PORT_TYPE
 dout[6] <= dout~1.DB_MAX_OUTPUT_PORT_TYPE
 dout[7] <= dout~0.DB_MAX_OUTPUT_PORT_TYPE
-clk => lpm_counter1:inst44.clock
+clk => lpm_counter1:inst.clock
 clk => lpm_dff0:buf5.clock
-clk => lpm_counter1:inst45.clock
+clk => lpm_counter1:inst2.clock
 clk => lpm_dff0:buf4.clock
 clk => lpm_dff0:buf3.clock
 clk => lpm_dff0:buf2.clock
 clk => lpm_dff0:buf1.clock
 clk => lpm_dff0:buf0.clock
-Read => lpm_counter1:inst44.clk_en
-Write => lpm_counter1:inst45.clk_en
+Read => lpm_counter1:inst.clk_en
+Write => lpm_counter1:inst2.clk_en
 din[0] => lpm_dff0:buf5.data[0]
 din[0] => lpm_dff0:buf4.data[0]
 din[0] => lpm_dff0:buf3.data[0]
@@ -470,7 +532,7 @@ din[7] => lpm_dff0:buf1.data[7]
 din[7] => lpm_dff0:buf0.data[7]
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst35
+|sifo33|Block1:inst7|lpm_bustri0:inst35
 data[0] => lpm_bustri:lpm_bustri_component.data[0]
 data[1] => lpm_bustri:lpm_bustri_component.data[1]
 data[2] => lpm_bustri:lpm_bustri_component.data[2]
@@ -499,7 +561,7 @@ tridata[6] <> lpm_bustri:lpm_bustri_component.tridata[6]
 tridata[7] <> lpm_bustri:lpm_bustri_component.tridata[7]
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component
+|sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component
 tridata[0] <> dout[0]
 tridata[1] <> dout[1]
 tridata[2] <> dout[2]
@@ -542,7 +604,7 @@ result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_decode5:inst5
+|sifo33|Block1:inst7|lpm_decode5:inst3
 data[0] => lpm_decode:lpm_decode_component.data[0]
 data[1] => lpm_decode:lpm_decode_component.data[1]
 data[2] => lpm_decode:lpm_decode_component.data[2]
@@ -553,9 +615,10 @@ eq3 <= lpm_decode:lpm_decode_component.eq[3]
 eq4 <= lpm_decode:lpm_decode_component.eq[4]
 eq5 <= lpm_decode:lpm_decode_component.eq[5]
 eq6 <= lpm_decode:lpm_decode_component.eq[6]
+eq7 <= lpm_decode:lpm_decode_component.eq[7]
 
 
-|sifo33|Block1:inst9|lpm_decode5:inst5|lpm_decode:lpm_decode_component
+|sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component
 data[0] => decode_u7f:auto_generated.data[0]
 data[1] => decode_u7f:auto_generated.data[1]
 data[2] => decode_u7f:auto_generated.data[2]
@@ -573,7 +636,7 @@ eq[6] <= decode_u7f:auto_generated.eq[6]
 eq[7] <= decode_u7f:auto_generated.eq[7]
 
 
-|sifo33|Block1:inst9|lpm_decode5:inst5|lpm_decode:lpm_decode_component|decode_u7f:auto_generated
+|sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated
 data[0] => w_anode19w[1].IN1
 data[0] => w_anode1w[1]~2.IN0
 data[0] => w_anode30w[1]~1.IN0
@@ -608,24 +671,25 @@ eq[6] <= w_anode74w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode85w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_counter1:inst44
+|sifo33|Block1:inst7|lpm_counter1:inst
 clk_en => lpm_counter:lpm_counter_component.clk_en
 clock => lpm_counter:lpm_counter_component.clock
+sclr => lpm_counter:lpm_counter_component.sclr
 q[0] <= lpm_counter:lpm_counter_component.q[0]
 q[1] <= lpm_counter:lpm_counter_component.q[1]
 q[2] <= lpm_counter:lpm_counter_component.q[2]
 
 
-|sifo33|Block1:inst9|lpm_counter1:inst44|lpm_counter:lpm_counter_component
-clock => cntr_5ai:auto_generated.clock
-clk_en => cntr_5ai:auto_generated.clk_en
+|sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component
+clock => cntr_poi:auto_generated.clock
+clk_en => cntr_poi:auto_generated.clk_en
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
 aclr => ~NO_FANOUT~
 aset => ~NO_FANOUT~
 aconst => ~NO_FANOUT~
 aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
+sclr => cntr_poi:auto_generated.sclr
 sset => ~NO_FANOUT~
 sconst => ~NO_FANOUT~
 sload => ~NO_FANOUT~
@@ -633,9 +697,9 @@ data[0] => ~NO_FANOUT~
 data[1] => ~NO_FANOUT~
 data[2] => ~NO_FANOUT~
 cin => ~NO_FANOUT~
-q[0] <= cntr_5ai:auto_generated.q[0]
-q[1] <= cntr_5ai:auto_generated.q[1]
-q[2] <= cntr_5ai:auto_generated.q[2]
+q[0] <= cntr_poi:auto_generated.q[0]
+q[1] <= cntr_poi:auto_generated.q[1]
+q[2] <= cntr_poi:auto_generated.q[2]
 cout <= <GND>
 eq[0] <= <GND>
 eq[1] <= <GND>
@@ -655,7 +719,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|sifo33|Block1:inst9|lpm_counter1:inst44|lpm_counter:lpm_counter_component|cntr_5ai:auto_generated
+|sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated
 clk_en => counter_reg_bit1a[2]~3.IN0
 clock => counter_reg_bit1a[2].CLK
 clock => counter_reg_bit1a[1].CLK
@@ -663,9 +727,13 @@ clock => counter_reg_bit1a[0].CLK
 q[0] <= counter_reg_bit1a[0].REGOUT
 q[1] <= counter_reg_bit1a[1].REGOUT
 q[2] <= counter_reg_bit1a[2].REGOUT
+sclr => _~7.IN1
+sclr => counter_reg_bit1a[2].SCLR
+sclr => counter_reg_bit1a[1].SCLR
+sclr => counter_reg_bit1a[0].SCLR
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf5
+|sifo33|Block1:inst7|lpm_dff0:buf5
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -686,7 +754,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf5|lpm_ff:lpm_ff_component
+|sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -727,7 +795,7 @@ q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_decode5:inst4
+|sifo33|Block1:inst7|lpm_decode5:inst4
 data[0] => lpm_decode:lpm_decode_component.data[0]
 data[1] => lpm_decode:lpm_decode_component.data[1]
 data[2] => lpm_decode:lpm_decode_component.data[2]
@@ -738,9 +806,10 @@ eq3 <= lpm_decode:lpm_decode_component.eq[3]
 eq4 <= lpm_decode:lpm_decode_component.eq[4]
 eq5 <= lpm_decode:lpm_decode_component.eq[5]
 eq6 <= lpm_decode:lpm_decode_component.eq[6]
+eq7 <= lpm_decode:lpm_decode_component.eq[7]
 
 
-|sifo33|Block1:inst9|lpm_decode5:inst4|lpm_decode:lpm_decode_component
+|sifo33|Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component
 data[0] => decode_u7f:auto_generated.data[0]
 data[1] => decode_u7f:auto_generated.data[1]
 data[2] => decode_u7f:auto_generated.data[2]
@@ -758,7 +827,7 @@ eq[6] <= decode_u7f:auto_generated.eq[6]
 eq[7] <= decode_u7f:auto_generated.eq[7]
 
 
-|sifo33|Block1:inst9|lpm_decode5:inst4|lpm_decode:lpm_decode_component|decode_u7f:auto_generated
+|sifo33|Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component|decode_u7f:auto_generated
 data[0] => w_anode19w[1].IN1
 data[0] => w_anode1w[1]~2.IN0
 data[0] => w_anode30w[1]~1.IN0
@@ -793,24 +862,25 @@ eq[6] <= w_anode74w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode85w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_counter1:inst45
+|sifo33|Block1:inst7|lpm_counter1:inst2
 clk_en => lpm_counter:lpm_counter_component.clk_en
 clock => lpm_counter:lpm_counter_component.clock
+sclr => lpm_counter:lpm_counter_component.sclr
 q[0] <= lpm_counter:lpm_counter_component.q[0]
 q[1] <= lpm_counter:lpm_counter_component.q[1]
 q[2] <= lpm_counter:lpm_counter_component.q[2]
 
 
-|sifo33|Block1:inst9|lpm_counter1:inst45|lpm_counter:lpm_counter_component
-clock => cntr_5ai:auto_generated.clock
-clk_en => cntr_5ai:auto_generated.clk_en
+|sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component
+clock => cntr_poi:auto_generated.clock
+clk_en => cntr_poi:auto_generated.clk_en
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
 aclr => ~NO_FANOUT~
 aset => ~NO_FANOUT~
 aconst => ~NO_FANOUT~
 aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
+sclr => cntr_poi:auto_generated.sclr
 sset => ~NO_FANOUT~
 sconst => ~NO_FANOUT~
 sload => ~NO_FANOUT~
@@ -818,9 +888,9 @@ data[0] => ~NO_FANOUT~
 data[1] => ~NO_FANOUT~
 data[2] => ~NO_FANOUT~
 cin => ~NO_FANOUT~
-q[0] <= cntr_5ai:auto_generated.q[0]
-q[1] <= cntr_5ai:auto_generated.q[1]
-q[2] <= cntr_5ai:auto_generated.q[2]
+q[0] <= cntr_poi:auto_generated.q[0]
+q[1] <= cntr_poi:auto_generated.q[1]
+q[2] <= cntr_poi:auto_generated.q[2]
 cout <= <GND>
 eq[0] <= <GND>
 eq[1] <= <GND>
@@ -840,7 +910,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|sifo33|Block1:inst9|lpm_counter1:inst45|lpm_counter:lpm_counter_component|cntr_5ai:auto_generated
+|sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_poi:auto_generated
 clk_en => counter_reg_bit1a[2]~3.IN0
 clock => counter_reg_bit1a[2].CLK
 clock => counter_reg_bit1a[1].CLK
@@ -848,9 +918,13 @@ clock => counter_reg_bit1a[0].CLK
 q[0] <= counter_reg_bit1a[0].REGOUT
 q[1] <= counter_reg_bit1a[1].REGOUT
 q[2] <= counter_reg_bit1a[2].REGOUT
+sclr => _~7.IN1
+sclr => counter_reg_bit1a[2].SCLR
+sclr => counter_reg_bit1a[1].SCLR
+sclr => counter_reg_bit1a[0].SCLR
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst34
+|sifo33|Block1:inst7|lpm_bustri0:inst34
 data[0] => lpm_bustri:lpm_bustri_component.data[0]
 data[1] => lpm_bustri:lpm_bustri_component.data[1]
 data[2] => lpm_bustri:lpm_bustri_component.data[2]
@@ -879,7 +953,7 @@ tridata[6] <> lpm_bustri:lpm_bustri_component.tridata[6]
 tridata[7] <> lpm_bustri:lpm_bustri_component.tridata[7]
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component
+|sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component
 tridata[0] <> dout[0]
 tridata[1] <> dout[1]
 tridata[2] <> dout[2]
@@ -922,7 +996,7 @@ result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf4
+|sifo33|Block1:inst7|lpm_dff0:buf4
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -943,7 +1017,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf4|lpm_ff:lpm_ff_component
+|sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -984,7 +1058,7 @@ q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst33
+|sifo33|Block1:inst7|lpm_bustri0:inst33
 data[0] => lpm_bustri:lpm_bustri_component.data[0]
 data[1] => lpm_bustri:lpm_bustri_component.data[1]
 data[2] => lpm_bustri:lpm_bustri_component.data[2]
@@ -1013,7 +1087,7 @@ tridata[6] <> lpm_bustri:lpm_bustri_component.tridata[6]
 tridata[7] <> lpm_bustri:lpm_bustri_component.tridata[7]
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component
+|sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component
 tridata[0] <> dout[0]
 tridata[1] <> dout[1]
 tridata[2] <> dout[2]
@@ -1056,7 +1130,7 @@ result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf3
+|sifo33|Block1:inst7|lpm_dff0:buf3
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -1077,7 +1151,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf3|lpm_ff:lpm_ff_component
+|sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -1118,7 +1192,7 @@ q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst32
+|sifo33|Block1:inst7|lpm_bustri0:inst32
 data[0] => lpm_bustri:lpm_bustri_component.data[0]
 data[1] => lpm_bustri:lpm_bustri_component.data[1]
 data[2] => lpm_bustri:lpm_bustri_component.data[2]
@@ -1147,7 +1221,7 @@ tridata[6] <> lpm_bustri:lpm_bustri_component.tridata[6]
 tridata[7] <> lpm_bustri:lpm_bustri_component.tridata[7]
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component
+|sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component
 tridata[0] <> dout[0]
 tridata[1] <> dout[1]
 tridata[2] <> dout[2]
@@ -1190,7 +1264,7 @@ result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf2
+|sifo33|Block1:inst7|lpm_dff0:buf2
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -1211,7 +1285,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf2|lpm_ff:lpm_ff_component
+|sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -1252,7 +1326,7 @@ q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst30
+|sifo33|Block1:inst7|lpm_bustri0:inst30
 data[0] => lpm_bustri:lpm_bustri_component.data[0]
 data[1] => lpm_bustri:lpm_bustri_component.data[1]
 data[2] => lpm_bustri:lpm_bustri_component.data[2]
@@ -1281,7 +1355,7 @@ tridata[6] <> lpm_bustri:lpm_bustri_component.tridata[6]
 tridata[7] <> lpm_bustri:lpm_bustri_component.tridata[7]
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component
+|sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component
 tridata[0] <> dout[0]
 tridata[1] <> dout[1]
 tridata[2] <> dout[2]
@@ -1324,7 +1398,7 @@ result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf1
+|sifo33|Block1:inst7|lpm_dff0:buf1
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -1345,7 +1419,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf1|lpm_ff:lpm_ff_component
+|sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -1386,7 +1460,7 @@ q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst29
+|sifo33|Block1:inst7|lpm_bustri0:inst29
 data[0] => lpm_bustri:lpm_bustri_component.data[0]
 data[1] => lpm_bustri:lpm_bustri_component.data[1]
 data[2] => lpm_bustri:lpm_bustri_component.data[2]
@@ -1415,7 +1489,7 @@ tridata[6] <> lpm_bustri:lpm_bustri_component.tridata[6]
 tridata[7] <> lpm_bustri:lpm_bustri_component.tridata[7]
 
 
-|sifo33|Block1:inst9|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component
+|sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component
 tridata[0] <> dout[0]
 tridata[1] <> dout[1]
 tridata[2] <> dout[2]
@@ -1458,7 +1532,7 @@ result[6] <= din[6].DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= din[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf0
+|sifo33|Block1:inst7|lpm_dff0:buf0
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
 data[1] => lpm_ff:lpm_ff_component.data[1]
@@ -1479,7 +1553,7 @@ q[6] <= lpm_ff:lpm_ff_component.q[6]
 q[7] <= lpm_ff:lpm_ff_component.q[7]
 
 
-|sifo33|Block1:inst9|lpm_dff0:buf0|lpm_ff:lpm_ff_component
+|sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN

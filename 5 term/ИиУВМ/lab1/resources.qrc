@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/images/1598188845_oboi-multik-graviti-folz.jpg</file>
+        <file>resources/images/BROKE.png</file>
+        <file>resources/images/step.png</file>
+        <file>resources/images/BROKE copy.png</file>
+        <file>resources/images/anim1.png</file>
+        <file>resources/images/anim2.png</file>
+        <file>resources/images/anim2.5.png</file>
+        <file>resources/images/anim3.png</file>
+  	<file>resources/images/pngwing.com.png</file>
+ 	<file>resources/images/m.png</file>
+ 	<file>resources/images/m2.png</file>
+ 	<file>resources/images/Untitled-5.png</file>
+ 	<file>resources/images/pm.png</file>
+    </qresource>
+</RCC>

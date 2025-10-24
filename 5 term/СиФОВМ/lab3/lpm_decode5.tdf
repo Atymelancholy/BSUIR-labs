@@ -46,6 +46,7 @@ SUBDESIGN lpm_decode5
 	eq4	 : OUTPUT;
 	eq5	 : OUTPUT;
 	eq6	 : OUTPUT;
+	eq7	 : OUTPUT;
 )
 
 VARIABLE
@@ -65,6 +66,7 @@ BEGIN
 	eq4 = lpm_decode_component.eq[4..4];
 	eq5 = lpm_decode_component.eq[5..5];
 	eq6 = lpm_decode_component.eq[6..6];
+	eq7 = lpm_decode_component.eq[7..7];
 	lpm_decode_component.data[2..0] = data[2..0];
 END;
 
@@ -88,7 +90,7 @@ END;
 -- Retrieval info: PRIVATE: eq4 NUMERIC "1"
 -- Retrieval info: PRIVATE: eq5 NUMERIC "1"
 -- Retrieval info: PRIVATE: eq6 NUMERIC "1"
--- Retrieval info: PRIVATE: eq7 NUMERIC "0"
+-- Retrieval info: PRIVATE: eq7 NUMERIC "1"
 -- Retrieval info: PRIVATE: nBit NUMERIC "3"
 -- Retrieval info: CONSTANT: LPM_DECODES NUMERIC "8"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_DECODE"
@@ -102,6 +104,7 @@ END;
 -- Retrieval info: USED_PORT: eq4 0 0 0 0 OUTPUT NODEFVAL eq4
 -- Retrieval info: USED_PORT: eq5 0 0 0 0 OUTPUT NODEFVAL eq5
 -- Retrieval info: USED_PORT: eq6 0 0 0 0 OUTPUT NODEFVAL eq6
+-- Retrieval info: USED_PORT: eq7 0 0 0 0 OUTPUT NODEFVAL eq7
 -- Retrieval info: CONNECT: @data 0 0 3 0 data 0 0 3 0
 -- Retrieval info: CONNECT: eq0 0 0 0 0 @eq 0 0 1 0
 -- Retrieval info: CONNECT: eq1 0 0 0 0 @eq 0 0 1 1
@@ -110,6 +113,7 @@ END;
 -- Retrieval info: CONNECT: eq4 0 0 0 0 @eq 0 0 1 4
 -- Retrieval info: CONNECT: eq5 0 0 0 0 @eq 0 0 1 5
 -- Retrieval info: CONNECT: eq6 0 0 0 0 @eq 0 0 1 6
+-- Retrieval info: CONNECT: eq7 0 0 0 0 @eq 0 0 1 7
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_decode5.tdf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_decode5.inc TRUE
