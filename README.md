@@ -11,10 +11,10 @@ RU: В данном репозитории представлены лабора
 **PS:** Все авторские права на предоставленные ниже условия лабораторных работ принадлежат Белорусскому Государственному Университету Информатики и Радиоэлектроники БГУИР, BSUIR  
 </div>
 
-## 3 term (3 семестр)
+## 3 семестр
 - [Программирование на языках высокого уровня, КП_C++](https://github.com/Atymelancholy/BSUIR-labs/tree/main/3%20term/%D0%9F%D0%9D%D0%90%D0%AF%D0%92%D0%A3)
 
-## 4 term (4 семестр):
+## 4 семестр
 - [Программирование на языках высокого уровня_Java](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%90%D0%AF%D0%92%D0%A3)
  
 - [Программирование на языке ассемблера](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
@@ -23,7 +23,7 @@ RU: В данном репозитории представлены лабора
 
 - [Схемотехника](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%A1%D1%85%D0%B5%D0%BC%D0%A2)  
 
-## 5 term (4 семестр):
+## 5 семестр
 
 - [Жизненый цикл разработки программного обеспечения](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%96%D0%A6%D0%A0%D0%9F%D0%9E)
 - [Базы данных](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%91%D0%94)
@@ -31,7 +31,7 @@ RU: В данном репозитории представлены лабора
 - [Схемотехника_КП](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%A1%D1%85%D0%B5%D0%BC%D0%A2%20%D0%9A%D0%9F)
 - [Структурная и функциональная организация вычислительных машин](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%A1%D0%B8%D0%A4%D0%9E%D0%92%D0%9C)
 - [Основы компьютерных сетей](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%9E%D0%9A%D0%A1)
-- [Интерфейсы и устройства вычислительных машин]
+- [Интерфейсы и устройства вычислительных машин]()
 - [Контроль и диагностика средств вычислительной техники](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%9A%D0%B8%D0%94%D0%A1%D0%92%D0%A2)
 
-## 6 term (6 семестр)  
+## 6 семестр
