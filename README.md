@@ -32,6 +32,6 @@ RU: В данном репозитории представлены лабора
 - [Структурная и функциональная организация вычислительных машин](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%A1%D0%B8%D0%A4%D0%9E%D0%92%D0%9C)
 - [Основы компьютерных сетей](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%9E%D0%9A%D0%A1)
 - [Интерфейсы и устройства вычислительных машин]
-- [Контроль и диагностика средств вычислительной техники]
+- [Контроль и диагностика средств вычислительной техники](https://github.com/Atymelancholy/BSUIR-labs/tree/main/5%20term/%D0%9A%D0%B8%D0%94%D0%A1%D0%92%D0%A2)
 
 ## 6 term (6 семестр)  
