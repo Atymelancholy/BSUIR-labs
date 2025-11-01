@@ -366,9 +366,9 @@ VECTOR("C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/W
 {
 	ZOOM{
 		ZBEGIN = 0;
-		ZEND = 0;
-		NUMERATOR = 0;
-		DENOMINATOR = 0;
+		ZEND = 1000000;
+		NUMERATOR = 20;
+		DENOMINATOR = 1000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -536,11 +536,11 @@ VECTOR("C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/W
 VECTOR("C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/sifo3.vwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 923200;
-		NUMERATOR = 932;
-		DENOMINATOR = 745600;
-		TOP_INDEX = 0;
+		ZBEGIN = 229600;
+		ZEND = 988800;
+		NUMERATOR = 949;
+		DENOMINATOR = 759200;
+		TOP_INDEX = 1;
 	}
 	CLOCK{
 		PERIOD = 10000;

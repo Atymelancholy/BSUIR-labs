@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sifo3
-Thu Oct 23 11:05:36 2025
+Fri Oct 31 15:36:50 2025
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -15,34 +15,31 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. General Register Statistics
- 10. Source assignments for lpm_counter1:inst6|lpm_counter:lpm_counter_component
- 11. Source assignments for LPM_RAM_DQ:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated
- 12. Source assignments for Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component
- 13. Source assignments for Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component
- 14. Source assignments for LPM_ROM:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated
- 15. Parameter Settings for User Entity Instance: lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component
- 16. Parameter Settings for User Entity Instance: lpm_decode5:inst8|lpm_decode:lpm_decode_component
- 17. Parameter Settings for User Entity Instance: lpm_counter1:inst6|lpm_counter:lpm_counter_component
- 18. Parameter Settings for User Entity Instance: LPM_RAM_DQ:inst20
- 19. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component
- 20. Parameter Settings for User Entity Instance: Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component
- 21. Parameter Settings for User Entity Instance: Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component
- 22. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component
- 23. Parameter Settings for User Entity Instance: Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component
- 24. Parameter Settings for User Entity Instance: Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component
- 25. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component
- 26. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component
- 27. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component
- 28. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component
- 29. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component
- 30. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component
- 31. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component
- 32. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component
- 33. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component
- 34. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component
- 35. Parameter Settings for User Entity Instance: lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component
- 36. Parameter Settings for User Entity Instance: LPM_ROM:inst
- 37. Analysis & Synthesis Messages
+ 10. Source assignments for LPM_RAM_DQ:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated
+ 11. Source assignments for Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component
+ 12. Source assignments for Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component
+ 13. Source assignments for LPM_ROM:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated
+ 14. Parameter Settings for User Entity Instance: lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component
+ 15. Parameter Settings for User Entity Instance: LPM_RAM_DQ:inst20
+ 16. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component
+ 17. Parameter Settings for User Entity Instance: Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component
+ 18. Parameter Settings for User Entity Instance: Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component
+ 19. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component
+ 20. Parameter Settings for User Entity Instance: Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component
+ 21. Parameter Settings for User Entity Instance: Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component
+ 22. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component
+ 23. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component
+ 24. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component
+ 25. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component
+ 26. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component
+ 27. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component
+ 28. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component
+ 29. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component
+ 30. Parameter Settings for User Entity Instance: Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component
+ 31. Parameter Settings for User Entity Instance: Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component
+ 32. Parameter Settings for User Entity Instance: lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component
+ 33. Parameter Settings for User Entity Instance: LPM_ROM:inst
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -68,15 +65,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                            ;
 +-------------------------------+-----------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Thu Oct 23 11:05:36 2025   ;
+; Analysis & Synthesis Status   ; Successful - Fri Oct 31 15:36:50 2025   ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
 ; Revision Name                 ; sifo3                                   ;
 ; Top-level Entity Name         ; sifo33                                  ;
 ; Family                        ; Stratix II                              ;
 ; Logic utilization             ; N/A                                     ;
-;     Combinational ALUTs       ; 81                                      ;
-;     Dedicated logic registers ; 58                                      ;
-; Total registers               ; 58                                      ;
+;     Combinational ALUTs       ; 76                                      ;
+;     Dedicated logic registers ; 54                                      ;
+; Total registers               ; 54                                      ;
 ; Total pins                    ; 21                                      ;
 ; Total virtual pins            ; 0                                       ;
 ; Total block memory bits       ; 4,096                                   ;
@@ -189,18 +186,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; lpm_bustri0.tdf                  ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/lpm_bustri0.tdf        ;
 ; lpm_bustri.inc                   ; yes             ; Auto-Found AHDL File               ; c:/altera/91/quartus/libraries/megafunctions/lpm_bustri.inc                                   ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_bustri.tdf                                   ;
-; lpm_decode5.tdf                  ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/lpm_decode5.tdf        ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                   ;
 ; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_decode.inc                                   ;
+; altram.tdf                       ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/altram.tdf                                       ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/altsyncram.tdf                                   ;
+; db/altsyncram_fb91.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/db/altsyncram_fb91.tdf ;
+; lpm_decode5.tdf                  ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/lpm_decode5.tdf        ;
 ; lpm_decode.tdf                   ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_decode.tdf                                   ;
 ; db/decode_u7f.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/db/decode_u7f.tdf      ;
 ; lpm_counter1.tdf                 ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/lpm_counter1.tdf       ;
 ; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_counter.inc                                  ;
 ; lpm_counter.tdf                  ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_counter.tdf                                  ;
 ; db/cntr_poi.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/db/cntr_poi.tdf        ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                   ;
-; altram.tdf                       ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/altram.tdf                                       ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/altsyncram.tdf                                   ;
-; db/altsyncram_fb91.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/db/altsyncram_fb91.tdf ;
 ; lpm_dff0.tdf                     ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/atyme/OneDrive/Документы/GitHub/BSUIR-labs/5 term/СиФОВМ/lab3/lpm_dff0.tdf           ;
 ; lpm_ff.inc                       ; yes             ; Auto-Found AHDL File               ; c:/altera/91/quartus/libraries/megafunctions/lpm_ff.inc                                       ;
 ; lpm_ff.tdf                       ; yes             ; Megafunction                       ; c:/altera/91/quartus/libraries/megafunctions/lpm_ff.tdf                                       ;
@@ -215,39 +212,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+--------+
 ; Resource                                      ; Usage  ;
 +-----------------------------------------------+--------+
-; Estimated ALUTs Used                          ; 81     ;
-; Dedicated logic registers                     ; 58     ;
+; Estimated ALUTs Used                          ; 76     ;
+; Dedicated logic registers                     ; 54     ;
 ;                                               ;        ;
 ; Estimated ALUTs Unavailable                   ; 0      ;
 ;                                               ;        ;
-; Total combinational functions                 ; 81     ;
+; Total combinational functions                 ; 76     ;
 ; Combinational ALUT usage by number of inputs  ;        ;
 ;     -- 7 input functions                      ; 0      ;
 ;     -- 6 input functions                      ; 16     ;
 ;     -- 5 input functions                      ; 16     ;
 ;     -- 4 input functions                      ; 26     ;
-;     -- <=3 input functions                    ; 23     ;
+;     -- <=3 input functions                    ; 18     ;
 ;                                               ;        ;
 ; Combinational ALUTs by mode                   ;        ;
-;     -- normal mode                            ; 72     ;
+;     -- normal mode                            ; 70     ;
 ;     -- extended LUT mode                      ; 0      ;
-;     -- arithmetic mode                        ; 9      ;
+;     -- arithmetic mode                        ; 6      ;
 ;     -- shared arithmetic mode                 ; 0      ;
 ;                                               ;        ;
-; Estimated ALUT/register pairs used            ; 105    ;
+; Estimated ALUT/register pairs used            ; 100    ;
 ;                                               ;        ;
-; Total registers                               ; 58     ;
-;     -- Dedicated logic registers              ; 58     ;
+; Total registers                               ; 54     ;
+;     -- Dedicated logic registers              ; 54     ;
 ;     -- I/O registers                          ; 0      ;
 ;                                               ;        ;
-; Estimated ALMs:  partially or completely used ; 53     ;
+; Estimated ALMs:  partially or completely used ; 50     ;
 ;                                               ;        ;
 ; I/O pins                                      ; 21     ;
 ; Total block memory bits                       ; 4096   ;
 ; Maximum fan-out node                          ; inst21 ;
 ; Maximum fan-out                               ; 54     ;
-; Total fan-out                                 ; 710    ;
-; Average fan-out                               ; 4.03   ;
+; Total fan-out                                 ; 685    ;
+; Average fan-out                               ; 4.10   ;
 +-----------------------------------------------+--------+
 
 
@@ -256,7 +253,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
-; |sifo33                                      ; 81 (7)            ; 58 (1)       ; 4096              ; 0            ; 0       ; 0         ; 0         ; 21   ; 0            ; |sifo33                                                                                           ; work         ;
+; |sifo33                                      ; 76 (6)            ; 54 (0)       ; 4096              ; 0            ; 0       ; 0         ; 0         ; 21   ; 0            ; |sifo33                                                                                           ; work         ;
 ;    |Block1:inst7|                            ; 21 (0)            ; 54 (0)       ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|Block1:inst7                                                                              ; work         ;
 ;       |lpm_bustri0:inst33|                   ; 8 (0)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|Block1:inst7|lpm_bustri0:inst33                                                           ; work         ;
 ;          |lpm_bustri:lpm_bustri_component|   ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component                           ; work         ;
@@ -286,12 +283,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_ff:lpm_ff_component|           ; 0 (0)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component                                        ; work         ;
 ;    |lpm_bustri0:inst29|                      ; 49 (0)            ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_bustri0:inst29                                                                        ;              ;
 ;       |lpm_bustri:lpm_bustri_component|      ; 49 (49)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component                                        ; work         ;
-;    |lpm_counter1:inst6|                      ; 3 (0)             ; 3 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_counter1:inst6                                                                        ; work         ;
-;       |lpm_counter:lpm_counter_component|    ; 3 (0)             ; 3 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component                                      ; work         ;
-;          |cntr_poi:auto_generated|           ; 3 (3)             ; 3 (3)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated              ; work         ;
-;    |lpm_decode5:inst8|                       ; 1 (0)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_decode5:inst8                                                                         ; work         ;
-;       |lpm_decode:lpm_decode_component|      ; 1 (0)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component                                         ; work         ;
-;          |decode_u7f:auto_generated|         ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated               ; work         ;
 ;    |lpm_ram_dq:inst20|                       ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_ram_dq:inst20                                                                         ; work         ;
 ;       |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_ram_dq:inst20|altram:sram                                                             ; work         ;
 ;          |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block                                        ; work         ;
@@ -319,25 +310,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 58    ;
-; Number of registers using Synchronous Clear  ; 9     ;
+; Total registers                              ; 54    ;
+; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 57    ;
+; Number of registers using Clock Enable       ; 54    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------+
-; Source assignments for lpm_counter1:inst6|lpm_counter:lpm_counter_component ;
-+---------------------------+-------+------+----------------------------------+
-; Assignment                ; Value ; From ; To                               ;
-+---------------------------+-------+------+----------------------------------+
-; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                ;
-; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                ;
-; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                ;
-+---------------------------+-------+------+----------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------+
@@ -387,52 +367,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+------------------------------------------------------------------------+
 ; LPM_WIDTH      ; 8     ; Untyped                                                                ;
 +----------------+-------+------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: lpm_decode5:inst8|lpm_decode:lpm_decode_component ;
-+------------------------+------------+----------------------------------------------------------+
-; Parameter Name         ; Value      ; Type                                                     ;
-+------------------------+------------+----------------------------------------------------------+
-; LPM_WIDTH              ; 3          ; Untyped                                                  ;
-; LPM_DECODES            ; 8          ; Untyped                                                  ;
-; LPM_PIPELINE           ; 0          ; Untyped                                                  ;
-; CASCADE_CHAIN          ; MANUAL     ; Untyped                                                  ;
-; DEVICE_FAMILY          ; Stratix II ; Untyped                                                  ;
-; CBXI_PARAMETER         ; decode_u7f ; Untyped                                                  ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                             ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                           ;
-+------------------------+------------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: lpm_counter1:inst6|lpm_counter:lpm_counter_component ;
-+------------------------+-------------+------------------------------------------------------------+
-; Parameter Name         ; Value       ; Type                                                       ;
-+------------------------+-------------+------------------------------------------------------------+
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                               ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                               ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                             ;
-; LPM_WIDTH              ; 3           ; Untyped                                                    ;
-; LPM_DIRECTION          ; UP          ; Untyped                                                    ;
-; LPM_MODULUS            ; 0           ; Untyped                                                    ;
-; LPM_AVALUE             ; UNUSED      ; Untyped                                                    ;
-; LPM_SVALUE             ; UNUSED      ; Untyped                                                    ;
-; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                    ;
-; DEVICE_FAMILY          ; Stratix II  ; Untyped                                                    ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                                                    ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                         ;
-; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                         ;
-; CARRY_CNT_EN           ; SMART       ; Untyped                                                    ;
-; LABWIDE_SCLR           ; ON          ; Untyped                                                    ;
-; USE_NEW_VERSION        ; TRUE        ; Untyped                                                    ;
-; CBXI_PARAMETER         ; cntr_poi    ; Untyped                                                    ;
-+------------------------+-------------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -761,7 +695,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Thu Oct 23 11:05:34 2025
+    Info: Processing started: Fri Oct 31 15:36:48 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sifo3 -c sifo3
 Warning: Tcl Script File ../lab2/lpm_mux0.qip not found
     Info: set_global_assignment -name QIP_FILE ../lab2/lpm_mux0.qip
@@ -789,31 +723,6 @@ Info: Elaborated megafunction instantiation "lpm_bustri0:inst29|lpm_bustri:lpm_b
 Info: Instantiated megafunction "lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component" with the following parameter:
     Info: Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info: Parameter "LPM_WIDTH" = "8"
-Warning: Using design file lpm_decode5.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info: Found entity 1: lpm_decode5
-Info: Elaborating entity "lpm_decode5" for hierarchy "lpm_decode5:inst8"
-Info: Elaborating entity "lpm_decode" for hierarchy "lpm_decode5:inst8|lpm_decode:lpm_decode_component"
-Info: Elaborated megafunction instantiation "lpm_decode5:inst8|lpm_decode:lpm_decode_component"
-Info: Instantiated megafunction "lpm_decode5:inst8|lpm_decode:lpm_decode_component" with the following parameter:
-    Info: Parameter "LPM_TYPE" = "LPM_DECODE"
-    Info: Parameter "LPM_WIDTH" = "3"
-    Info: Parameter "LPM_DECODES" = "8"
-Info: Found 1 design units, including 1 entities, in source file db/decode_u7f.tdf
-    Info: Found entity 1: decode_u7f
-Info: Elaborating entity "decode_u7f" for hierarchy "lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated"
-Warning: Using design file lpm_counter1.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info: Found entity 1: lpm_counter1
-Info: Elaborating entity "lpm_counter1" for hierarchy "lpm_counter1:inst6"
-Info: Elaborating entity "lpm_counter" for hierarchy "lpm_counter1:inst6|lpm_counter:lpm_counter_component"
-Info: Elaborated megafunction instantiation "lpm_counter1:inst6|lpm_counter:lpm_counter_component"
-Info: Instantiated megafunction "lpm_counter1:inst6|lpm_counter:lpm_counter_component" with the following parameter:
-    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
-    Info: Parameter "LPM_WIDTH" = "3"
-    Info: Parameter "LPM_DIRECTION" = "UP"
-    Info: Parameter "LPM_PORT_UPDOWN" = "PORT_UNUSED"
-Info: Found 1 design units, including 1 entities, in source file db/cntr_poi.tdf
-    Info: Found entity 1: cntr_poi
-Info: Elaborating entity "cntr_poi" for hierarchy "lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated"
 Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "LPM_RAM_DQ:inst20"
 Info: Elaborated megafunction instantiation "LPM_RAM_DQ:inst20"
 Info: Instantiated megafunction "LPM_RAM_DQ:inst20" with the following parameter:
@@ -834,7 +743,31 @@ Info: Found 1 design units, including 1 entities, in source file db/altsyncram_f
 Info: Elaborating entity "altsyncram_fb91" for hierarchy "LPM_RAM_DQ:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated"
 Info: Elaborating entity "Block1" for hierarchy "Block1:inst7"
 Info: Elaborating entity "lpm_bustri0" for hierarchy "Block1:inst7|lpm_bustri0:inst35"
+Warning: Using design file lpm_decode5.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_decode5
 Info: Elaborating entity "lpm_decode5" for hierarchy "Block1:inst7|lpm_decode5:inst3"
+Info: Elaborating entity "lpm_decode" for hierarchy "Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component"
+Info: Elaborated megafunction instantiation "Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component"
+Info: Instantiated megafunction "Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component" with the following parameter:
+    Info: Parameter "LPM_TYPE" = "LPM_DECODE"
+    Info: Parameter "LPM_WIDTH" = "3"
+    Info: Parameter "LPM_DECODES" = "8"
+Info: Found 1 design units, including 1 entities, in source file db/decode_u7f.tdf
+    Info: Found entity 1: decode_u7f
+Info: Elaborating entity "decode_u7f" for hierarchy "Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated"
+Warning: Using design file lpm_counter1.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_counter1
+Info: Elaborating entity "lpm_counter1" for hierarchy "Block1:inst7|lpm_counter1:inst"
+Info: Elaborating entity "lpm_counter" for hierarchy "Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component"
+Info: Instantiated megafunction "Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component" with the following parameter:
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info: Parameter "LPM_WIDTH" = "3"
+    Info: Parameter "LPM_DIRECTION" = "UP"
+    Info: Parameter "LPM_PORT_UPDOWN" = "PORT_UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_poi.tdf
+    Info: Found entity 1: cntr_poi
+Info: Elaborating entity "cntr_poi" for hierarchy "Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated"
 Warning: Using design file lpm_dff0.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info: Found entity 1: lpm_dff0
 Info: Elaborating entity "lpm_dff0" for hierarchy "Block1:inst7|lpm_dff0:buf5"
@@ -879,14 +812,14 @@ Warning: Tri-state node(s) do not directly drive top-level pin(s)
     Warning: Converted the fan-out from the tri-state buffer "lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[2]" to the node "Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[2]" into an OR gate
     Warning: Converted the fan-out from the tri-state buffer "lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[1]" to the node "Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[1]" into an OR gate
     Warning: Converted the fan-out from the tri-state buffer "lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[0]" to the node "Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[0]" into an OR gate
-Info: Implemented 166 device resources after synthesis - the final resource count might be different
+Info: Implemented 161 device resources after synthesis - the final resource count might be different
     Info: Implemented 13 input pins
     Info: Implemented 8 output pins
-    Info: Implemented 129 logic cells
+    Info: Implemented 124 logic cells
     Info: Implemented 16 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 30 warnings
     Info: Peak virtual memory: 241 megabytes
-    Info: Processing ended: Thu Oct 23 11:05:36 2025
+    Info: Processing ended: Fri Oct 31 15:36:50 2025
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -5,29 +5,29 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 2.887 ns
-From           : rom_ram
-To             : Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[3]
+Actual Time    : 2.652 ns
+From           : read
+To             : Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[6]
 From Clock     : --
-To Clock       : write
+To Clock       : read
 Failed Paths   : 0
 
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.035 ns
-From           : lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[7]
-To             : Data[7]
-From Clock     : outclock
+Actual Time    : 12.933 ns
+From           : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|q_a[0]
+To             : Data[0]
+From Clock     : rom_ram
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
-Actual Time    : 10.353 ns
-From           : rom_ram
-To             : Data[7]
+Actual Time    : 11.859 ns
+From           : read
+To             : Data[0]
 From Clock     : --
 To Clock       : --
 Failed Paths   : 0
@@ -35,49 +35,49 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 2.939 ns
+Actual Time    : 3.125 ns
 From           : write
-To             : lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]
+To             : lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a0~porta_we_reg
 From Clock     : --
-To Clock       : outclock
+To Clock       : rom_ram
 Failed Paths   : 0
 
 Type           : Clock Setup: 'read'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 315.16 MHz ( period = 3.173 ns )
-From           : Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]
-To             : Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]
+Actual Time    : 287.69 MHz ( period = 3.476 ns )
+From           : Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]
+To             : Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[7]
 From Clock     : read
 To Clock       : read
-Failed Paths   : 0
-
-Type           : Clock Setup: 'inclock'
-Slack          : N/A
-Required Time  : None
-Actual Time    : 315.16 MHz ( period = 3.173 ns )
-From           : Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]
-To             : Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]
-From Clock     : inclock
-To Clock       : inclock
 Failed Paths   : 0
 
 Type           : Clock Setup: 'write'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 315.16 MHz ( period = 3.173 ns )
-From           : Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]
-To             : Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]
+Actual Time    : 287.69 MHz ( period = 3.476 ns )
+From           : Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]
+To             : Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[7]
 From Clock     : write
 To Clock       : write
+Failed Paths   : 0
+
+Type           : Clock Setup: 'inclock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 287.69 MHz ( period = 3.476 ns )
+From           : Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]
+To             : Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[7]
+From Clock     : inclock
+To Clock       : inclock
 Failed Paths   : 0
 
 Type           : Clock Setup: 'rom_ram'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 393.70 MHz ( period = 2.540 ns )
-From           : inst11
-To             : lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a0~porta_datain_reg3
+Actual Time    : 349.77 MHz ( period = 2.859 ns )
+From           : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|ram_block1a0~porta_address_reg7
+To             : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|q_a[7]
 From Clock     : rom_ram
 To Clock       : rom_ram
 Failed Paths   : 0
@@ -85,9 +85,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'outclock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 400.00 MHz ( period = 2.500 ns )
-From           : lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[3]
-To             : lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a0~porta_datain_reg3
+Actual Time    : 349.77 MHz ( period = 2.859 ns )
+From           : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|ram_block1a0~porta_address_reg7
+To             : lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_mov:auto_generated|q_a[7]
 From Clock     : outclock
 To Clock       : outclock
 Failed Paths   : 0

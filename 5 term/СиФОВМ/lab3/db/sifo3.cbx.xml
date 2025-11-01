@@ -2,8 +2,6 @@
 <LOG_ROOT>
 	<PROJECT NAME="sifo3">
 		<CBX_INST_ENTRY INSTANCE_NAME="|sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component" CBX_FILE_NAME="decode_u7f.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_poi.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component" CBX_FILE_NAME="decode_u7f.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_poi.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_poi.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|sifo33|Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component" CBX_FILE_NAME="decode_u7f.tdf"/>

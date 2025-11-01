@@ -1,5 +1,5 @@
 Simulator report for sifo3
-Thu Oct 23 12:05:03 2025
+Fri Oct 31 16:58:12 2025
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -47,9 +47,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 5.0 us       ;
-; Simulation Netlist Size     ; 237 nodes    ;
-; Simulation Coverage         ;      49.79 % ;
-; Total Number of Transitions ; 1893         ;
+; Simulation Netlist Size     ; 222 nodes    ;
+; Simulation Coverage         ;      48.67 % ;
+; Total Number of Transitions ; 2214         ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Stratix II   ;
 +-----------------------------+--------------+
@@ -108,13 +108,13 @@ Please refer to fitter text-based report (*.fit.rpt) to view logical memory repo
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      49.79 % ;
-; Total nodes checked                                 ; 237          ;
-; Total output ports checked                          ; 243          ;
-; Total output ports with complete 1/0-value coverage ; 121          ;
-; Total output ports with no 1/0-value coverage       ; 42           ;
-; Total output ports with no 1-value coverage         ; 98           ;
-; Total output ports with no 0-value coverage         ; 66           ;
+; Total coverage as a percentage                      ;      48.67 % ;
+; Total nodes checked                                 ; 222          ;
+; Total output ports checked                          ; 226          ;
+; Total output ports with complete 1/0-value coverage ; 110          ;
+; Total output ports with no 1/0-value coverage       ; 45           ;
+; Total output ports with no 1-value coverage         ; 94           ;
+; Total output ports with no 0-value coverage         ; 67           ;
 +-----------------------------------------------------+--------------+
 
 
@@ -135,16 +135,13 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |sifo33|inst14                                                                                                         ; |sifo33|inst14                                                                                                            ; out0             ;
 ; |sifo33|rom_ram                                                                                                        ; |sifo33|rom_ram                                                                                                           ; out              ;
 ; |sifo33|read                                                                                                           ; |sifo33|read                                                                                                              ; out              ;
-; |sifo33|inst11                                                                                                         ; |sifo33|inst11                                                                                                            ; regout           ;
-; |sifo33|inst11~0                                                                                                       ; |sifo33|inst11~0                                                                                                          ; out0             ;
-; |sifo33|inst9                                                                                                          ; |sifo33|inst9                                                                                                             ; out0             ;
+; |sifo33|inst15                                                                                                         ; |sifo33|inst15                                                                                                            ; out0             ;
+; |sifo33|write                                                                                                          ; |sifo33|write                                                                                                             ; out              ;
 ; |sifo33|inst4                                                                                                          ; |sifo33|inst4                                                                                                             ; out0             ;
 ; |sifo33|inst3                                                                                                          ; |sifo33|inst3                                                                                                             ; out0             ;
 ; |sifo33|outclock                                                                                                       ; |sifo33|outclock                                                                                                          ; out              ;
 ; |sifo33|inst2                                                                                                          ; |sifo33|inst2                                                                                                             ; out0             ;
 ; |sifo33|inclock                                                                                                        ; |sifo33|inclock                                                                                                           ; out              ;
-; |sifo33|write                                                                                                          ; |sifo33|write                                                                                                             ; out              ;
-; |sifo33|inst15                                                                                                         ; |sifo33|inst15                                                                                                            ; out0             ;
 ; |sifo33|address[4]                                                                                                     ; |sifo33|address[4]                                                                                                        ; out              ;
 ; |sifo33|address[3]                                                                                                     ; |sifo33|address[3]                                                                                                        ; out              ;
 ; |sifo33|address[2]                                                                                                     ; |sifo33|address[2]                                                                                                        ; out              ;
@@ -169,12 +166,20 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |sifo33|lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component|dout[2]                                                     ; |sifo33|lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component|dout[2]                                                        ; out              ;
 ; |sifo33|lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component|dout[1]                                                     ; |sifo33|lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component|dout[1]                                                        ; out              ;
 ; |sifo33|lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component|dout[0]                                                     ; |sifo33|lpm_bustri0:inst31|lpm_bustri:lpm_bustri_component|dout[0]                                                        ; out              ;
-; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[3]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[3]                                                        ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[3]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[3]                                                        ; regout           ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[3]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[3]                                           ; out              ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[2]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[2]                                           ; out              ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[0]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[0]                                           ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[2]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[2]                                                        ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[3]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[3]                                                        ; regout           ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[2]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[2]                                           ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[2]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[2]                                                        ; regout           ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[2]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[2]                                           ; out              ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[1]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[1]                                           ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[3]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[3]                                                        ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[1]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[1]                                                        ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[0]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[0]                                                        ; regout           ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[3]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[3]                                           ; out              ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[2]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[2]                                           ; out              ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[0]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[0]                                           ; out              ;
 ; |sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0   ; |sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0      ; sumout           ;
 ; |sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0   ; |sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0~COUT ; cout             ;
 ; |sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1   ; |sifo33|Block1:inst7|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1      ; sumout           ;
@@ -196,9 +201,6 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |sifo33|Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode85w[3]         ; |sifo33|Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode85w[3]            ; out0             ;
 ; |sifo33|Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode85w[2]         ; |sifo33|Block1:inst7|lpm_decode5:inst4|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode85w[2]            ; out0             ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[3]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[3]                                                        ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[2]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[2]                                                        ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[1]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[1]                                                        ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[0]                                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[0]                                                        ; regout           ;
 ; |sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0       ; sumout           ;
 ; |sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0~COUT  ; cout             ;
 ; |sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1    ; |sifo33|Block1:inst7|lpm_counter1:inst|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1       ; sumout           ;
@@ -219,24 +221,11 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode63w[2]         ; |sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode63w[2]            ; out0             ;
 ; |sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[3]         ; |sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[3]            ; out0             ;
 ; |sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[2]         ; |sifo33|Block1:inst7|lpm_decode5:inst3|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[2]            ; out0             ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[3]                                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[3]                                           ; out              ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a0                 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[0]                          ; portadataout0    ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a1                 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[1]                          ; portadataout0    ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a2                 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[2]                          ; portadataout0    ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a3                 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[3]                          ; portadataout0    ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0                ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0                   ; sumout           ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0                ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0~COUT              ; cout             ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1                ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1                   ; sumout           ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1                ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1~COUT              ; cout             ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2                ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2                   ; sumout           ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[2]              ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]                            ; regout           ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[1]              ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[1]                            ; regout           ;
-; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[0]              ; |sifo33|lpm_counter1:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]                            ; regout           ;
-; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode19w[3]                      ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode19w[3]                         ; out0             ;
-; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode19w[2]                      ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode19w[2]                         ; out0             ;
-; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode63w[3]                      ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode63w[3]                         ; out0             ;
-; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode63w[2]                      ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode63w[2]                         ; out0             ;
-; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[3]                      ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[3]                         ; out0             ;
-; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[2]                      ; |sifo33|lpm_decode5:inst8|lpm_decode:lpm_decode_component|decode_u7f:auto_generated|w_anode74w[2]                         ; out0             ;
 ; |sifo33|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[3]                                                     ; |sifo33|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[3]                                                        ; out              ;
 ; |sifo33|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[2]                                                     ; |sifo33|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[2]                                                        ; out              ;
 ; |sifo33|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[1]                                                     ; |sifo33|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[1]                                                        ; out              ;
@@ -290,18 +279,15 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[2]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[2]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[7]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[7]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[6]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[6]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[5]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[5]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[4]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[4]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[2]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[2]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[0]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst30|lpm_bustri:lpm_bustri_component|dout[0]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[7]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[7]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[3]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[3]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[7]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[7]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[6]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[6]                  ; out              ;
@@ -313,33 +299,32 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[7]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[7]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[6]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[6]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[5]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[5]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[4]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[4]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[1]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[1]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[0]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[0]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[7]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[7]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[2]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[2]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[7]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[7]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[6]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[6]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[5]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[5]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[4]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[4]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[2]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[2]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[7]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[7]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[2]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[2]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[7]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[7]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[6]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[6]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[5]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[5]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[4]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[4]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[2]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[2]                  ; out              ;
+; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[1]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[1]                  ; out              ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a4 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[4] ; portadataout0    ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a5 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[5] ; portadataout0    ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a6 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[6] ; portadataout0    ;
@@ -377,11 +362,9 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[3]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[3]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[2]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[2]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf0|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[3]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[3]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[2]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[2]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[1]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[1]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[0]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst29|lpm_bustri:lpm_bustri_component|dout[0]                  ; out              ;
@@ -389,6 +372,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[3]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[3]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[2]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[2]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf1|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
@@ -401,27 +385,29 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[3]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[3]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf2|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[2]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[2]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[1]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst32|lpm_bustri:lpm_bustri_component|dout[1]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[7]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[7]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[3]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[3]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf3|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[3]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[3]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[2]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst33|lpm_bustri:lpm_bustri_component|dout[2]                  ; out              ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[7]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[7]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[2]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[2]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[3]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[3]                  ; out              ;
+; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf4|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[1]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[1]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[0]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst34|lpm_bustri:lpm_bustri_component|dout[0]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[3]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[3]                  ; out              ;
-; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[1]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[1]                  ; out              ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[7]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[7]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[6]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[6]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[5]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[5]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[4]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[4]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[2]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[2]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[1]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[1]                               ; regout           ;
+; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[0]                                     ; |sifo33|Block1:inst7|lpm_dff0:buf5|lpm_ff:lpm_ff_component|dffs[0]                               ; regout           ;
 ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[0]                        ; |sifo33|Block1:inst7|lpm_bustri0:inst35|lpm_bustri:lpm_bustri_component|dout[0]                  ; out              ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a4 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[4] ; portadataout0    ;
 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|ram_block1a5 ; |sifo33|lpm_ram_dq:inst20|altram:sram|altsyncram:ram_block|altsyncram_fb91:auto_generated|q_a[5] ; portadataout0    ;
@@ -443,7 +429,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Thu Oct 23 12:05:02 2025
+    Info: Processing started: Fri Oct 31 16:58:11 2025
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off sifo3 -c sifo3
 Warning: Tcl Script File ../lab2/lpm_mux0.qip not found
     Info: set_global_assignment -name QIP_FILE ../lab2/lpm_mux0.qip
@@ -463,12 +449,12 @@ Info: Overwriting simulation input file with simulation results
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      49.79 %
-Info: Number of transitions in simulation is 1893
+Info: Simulation coverage is      48.67 %
+Info: Number of transitions in simulation is 2214
 Info: Vector file sifo3.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II Simulator was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 157 megabytes
-    Info: Processing ended: Thu Oct 23 12:05:03 2025
+    Info: Processing ended: Fri Oct 31 16:58:12 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
