@@ -16,11 +16,8 @@ RU: В данном репозитории представлены лабора
 
 ## 4 семестр
 - [Программирование на языках высокого уровня_Java](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%90%D0%AF%D0%92%D0%A3)
- 
 - [Программирование на языке ассемблера](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9F%D0%9D%D0%AF%D0%90)
-
 - [Операционные системы и системное программирование, КП_C](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%9E%D0%A1%D0%98%D0%A1%D0%9F%20%D0%9A%D0%9F) 
-
 - [Схемотехника](https://github.com/Atymelancholy/BSUIR-labs/tree/main/4%20term/%D0%A1%D1%85%D0%B5%D0%BC%D0%A2)  
 
 ## 5 семестр
