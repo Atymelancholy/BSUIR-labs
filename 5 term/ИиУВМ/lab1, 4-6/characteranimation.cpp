@@ -2,7 +2,7 @@
 #include <QPainter>
 #include <QDebug>
 
-CharacterAnimation::CharacterAnimation(QWidget *parent) // Убираем explicit здесь
+CharacterAnimation::CharacterAnimation(QWidget *parent)
     : QWidget(parent), m_frameWidth(0), m_frameHeight(0), m_currentFrame(0),
     m_totalFrames(0), m_columns(0), m_scaleFactor(1.0), m_backgroundColor(Qt::transparent)
 {
@@ -11,14 +11,16 @@ CharacterAnimation::CharacterAnimation(QWidget *parent) // Убираем explic
     setMinimumSize(100, 100);
 }
 
-void CharacterAnimation::loadSpriteSheet(const QString &imagePath, int frameWidth, int frameHeight)
+bool CharacterAnimation::loadSpriteSheet(const QString &imagePath, int frameWidth, int frameHeight)
 {
     if (m_spriteSheet.load(imagePath)) {
         m_frameWidth = frameWidth;
         m_frameHeight = frameHeight;
         calculateTotalFrames();
         update();
+        return true;
     }
+    return false;
 }
 
 void CharacterAnimation::calculateTotalFrames()

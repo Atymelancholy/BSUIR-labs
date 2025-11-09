@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "lab1window.h"
+#include "lab4window.h"
+#include "lab5window.h"
 
 #include <QPropertyAnimation>
 #include <QEasingCurve>
@@ -11,17 +13,23 @@
 #include <QDebug>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , m_lab1Window(nullptr)
+    , m_lab4Window(nullptr)
+    , m_lab5Window(nullptr)
     , characterImageLabel(nullptr)
     , titleLabel(nullptr)
-    , pigImageLabel(nullptr)
-    , pigButton(nullptr)
 {
     ui->setupUi(this);
+
+    for (int i = 0; i < 6; ++i) {
+        pigImageLabels[i] = nullptr;
+        pigButtons[i] = nullptr;
+    }
 
     setupBackground();
     setupUI();
@@ -31,17 +39,21 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete m_lab1Window;
+    delete m_lab4Window;
+    delete m_lab5Window;
     delete characterImageLabel;
-    delete pigImageLabel;
-    delete pigButton;
+    delete titleLabel;
+
+    for (int i = 0; i < 6; ++i) {
+        delete pigImageLabels[i];
+        delete pigButtons[i];
+    }
     delete ui;
 }
 
 void MainWindow::setupBackground()
 {
-    // Устанавливаем бежевый фон
     setStyleSheet("QMainWindow { background-color: #F5F5DC; }");
-    qDebug() << "Установлен бежевый фон";
 }
 
 void MainWindow::setupUI()
@@ -49,76 +61,98 @@ void MainWindow::setupUI()
     QWidget *centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
 
-    // Заголовок
     titleLabel = new QLabel("Лабораторные работы по ИиУВМ", centralWidget);
-    titleLabel->setStyleSheet("font-size: 28px; font-weight: bold; color: #8B4513; "
-                              "text-shadow: 1px 1px 2px rgba(255,255,255,0.7);");
+    titleLabel->setStyleSheet("font-size: 28px; font-weight: bold; color: #8B4513; text-shadow: 1px 1px 2px rgba(255,255,255,0.7);");
     titleLabel->setAlignment(Qt::AlignCenter);
 
-    // Картинка свинки (заменяет все ступеньки)
-    pigImageLabel = new QLabel(centralWidget);
-    QPixmap pigPixmap(":/resources/images/pngwing.com.png");
-    if (!pigPixmap.isNull()) {
-        // Масштабируем картинку под нужный размер
-        pigImageLabel->setPixmap(pigPixmap.scaled(300, 250, Qt::KeepAspectRatio, Qt::SmoothTransformation));
-        pigImageLabel->setFixedSize(pigPixmap.scaled(300, 250, Qt::KeepAspectRatio, Qt::SmoothTransformation).size());
-    } else {
-        qDebug() << "Не удалось загрузить картинку pngwing.com.png";
-        pigImageLabel->setStyleSheet("background-color: pink; border: 2px solid darkred;");
-        pigImageLabel->setText("Свинка\nnot found");
-        pigImageLabel->setAlignment(Qt::AlignCenter);
-        pigImageLabel->setFixedSize(300, 250);
+    QString tooltips[6] = {
+        "Лабораторная работа 1 - Управление питанием",
+        "Лабораторная работа 2 - В разработке",
+        "Лабораторная работа 3 - В разработке",
+        "Лабораторная работа 4 - Работа с камерой",
+        "Лабораторная работа 5 - Мониторинг USB устройств",
+        "Лабораторная работа 6 - Bluetooth File Transfer"
+    };
+
+    for (int i = 0; i < 6; ++i) {
+        pigImageLabels[i] = new QLabel(centralWidget);
+        QPixmap pigPixmap(":/resources/images/pngwing.com.png");
+        if (!pigPixmap.isNull()) {
+            pigImageLabels[i]->setPixmap(pigPixmap.scaled(120, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+            pigImageLabels[i]->setFixedSize(120, 100);
+        } else {
+            QString color;
+            if (i == 0) color = "#32CD32";
+            else if (i == 3) color = "#32CD32";
+            else if (i == 4) color = "#4169E1";
+            else if (i == 5) color = "#9370DB";
+            else color = "#A9A9A9";
+
+            pigImageLabels[i]->setStyleSheet(QString("background-color: %1; border: 2px solid darkred; border-radius: 10px; color: white; font-weight: bold;").arg(color));
+            pigImageLabels[i]->setText(QString("Лаб %1").arg(i+1));
+            pigImageLabels[i]->setAlignment(Qt::AlignCenter);
+            pigImageLabels[i]->setFixedSize(120, 100);
+        }
+        pigImageLabels[i]->setAttribute(Qt::WA_TransparentForMouseEvents);
+
+        pigButtons[i] = new QPushButton(centralWidget);
+        pigButtons[i]->setFixedSize(120, 100);
+        pigButtons[i]->setToolTip(tooltips[i]);
+        pigButtons[i]->setStyleSheet(
+            "QPushButton {"
+            "background-color: transparent;"
+            "border: 2px solid transparent;"
+            "border-radius: 15px;"
+            "}"
+            "QPushButton:hover {"
+            "background-color: rgba(139, 69, 19, 0.1);"
+            "border: 2px solid #8B4513;"
+            "}"
+            "QPushButton:pressed {"
+            "background-color: rgba(139, 69, 19, 0.2);"
+            "}"
+            );
+
+        switch (i) {
+        case 0: connect(pigButtons[i], &QPushButton::clicked, this, &MainWindow::onPigButton1Clicked); break;
+        case 1: connect(pigButtons[i], &QPushButton::clicked, this, &MainWindow::onPigButton2Clicked); break;
+        case 2: connect(pigButtons[i], &QPushButton::clicked, this, &MainWindow::onPigButton3Clicked); break;
+        case 3: connect(pigButtons[i], &QPushButton::clicked, this, &MainWindow::onPigButton4Clicked); break;
+        case 4: connect(pigButtons[i], &QPushButton::clicked, this, &MainWindow::onPigButton5Clicked); break;
+        case 5: connect(pigButtons[i], &QPushButton::clicked, this, &MainWindow::onPigButton6Clicked); break;
+        }
+
+        QGraphicsOpacityEffect *effect = new QGraphicsOpacityEffect(pigButtons[i]);
+        pigButtons[i]->setGraphicsEffect(effect);
+        effect->setOpacity(0);
+
+        QPropertyAnimation *anim = new QPropertyAnimation(effect, "opacity");
+        anim->setDuration(1000);
+        anim->setStartValue(0);
+        anim->setEndValue(1);
+        anim->setEasingCurve(QEasingCurve::InOutQuad);
+        anim->start();
     }
-    pigImageLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-    // Кнопка поверх картинки свинки
-    pigButton = new QPushButton(centralWidget);
-    pigButton->setFixedSize(pigImageLabel->size());
-    pigButton->setStyleSheet(
-        "QPushButton {"
-        "background-color: transparent;"
-        "border: none;"
-        "}"
-        "QPushButton:hover {"
-        "background-color: rgba(255,255,255,0.1);"
-        "border: 2px dashed #8B4513;"
-        "border-radius: 10px;"
-        "}"
-        );
-    connect(pigButton, &QPushButton::clicked, this, &MainWindow::onPigButtonClicked);
-
-    // Статичная картинка m.png
     characterImageLabel = new QLabel(centralWidget);
     characterImageLabel->setFixedSize(150, 150);
     QPixmap characterPixmap(":/resources/images/m.png");
     if (!characterPixmap.isNull()) {
         characterImageLabel->setPixmap(characterPixmap.scaled(150, 150, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     } else {
-        qDebug() << "Не удалось загрузить картинку m.png";
-        characterImageLabel->setStyleSheet("background-color: gray; border: 2px solid black;");
+        characterImageLabel->setStyleSheet("background-color: gray; border: 2px solid black; border-radius: 10px;");
         characterImageLabel->setText("m.png\nnot found");
         characterImageLabel->setAlignment(Qt::AlignCenter);
     }
     characterImageLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
-
-    // Эффект плавного появления для кнопки
-    auto *effect = new QGraphicsOpacityEffect(pigButton);
-    pigButton->setGraphicsEffect(effect);
-    effect->setOpacity(0);
-
-    auto *anim = new QPropertyAnimation(effect, "opacity");
-    anim->setDuration(1000);
-    anim->setStartValue(0);
-    anim->setEndValue(1);
-    anim->setEasingCurve(QEasingCurve::InOutQuad);
-    anim->start();
 }
 
-void MainWindow::onPigButtonClicked()
-{
-    qDebug() << "Свинка нажата! Открываем лабораторную работу...";
-    showLab1Window();
-}
+void MainWindow::onPigButton1Clicked() { showLab1Window(); }
+void MainWindow::onPigButton2Clicked() { showLab2Window(); }
+void MainWindow::onPigButton3Clicked() { showLab3Window(); }
+void MainWindow::onPigButton4Clicked() { showLab4Window(); }
+void MainWindow::onPigButton5Clicked() { showLab5Window(); }
+void MainWindow::onPigButton6Clicked() { showLab6Window(); }
 
 void MainWindow::showLab1Window()
 {
@@ -131,9 +165,48 @@ void MainWindow::showLab1Window()
     m_lab1Window->activateWindow();
 }
 
+void MainWindow::showLab4Window()
+{
+    if (!m_lab4Window) {
+        m_lab4Window = new Lab4Window(this);
+        connect(m_lab4Window, &Lab4Window::backToMain, this, &MainWindow::backToMain);
+    }
+    m_lab4Window->show();
+    m_lab4Window->raise();
+    m_lab4Window->activateWindow();
+}
+
+void MainWindow::showLab5Window()
+{
+    if (!m_lab5Window) {
+        m_lab5Window = new Lab5Window(this);
+        connect(m_lab5Window, &Lab5Window::backToMain, this, &MainWindow::backToMain);
+    }
+    m_lab5Window->show();
+    m_lab5Window->raise();
+    m_lab5Window->activateWindow();
+}
+
+void MainWindow::showLab6Window()
+{
+    QMessageBox::information(this, "В разработке", "Лабораторная работа 6 находится в разработке");
+}
+
+void MainWindow::showLab2Window()
+{
+    QMessageBox::information(this, "В разработке", "Лабораторная работа 2 находится в разработке.\n\nЧтобы просмотреть работоспособность, откройте Virtual Box");
+}
+
+void MainWindow::showLab3Window()
+{
+    QMessageBox::information(this, "В разработке", "Лабораторная работа 3 находится в разработке.\n\nЧтобы просмотреть работоспособность, откройте Virtual Box");
+}
+
 void MainWindow::backToMain()
 {
     if (m_lab1Window) m_lab1Window->hide();
+    if (m_lab4Window) m_lab4Window->hide();
+    if (m_lab5Window) m_lab5Window->hide();
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)
@@ -147,28 +220,43 @@ void MainWindow::positionElements()
     int w = width();
     int h = height();
 
-    // Позиционируем заголовок
     if (titleLabel) {
-        titleLabel->setGeometry(0, h/4 - 50, w, 50);
+        titleLabel->setGeometry(0, 50, w, 50);
     }
 
-    // Позиционируем картинку свинки по центру
-    if (pigImageLabel) {
-        pigImageLabel->move(w/2 - pigImageLabel->width()/2, h/2 - pigImageLabel->height()/2);
+    int pigWidth = 120;
+    int pigHeight = 100;
+    int horizontalSpacing = (w - 3 * pigWidth) / 4;
+    int verticalSpacing = 40;
+
+    int totalGridHeight = 2 * pigHeight + verticalSpacing;
+    int startY = h/2 - totalGridHeight/2;
+
+    for (int row = 0; row < 2; ++row) {
+        for (int col = 0; col < 3; ++col) {
+            int index = row * 3 + col;
+            if (index >= 6) break;
+
+            int x = horizontalSpacing + col * (pigWidth + horizontalSpacing);
+            int y = startY + row * (pigHeight + verticalSpacing);
+
+            if (pigImageLabels[index]) {
+                pigImageLabels[index]->move(x, y);
+            }
+            if (pigButtons[index]) {
+                pigButtons[index]->move(x, y);
+            }
+        }
     }
 
-    // Позиционируем кнопку поверх картинки свинки
-    if (pigButton && pigImageLabel) {
-        pigButton->move(pigImageLabel->pos());
-    }
-
-    // Позиционируем статичную картинку персонажа внизу
     if (characterImageLabel) {
         characterImageLabel->move(w/2 - 75, h - 200);
     }
 
-    // Поднимаем все элементы на верхний уровень
     if (titleLabel) titleLabel->raise();
-    if (pigButton) pigButton->raise();
+    for (int i = 0; i < 6; ++i) {
+        if (pigButtons[i]) pigButtons[i]->raise();
+        if (pigImageLabels[i]) pigImageLabels[i]->raise();
+    }
     if (characterImageLabel) characterImageLabel->raise();
 }

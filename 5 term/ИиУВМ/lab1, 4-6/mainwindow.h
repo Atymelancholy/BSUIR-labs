@@ -8,6 +8,8 @@ class MainWindow;
 }
 
 class Lab1Window;
+class Lab4Window;
+class Lab5Window;
 class QLabel;
 class QPushButton;
 
@@ -23,8 +25,18 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private slots:
-    void onPigButtonClicked();
+    void onPigButton1Clicked();
+    void onPigButton2Clicked();
+    void onPigButton3Clicked();
+    void onPigButton4Clicked();
+    void onPigButton5Clicked();
+    void onPigButton6Clicked();
     void showLab1Window();
+    void showLab2Window();
+    void showLab3Window();
+    void showLab4Window();
+    void showLab5Window();
+    void showLab6Window();
     void backToMain();
 
 private:
@@ -34,10 +46,13 @@ private:
     void positionElements();
 
     Lab1Window *m_lab1Window;
+    Lab4Window *m_lab4Window;
+    Lab5Window *m_lab5Window;
     QLabel *characterImageLabel;
-    QLabel *pigImageLabel;     // Картинка свинки
     QLabel *titleLabel;
-    QPushButton *pigButton;    // Кнопка поверх свинки
+
+    QLabel *pigImageLabels[6];
+    QPushButton *pigButtons[6];
 };
 
 #endif // MAINWINDOW_H

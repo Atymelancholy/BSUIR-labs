@@ -10,9 +10,9 @@ class CharacterAnimation : public QWidget
     Q_OBJECT
 
 public:
-    explicit CharacterAnimation(QWidget *parent = nullptr); // Добавляем explicit
+    explicit CharacterAnimation(QWidget *parent = nullptr);
 
-    void loadSpriteSheet(const QString &imagePath, int frameWidth, int frameHeight);
+    bool loadSpriteSheet(const QString &imagePath, int frameWidth, int frameHeight);
     void setAnimationSpeed(int ms);
     void startAnimation();
     void stopAnimation();
