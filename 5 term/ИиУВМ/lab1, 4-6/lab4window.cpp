@@ -9,6 +9,10 @@
 #include <QScrollBar>
 #include <QResizeEvent>
 #include <QShowEvent>
+#include <QPainter>
+#include <QDir>
+#include <QScreen>
+#include <QGuiApplication>
 #include <windows.h>
 
 using namespace cv;
@@ -20,10 +24,12 @@ Lab4Window::Lab4Window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Lab4Window),
     m_characterAnimation(nullptr),
+    m_cameraAnimation(nullptr),
     m_isSecretMode(false),
     m_isRecording(false),
     m_stopRecordingRequested(false),
     m_cameraActive(false),
+    m_isMaximized(false),
     m_recordThread(nullptr),
     m_videoCapture(nullptr),
     m_videoWriter(nullptr)
@@ -35,7 +41,11 @@ Lab4Window::Lab4Window(QWidget *parent) :
     setupConnections();
     applyStyles();
     setupAnimation();
+    setupCameraAnimation();
     registerHotkey();
+
+    // Центрируем окно при запуске
+    QTimer::singleShot(100, this, &Lab4Window::centerWindow);
 }
 
 Lab4Window::~Lab4Window()
@@ -44,7 +54,35 @@ Lab4Window::~Lab4Window()
         stopVideoRecording();
     }
     unregisterHotkey();
+
+    if (m_characterAnimation) delete m_characterAnimation;
+    if (m_cameraAnimation) delete m_cameraAnimation;
+
     delete ui;
+}
+
+void Lab4Window::centerWindow()
+{
+    if (isMinimized() || isMaximized() || m_isSecretMode) {
+        return;
+    }
+
+    QScreen *screen = QGuiApplication::primaryScreen();
+    if (!screen) return;
+
+    QRect screenGeometry = screen->availableGeometry();
+
+    // Вычисляем позицию для центрирования
+    int x = (screenGeometry.width() - width()) / 2;
+    int y = (screenGeometry.height() - height()) / 2;
+
+    // Гарантируем что окно не выйдет за границы экрана
+    x = qMax(0, x);
+    y = qMax(0, y);
+    x = qMin(screenGeometry.width() - width(), x);
+    y = qMin(screenGeometry.height() - height(), y);
+
+    move(x, y);
 }
 
 void Lab4Window::initializeUI()
@@ -54,16 +92,63 @@ void Lab4Window::initializeUI()
     m_trayIcon = new QSystemTrayIcon(this);
     m_trayIcon->setIcon(QIcon(":/resources/images/m2.png"));
     m_trayIcon->setToolTip("Camera Application");
+    m_trayIcon->hide();
 
-    // Создаем анимацию персонажа
+    // Создаем анимацию персонажа для угла экрана
     m_characterAnimation = new CharacterAnimation(this);
-    m_characterAnimation->setFixedSize(150, 150);
+    m_characterAnimation->setFixedSize(120, 120);
     m_characterAnimation->setBackgroundColor(Qt::transparent);
     m_characterAnimation->hide();
 
     // Таймер для проверки статуса камеры
     m_cameraCheckTimer = new QTimer(this);
     m_cameraCheckTimer->setInterval(1000);
+}
+
+void Lab4Window::setupCameraAnimation()
+{
+    // Создаем анимацию персонажа для камеры
+    m_cameraAnimation = new CharacterAnimation(this);
+    m_cameraAnimation->setFixedSize(200, 200);
+    m_cameraAnimation->setBackgroundColor(QColor(255, 255, 255, 100));
+
+    // Загружаем спрайт для анимации камеры - файл lab4.png
+    QStringList spritePaths = {
+        "C:/Users/atyme/OneDrive/Документы/db/AnimationLab/resources/images/lab4.png"
+    };
+
+    bool spriteLoaded = false;
+
+    for (const QString& path : spritePaths) {
+        QFile file(path);
+        if (!file.exists()) {
+            continue;
+        }
+
+        // Для спрайта 4520x1130 с 4 кадрами (горизонтально)
+        int frameWidth = 1130;
+        int frameHeight = 1130;
+
+        if (m_cameraAnimation->loadSpriteSheet(path, frameWidth, frameHeight)) {
+            int loadedFrames = m_cameraAnimation->totalFrames();
+
+            if (loadedFrames > 0) {
+                spriteLoaded = true;
+
+                // Настройка анимации
+                m_cameraAnimation->setScaleFactor(0.18);
+                m_cameraAnimation->setAnimationSpeed(150);
+                break;
+            }
+        }
+    }
+
+    if (!spriteLoaded) {
+        logMessage("❌ Не удалось загрузить анимацию камеры");
+        return;
+    }
+
+    updateCameraAnimationPosition();
 }
 
 void Lab4Window::setupConnections()
@@ -117,13 +202,12 @@ void Lab4Window::setupAnimation()
     for (const QString& path : spritePaths) {
         if (m_characterAnimation->loadSpriteSheet(path, 100, 100)) {
             spriteLoaded = true;
-            logMessage("✅ Спрайт для анимации загружен успешно: " + path);
             break;
         }
     }
 
     if (!spriteLoaded) {
-        logMessage("❌ Ошибка загрузки спрайта для анимации");
+        logMessage("❌ Ошибка загрузки спрайта для угловой анимации");
     }
 
     m_characterAnimation->setAnimationSpeed(100);
@@ -134,10 +218,36 @@ void Lab4Window::setupAnimation()
 void Lab4Window::updateAnimationPosition()
 {
     if (m_characterAnimation) {
-        int x = width() - 150 - 20;
-        int y = height() - 150 - 20;
+        int x = width() - 120 - 20;
+        int y = height() - 120 - 20;
         m_characterAnimation->move(x, y);
         m_characterAnimation->raise();
+    }
+}
+
+void Lab4Window::updateCameraAnimationPosition()
+{
+    if (m_cameraAnimation) {
+        int x = 550;
+        int y = height() - 230;
+        m_cameraAnimation->move(x, y);
+        m_cameraAnimation->raise();
+    }
+}
+
+void Lab4Window::showCameraAnimation(bool show)
+{
+    if (m_cameraAnimation) {
+        if (show) {
+            m_cameraAnimation->show();
+            m_cameraAnimation->startAnimation();
+            m_cameraAnimation->raise();
+            logMessage("🎬 Анимация камеры включена");
+        } else {
+            m_cameraAnimation->hide();
+            m_cameraAnimation->stopAnimation();
+            logMessage("💤 Анимация камеры выключена");
+        }
     }
 }
 
@@ -147,7 +257,7 @@ void Lab4Window::startCameraAnimation()
         m_cameraActive = true;
         m_characterAnimation->show();
         m_characterAnimation->startAnimation();
-        logMessage("🚨 ВНИМАНИЕ: Обнаружена активная камера! Персонаж предупреждает о наблюдении.");
+        logMessage("🚨 ВНИМАНИЕ: Обнаружена активная камера!");
         updateAnimationPosition();
     }
 }
@@ -158,23 +268,13 @@ void Lab4Window::stopCameraAnimation()
         m_cameraActive = false;
         m_characterAnimation->stopAnimation();
         m_characterAnimation->hide();
-        logMessage("✅ Камера отключена - анимация остановлена");
+        logMessage("✅ Камера отключена");
     }
 }
 
 bool Lab4Window::isCameraInUse()
 {
-    if (m_isRecording) {
-        return true;
-    }
-
-    VideoCapture testCap(DEFAULT_CAMERA_ID);
-    bool isAvailable = testCap.isOpened();
-    if (isAvailable) {
-        testCap.release();
-    }
-
-    return isAvailable;
+    return m_isRecording;
 }
 
 void Lab4Window::checkCameraStatus()
@@ -183,26 +283,41 @@ void Lab4Window::checkCameraStatus()
 
     if (cameraInUse && !m_cameraActive) {
         startCameraAnimation();
+        showCameraAnimation(true);
     } else if (!cameraInUse && m_cameraActive) {
         stopCameraAnimation();
+        showCameraAnimation(false);
     }
 }
 
 void Lab4Window::onTakePhotoClicked()
 {
-    logMessage("📸 Запрос на создание фото...");
+    logMessage("📸 Начало создания фото...");
+
+    showCameraAnimation(true);
     capturePhoto();
+
+    QTimer::singleShot(2000, this, [this]() {
+        if (!m_isRecording) {
+            showCameraAnimation(false);
+        }
+    });
 }
 
 void Lab4Window::onRecordVideoClicked()
 {
-    int duration = ui->spinVideoDuration->value();
-    logMessage(QString("🎥 Захват видео на %1 секунд").arg(duration));
+    if (m_isRecording) {
+        logMessage("⏹️ Остановка записи видео");
+        stopVideoRecording();
+    } else {
+        int duration = ui->spinVideoDuration->value();
+        logMessage(QString("🎥 Начало записи видео на %1 секунд").arg(duration));
 
-    QString filename = generateFilename("video", "mp4");
-    std::thread([this, duration, filename]() {
-        recordVideo(duration, filename);
-    }).detach();
+        QString filename = generateFilename("video", "mp4");
+        std::thread([this, duration, filename]() {
+            recordVideo(duration, filename);
+        }).detach();
+    }
 }
 
 void Lab4Window::onCameraInfoClicked()
@@ -222,6 +337,7 @@ void Lab4Window::onBackClicked()
         stopVideoRecording();
     }
     stopCameraAnimation();
+    showCameraAnimation(false);
     m_cameraCheckTimer->stop();
     emit backToMain();
     close();
@@ -296,8 +412,11 @@ void Lab4Window::capturePhoto()
 void Lab4Window::recordVideo(int seconds, const QString &filename)
 {
     try {
+        showCameraAnimation(true);
+
         VideoCapture cap;
         if (!initializeCamera(cap)) {
+            showCameraAnimation(false);
             return;
         }
 
@@ -311,27 +430,23 @@ void Lab4Window::recordVideo(int seconds, const QString &filename)
         VideoWriter writer;
         if (!initializeVideoWriter(writer, cap, filename)) {
             logMessage("❌ Ошибка создания видеофайла");
+            showCameraAnimation(false);
             return;
         }
 
+        m_isRecording = true;
         int framesToCapture = static_cast<int>(std::round(seconds * fps));
         Mat frame;
         auto startTime = chrono::steady_clock::now();
 
         logMessage("⏺️ Начало записи видео...");
 
-        for (int i = 0; i < framesToCapture; ++i) {
+        for (int i = 0; i < framesToCapture && m_isRecording; ++i) {
             if (!cap.read(frame) || frame.empty()) {
                 logMessage("❌ Ошибка чтения кадра");
                 break;
             }
-
             writer.write(frame);
-
-            if (i % static_cast<int>(fps * 2) == 0) {
-                int progress = static_cast<int>((i * 100) / framesToCapture);
-                logMessage(QString("📈 Прогресс: %1% (%2/%3 кадров)").arg(progress).arg(i).arg(framesToCapture));
-            }
         }
 
         auto endTime = chrono::steady_clock::now();
@@ -339,8 +454,13 @@ void Lab4Window::recordVideo(int seconds, const QString &filename)
 
         logMessage(QString("✅ Видео успешно сохранено: %1 (длительность: %2 сек)").arg(filename).arg(totalDuration));
 
+        m_isRecording = false;
+        showCameraAnimation(false);
+
     } catch (const std::exception& e) {
         logMessage(QString("❌ Ошибка при захвате видео: %1").arg(e.what()));
+        m_isRecording = false;
+        showCameraAnimation(false);
     }
 }
 
@@ -424,7 +544,6 @@ void Lab4Window::videoRecordingThread()
         Mat frame;
         int frameCount = 0;
         auto startTime = chrono::steady_clock::now();
-        auto lastLogTime = startTime;
 
         while (m_isRecording && !m_stopRecordingRequested) {
             if (!m_videoCapture->read(frame) || frame.empty()) {
@@ -434,16 +553,6 @@ void Lab4Window::videoRecordingThread()
 
             m_videoWriter->write(frame);
             frameCount++;
-
-            auto currentTime = chrono::steady_clock::now();
-            auto elapsedSinceLastLog = chrono::duration_cast<chrono::seconds>(currentTime - lastLogTime).count();
-
-            if (elapsedSinceLastLog >= 5) {
-                auto totalElapsed = chrono::duration_cast<chrono::seconds>(currentTime - startTime).count();
-                logMessage(QString("📹 Запись: %1 кадров, %2 секунд").arg(frameCount).arg(totalElapsed));
-                lastLogTime = currentTime;
-            }
-
             this_thread::sleep_for(chrono::milliseconds(1));
         }
 
@@ -494,10 +603,16 @@ void Lab4Window::printCameraInfo()
 void Lab4Window::toggleSecretMode(bool enable)
 {
     if (enable) {
+        // Сохраняем текущую позицию и состояние
+        m_savedPosition = pos();
+        m_savedSize = size();
+        m_isMaximized = isMaximized();
+
         m_isSecretMode = true;
         ui->btnToggleSecret->setText("Выйти из скрытого режима");
+
+        // Просто скрываем окно
         hide();
-        setWindowFlags(windowFlags() | Qt::Tool);
         m_trayIcon->show();
         logMessage("🕵️ Включен скрытый режим");
     } else {
@@ -506,10 +621,31 @@ void Lab4Window::toggleSecretMode(bool enable)
         }
         m_isSecretMode = false;
         ui->btnToggleSecret->setText("Войти в скрытый режим");
+
+        // Показываем окно
         show();
-        setWindowFlags(windowFlags() & ~Qt::Tool);
-        showNormal();
+
+        // Восстанавливаем состояние
+        if (m_isMaximized) {
+            showMaximized();
+        } else {
+            // Восстанавливаем позицию и размер
+            if (!m_savedPosition.isNull() && m_savedSize.isValid()) {
+                setGeometry(m_savedPosition.x(), m_savedPosition.y(),
+                            m_savedSize.width(), m_savedSize.height());
+            }
+
+            // Центрируем окно
+            QTimer::singleShot(50, this, &Lab4Window::centerWindow);
+        }
+
+        // Гарантируем что окно будет активно
+        raise();
+        activateWindow();
+        setFocus();
+
         m_trayIcon->hide();
+        logMessage("👁️ Выход из скрытого режима");
     }
 }
 
@@ -517,20 +653,14 @@ void Lab4Window::registerHotkey()
 {
     if (!RegisterHotKey((HWND)winId(), HOTKEY_SHOW, MOD_CONTROL | MOD_ALT, 'A')) {
         logMessage("❌ Ошибка регистрации горячей клавиши Ctrl+Alt+A");
-    } else {
-        logMessage("✅ Горячая клавиша Ctrl+Alt+A зарегистрирована (показать/скрыть)");
     }
 
     if (!RegisterHotKey((HWND)winId(), HOTKEY_PHOTO, MOD_CONTROL | MOD_ALT, 'S')) {
         logMessage("❌ Ошибка регистрации горячей клавиши Ctrl+Alt+S");
-    } else {
-        logMessage("✅ Горячая клавиша Ctrl+Alt+S зарегистрирована (фото)");
     }
 
     if (!RegisterHotKey((HWND)winId(), HOTKEY_VIDEO, MOD_CONTROL | MOD_ALT, 'D')) {
         logMessage("❌ Ошибка регистрации горячей клавиши Ctrl+Alt+D");
-    } else {
-        logMessage("✅ Горячая клавиша Ctrl+Alt+D зарегистрирована (видео)");
     }
 }
 
@@ -548,27 +678,22 @@ bool Lab4Window::nativeEvent(const QByteArray &eventType, void *message, long lo
         switch (msg->wParam) {
         case HOTKEY_SHOW:
             toggleSecretMode(!m_isSecretMode);
-            logMessage("🔑 Горячая клавиша Ctrl+Alt+A: переключение скрытого режима");
             return true;
         case HOTKEY_PHOTO:
             if (m_isSecretMode) {
-                logMessage("🔑 Горячая клавиша Ctrl+Alt+S: захват фото");
+                logMessage("📸 Захват фото по горячей клавише");
                 capturePhoto();
-            } else {
-                logMessage("🔑 Горячая клавиша Ctrl+Alt+S: работает только в скрытом режиме");
             }
             return true;
         case HOTKEY_VIDEO:
             if (m_isSecretMode) {
                 if (m_isRecording) {
-                    logMessage("🔑 Горячая клавиша Ctrl+Alt+D: остановка записи видео");
+                    logMessage("⏹️ Остановка записи видео по горячей клавише");
                     stopVideoRecording();
                 } else {
-                    logMessage("🔑 Горячая клавиша Ctrl+Alt+D: начало записи видео");
+                    logMessage("🎥 Начало записи видео по горячей клавише");
                     startVideoRecording();
                 }
-            } else {
-                logMessage("🔑 Горячая клавиша Ctrl+Alt+D: работает только в скрытом режиме");
             }
             return true;
         }
@@ -615,6 +740,7 @@ void Lab4Window::closeEvent(QCloseEvent *event)
             m_trayIcon->hide();
         }
         stopCameraAnimation();
+        showCameraAnimation(false);
         m_cameraCheckTimer->stop();
         QMainWindow::closeEvent(event);
     }
@@ -624,10 +750,18 @@ void Lab4Window::resizeEvent(QResizeEvent *event)
 {
     QMainWindow::resizeEvent(event);
     updateAnimationPosition();
+    updateCameraAnimationPosition();
 }
 
 void Lab4Window::showEvent(QShowEvent *event)
 {
     QMainWindow::showEvent(event);
+
+    // Центрируем окно при каждом показе, но только если не в скрытом режиме
+    if (!m_isSecretMode) {
+        QTimer::singleShot(100, this, &Lab4Window::centerWindow);
+    }
+
     updateAnimationPosition();
+    updateCameraAnimationPosition();
 }

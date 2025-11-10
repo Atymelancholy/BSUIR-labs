@@ -5,6 +5,8 @@
 #include <QSystemTrayIcon>
 #include <QLabel>
 #include <QTimer>
+#include <QPoint>
+#include <QSize>
 #include <atomic>
 #include <thread>
 #include <chrono>
@@ -62,11 +64,19 @@ private:
     CharacterAnimation *m_characterAnimation;
     QTimer *m_cameraCheckTimer;
 
+    // Анимация камеры
+    CharacterAnimation *m_cameraAnimation;
+
     // Состояние приложения
     std::atomic<bool> m_isSecretMode;
     std::atomic<bool> m_isRecording;
     std::atomic<bool> m_stopRecordingRequested;
     std::atomic<bool> m_cameraActive;
+
+    // Сохраненная позиция для скрытого режима
+    QPoint m_savedPosition;
+    QSize m_savedSize;
+    bool m_isMaximized;
 
     // Потоки и ресурсы
     std::thread* m_recordThread;
@@ -79,6 +89,11 @@ private:
     void applyStyles();
     void setupAnimation();
     void updateAnimationPosition();
+
+    // Методы для анимации камеры
+    void setupCameraAnimation();
+    void updateCameraAnimationPosition();
+    void showCameraAnimation(bool show);
 
     // Методы работы с камерой
     void capturePhoto();
@@ -101,6 +116,9 @@ private:
     // Методы анимации
     void startCameraAnimation();
     void stopCameraAnimation();
+
+    // Методы центрирования окна
+    void centerWindow();
 
     // Вспомогательные методы
     void logMessage(const QString &message);
