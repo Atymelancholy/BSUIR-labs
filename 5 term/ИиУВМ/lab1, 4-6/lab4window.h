@@ -7,6 +7,8 @@
 #include <QTimer>
 #include <QPoint>
 #include <QSize>
+#include <QVector>
+#include <QPair>
 #include <atomic>
 #include <thread>
 #include <chrono>
@@ -21,6 +23,13 @@
 namespace Ui {
 class Lab4Window;
 }
+
+struct CameraInfo {
+    QString name;
+    QString devicePath;
+    QString description;
+    QVector<QPair<QString, QString>> capabilities;
+};
 
 class Lab4Window : public QMainWindow
 {
@@ -49,7 +58,6 @@ protected:
     void showEvent(QShowEvent *event) override;
 
 private:
-    // Константы
     static const int HOTKEY_SHOW = 1;
     static const int HOTKEY_PHOTO = 2;
     static const int HOTKEY_VIDEO = 3;
@@ -58,72 +66,54 @@ private:
     static const int DEFAULT_HEIGHT = 480;
     static const double DEFAULT_FPS;
 
-    // UI компоненты
     Ui::Lab4Window *ui;
     QSystemTrayIcon *m_trayIcon;
     CharacterAnimation *m_characterAnimation;
+    CharacterAnimation *m_cameraAnimation;
     QTimer *m_cameraCheckTimer;
 
-    // Анимация камеры
-    CharacterAnimation *m_cameraAnimation;
-
-    // Состояние приложения
     std::atomic<bool> m_isSecretMode;
     std::atomic<bool> m_isRecording;
     std::atomic<bool> m_stopRecordingRequested;
     std::atomic<bool> m_cameraActive;
 
-    // Сохраненная позиция для скрытого режима
     QPoint m_savedPosition;
     QSize m_savedSize;
     bool m_isMaximized;
 
-    // Потоки и ресурсы
     std::thread* m_recordThread;
     cv::VideoCapture* m_videoCapture;
     cv::VideoWriter* m_videoWriter;
 
-    // Основные методы
     void initializeUI();
     void setupConnections();
     void applyStyles();
     void setupAnimation();
     void updateAnimationPosition();
-
-    // Методы для анимации камеры
     void setupCameraAnimation();
     void updateCameraAnimationPosition();
     void showCameraAnimation(bool show);
-
-    // Методы работы с камерой
     void capturePhoto();
     void recordVideo(int seconds, const QString &filename = "");
     void startVideoRecording();
     void stopVideoRecording();
     void videoRecordingThread();
-
-    // Методы управления камерой
     bool initializeCamera(cv::VideoCapture &camera);
     bool initializeVideoWriter(cv::VideoWriter &writer, const cv::VideoCapture &camera, const QString &filename);
     void printCameraInfo();
     bool isCameraInUse();
-
-    // Методы скрытого режима
+    QVector<CameraInfo> getCameraInfoLowLevel();
+    QVector<CameraInfo> getDemoCameraData();
+    QString getDefaultCameraInfo();
     void toggleSecretMode(bool enable);
     void registerHotkey();
     void unregisterHotkey();
-
-    // Методы анимации
     void startCameraAnimation();
     void stopCameraAnimation();
-
-    // Методы центрирования окна
     void centerWindow();
-
-    // Вспомогательные методы
     void logMessage(const QString &message);
     QString generateTimestamp() const;
     QString generateFilename(const QString &prefix, const QString &extension) const;
 };
 
-#endif // LAB4WINDOW_H
+#endif
