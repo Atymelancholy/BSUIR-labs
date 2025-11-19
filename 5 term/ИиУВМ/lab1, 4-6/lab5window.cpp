@@ -1,522 +1,532 @@
 #include "lab5window.h"
+#include "characteranimation.h"
+#include "usbmanager.h"
 
-// Условная компиляция для Windows
-#ifdef Q_OS_WIN
-#include <windows.h>
-#include <setupapi.h>
-#include <initguid.h>
-#include <Usbiodef.h>
-#include <Cfgmgr32.h>
-#endif
+#include <QListWidgetItem>
+#include <QMessageBox>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QLabel>
+#include <QGroupBox>
+#include <QListWidget>
+#include <QTimer>
+#include <QScreen>
+#include <QGuiApplication>
+#include <QDebug>
+#include <QMetaObject>
+#include <QMetaMethod>
 
-#include <locale>
-#include <chrono>
-#include <thread>
-#include <random>
-
-// ==================== UsbMonitorThread Implementation ====================
-
-UsbMonitorThread::UsbMonitorThread(QObject *parent)
-    : QThread(parent)
-    , m_stopMonitoring(false)
+Lab5Window::Lab5Window(QWidget *parent) :
+    QMainWindow(parent),
+    m_usbManager(new USBManager(this)),
+    m_characterAnimation(nullptr),
+    m_centralWidget(nullptr),
+    m_devicesGroup(nullptr),
+    m_infoGroup(nullptr),
+    m_devicesList(nullptr),
+    m_deviceInfoLabel(nullptr),
+    m_statusLabel(nullptr),
+    m_refreshButton(nullptr),
+    m_ejectButton(nullptr),
+    m_backButton(nullptr)
 {
-}
+    setWindowTitle("Мониторинг USB устройств - Лабораторная работа 5");
+    resize(900, 600);
 
-UsbMonitorThread::~UsbMonitorThread()
-{
-    stopMonitoring();
-}
+    qDebug() << "Инициализация окна USB мониторинга";
 
-void UsbMonitorThread::stopMonitoring()
-{
-    m_mutex.lock();
-    m_stopMonitoring = true;
-    m_mutex.unlock();
-    wait(3000);
-}
+    initializeInterface();
+    setupSignalHandlers();
+    applyCustomStyles();
+    initializeCharacterAnimation();
 
-void UsbMonitorThread::run()
-{
-#ifdef Q_OS_WIN
-    // Initial scan
-    enumerateUsbDevices(false, true);
-    m_previousDevices = m_currentDevices;
-
-    while (!m_stopMonitoring) {
-        checkUsbDevices();
-        QThread::msleep(1000);
-    }
-#else
-    // Для не-Windows систем имитируем работу
-    int counter = 0;
-    while (!m_stopMonitoring) {
-        QStringList deviceList;
-        deviceList << "USB Flash Drive (ID: 1234)";
-        deviceList << "USB Mouse (ID: 5678)";
-        deviceList << "External HDD (ID: 9ABC)";
-
-        emit deviceListUpdated(deviceList);
-
-        if (counter % 10 == 0) {
-            emit deviceConnected("Имитация: USB устройство подключено");
-        }
-
-        QThread::msleep(2000);
-        counter++;
-    }
-#endif
-}
-
-int UsbMonitorThread::enumerateUsbDevices(bool printInfo, bool updateList)
-{
-#ifdef Q_OS_WIN
-    SP_DEVINFO_DATA DeviceInfoData;
-    ZeroMemory(&DeviceInfoData, sizeof(SP_DEVINFO_DATA));
-    DeviceInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
-
-    HDEVINFO DeviceInfoSet = SetupDiGetClassDevs(&GUID_DEVINTERFACE_USB_DEVICE, NULL, NULL,
-                                                 DIGCF_PRESENT | DIGCF_DEVICEINTERFACE);
-
-    if (DeviceInfoSet == INVALID_HANDLE_VALUE) {
-        return 0;
-    }
-
-    if (updateList) {
-        m_currentDevices.clear();
-        m_deviceInstances.clear();
-    }
-
-    int deviceCount = 0;
-    for (int i = 0; ; i++) {
-        DeviceInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
-
-        if (!SetupDiEnumDeviceInfo(DeviceInfoSet, i, &DeviceInfoData)) {
-            break;
-        }
-
-        const int PropertyBufferSize = 1024;
-        wchar_t deviceID[PropertyBufferSize], deviceName[PropertyBufferSize];
-
-        ZeroMemory(deviceID, sizeof(deviceID));
-        ZeroMemory(deviceName, sizeof(deviceName));
-
-        if (!SetupDiGetDeviceInstanceId(DeviceInfoSet, &DeviceInfoData, deviceID,
-                                        sizeof(deviceID), NULL)) {
-            continue;
-        }
-
-        if (!SetupDiGetDeviceRegistryProperty(DeviceInfoSet, &DeviceInfoData, SPDRP_DEVICEDESC,
-                                              NULL, (PBYTE)deviceName, sizeof(deviceName), NULL)) {
-            continue;
-        }
-
-        std::wstring venAndDevId(deviceID);
-        std::wstring devId = venAndDevId.length() >= 21 ? venAndDevId.substr(17, 4) : L"0000";
-
-        if (updateList) {
-            m_currentDevices[devId] = deviceName;
-            m_deviceInstances[devId] = DeviceInfoData.DevInst;
-        }
-
-        deviceCount++;
-    }
-
-    SetupDiDestroyDeviceInfoList(DeviceInfoSet);
-    return deviceCount;
-#else
-    return 3;
-#endif
-}
-
-void UsbMonitorThread::checkUsbDevices()
-{
-#ifdef Q_OS_WIN
-    int currentCount = enumerateUsbDevices(false, true);
-
-    // Check for new devices
-    for (const auto& pair : m_currentDevices) {
-        const std::wstring& key = pair.first;
-        const std::wstring& value = pair.second;
-
-        if (m_previousDevices.find(key) == m_previousDevices.end()) {
-            // New device connected
-            QString deviceInfo = QString("Устройство подключено: %1 (ID: %2)")
-                                     .arg(QString::fromWCharArray(value.c_str()))
-                                     .arg(QString::fromWCharArray(key.c_str()));
-            emit deviceConnected(deviceInfo);
-        }
-    }
-
-    // Check for removed devices
-    for (const auto& pair : m_previousDevices) {
-        const std::wstring& key = pair.first;
-        const std::wstring& value = pair.second;
-
-        if (m_currentDevices.find(key) == m_currentDevices.end()) {
-            // Device disconnected
-            QString deviceInfo = QString("Устройство отключено: %1 (ID: %2)")
-                                     .arg(QString::fromWCharArray(value.c_str()))
-                                     .arg(QString::fromWCharArray(key.c_str()));
-            emit deviceDisconnected(deviceInfo);
-        }
-    }
-
-    // Update device list for UI
-    if (currentCount != static_cast<int>(m_previousDevices.size())) {
-        QStringList deviceList;
-        for (const auto& pair : m_currentDevices) {
-            QString deviceInfo = QString("%1 (ID: %2)")
-            .arg(QString::fromWCharArray(pair.second.c_str()))
-                .arg(QString::fromWCharArray(pair.first.c_str()));
-            deviceList << deviceInfo;
-        }
-        emit deviceListUpdated(deviceList);
-    }
-
-    m_previousDevices = m_currentDevices;
-#endif
-}
-
-QString UsbMonitorThread::ejectDevice(const QString &deviceName)
-{
-    return simulateEjectDevice(deviceName, true);
-}
-
-QString UsbMonitorThread::simulateEjectDevice(const QString &deviceName, bool safeEject)
-{
-    // Имитация проверки использования устройства
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(1, 100);
-
-    int chance = dis(gen);
-
-    if (safeEject) {
-        // Безопасное извлечение - 70% шанс отказа если устройство "используется"
-        if (chance <= 70) {
-            return "❌ ОТКАЗ: Устройство используется системой\n   Причина: Открытые файлы или активные процессы\n   Решение: Закройте все файлы и попробуйте снова";
-        } else {
-            return "✅ УСТРОЙСТВО УСПЕШНО ИЗВЛЕЧЕНО\n   Статус: Безопасное извлечение завершено";
-        }
-    } else {
-        // Небезопасное извлечение - всегда "успешно" но с предупреждением
-        if (chance <= 30) {
-            return "⚠️ УСТРОЙСТВО ИЗВЛЕЧЕНО С РИСКОМ\n   Предупреждение: Возможна потеря данных\n   Статус: Принудительное отключение";
-        } else {
-            return "✅ УСТРОЙСТВО ИЗВЛЕЧЕНО\n   Статус: Небезопасное извлечение завершено";
-        }
-    }
-}
-
-// ==================== Lab5Window Implementation ====================
-
-Lab5Window::Lab5Window(QWidget *parent)
-    : QMainWindow(parent)
-    , outputTextEdit(nullptr)
-    , deviceComboBox(nullptr)
-    , safeUnmountButton(nullptr)
-    , unsafeUnmountButton(nullptr)
-    , refreshButton(nullptr)
-    , backButton(nullptr)
-    , statusLabel(nullptr)
-    , usbMonitorThread(nullptr)
-    , statusTimer(nullptr)
-{
-    setWindowTitle("Лабораторная работа 5 - Мониторинг USB устройств");
-    resize(900, 700);
-
-    setStyleSheet("QMainWindow { background-color: #F5F5DC; }");
-
-    setupUI();
-    startUsbMonitoring();
+    QTimer::singleShot(500, this, &Lab5Window::refreshDeviceList);
+    QTimer::singleShot(100, this, &Lab5Window::centerOnScreen);
 }
 
 Lab5Window::~Lab5Window()
 {
-    stopUsbMonitoring();
+    delete m_characterAnimation;
+    delete m_usbManager;
 }
 
-void Lab5Window::setupUI()
+void Lab5Window::initializeInterface()
 {
-    QWidget *centralWidget = new QWidget(this);
-    setCentralWidget(centralWidget);
+    setStyleSheet("QMainWindow { background-color: #F5F5DC; }");
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
+    m_centralWidget = new QWidget(this);
+    setCentralWidget(m_centralWidget);
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(m_centralWidget);
     mainLayout->setContentsMargins(20, 20, 20, 20);
     mainLayout->setSpacing(15);
 
-    // Заголовок
-    QLabel *titleLabel = new QLabel("Мониторинг USB устройств", centralWidget);
-    titleLabel->setStyleSheet("font-size: 24px; font-weight: bold; color: #8B4513;");
-    titleLabel->setAlignment(Qt::AlignCenter);
+    QHBoxLayout *contentLayout = new QHBoxLayout();
+    contentLayout->setSpacing(20);
 
-    // Группа управления
-    QGroupBox *controlGroup = new QGroupBox("Управление устройствами", centralWidget);
-    controlGroup->setStyleSheet("QGroupBox { font-weight: bold; color: #8B4513; }");
+    setupDevicesPanel(contentLayout);
+    setupInfoPanel(contentLayout);
 
-    QHBoxLayout *controlLayout = new QHBoxLayout(controlGroup);
+    mainLayout->addLayout(contentLayout);
 
-    deviceComboBox = new QComboBox(controlGroup);
-    deviceComboBox->setMinimumWidth(300);
-    deviceComboBox->setStyleSheet("QComboBox { padding: 5px; font-size: 14px; }");
+    initializeCharacterAnimation();
+}
 
-    safeUnmountButton = new QPushButton("Безопасное извлечение", controlGroup);
-    safeUnmountButton->setStyleSheet(
-        "QPushButton {"
-        "padding: 8px 15px; font-size: 14px; font-weight: bold;"
-        "background-color: #90EE90; color: #006400; border-radius: 5px;"
-        "border: 2px solid #32CD32;"
-        "}"
-        "QPushButton:hover { background-color: #7CFC00; }"
-        "QPushButton:pressed { background-color: #32CD32; color: white; }"
-        );
+void Lab5Window::setupDevicesPanel(QHBoxLayout *parentLayout)
+{
+    m_devicesGroup = new QGroupBox("Список USB устройств", m_centralWidget);
+    QVBoxLayout *devicesLayout = new QVBoxLayout(m_devicesGroup);
 
-    unsafeUnmountButton = new QPushButton("Небезопасное извлечение", controlGroup);
-    unsafeUnmountButton->setStyleSheet(
-        "QPushButton {"
-        "padding: 8px 15px; font-size: 14px; font-weight: bold;"
-        "background-color: #FFB6C1; color: #8B0000; border-radius: 5px;"
-        "border: 2px solid #DC143C;"
-        "}"
-        "QPushButton:hover { background-color: #FF69B4; }"
-        "QPushButton:pressed { background-color: #DC143C; color: white; }"
-        );
+    m_devicesList = new QListWidget(m_devicesGroup);
+    m_devicesList->setMinimumWidth(400);
 
-    refreshButton = new QPushButton("Обновить список", controlGroup);
-    refreshButton->setStyleSheet(
+    QHBoxLayout *controlButtonsLayout = new QHBoxLayout();
+    m_refreshButton = new QPushButton("Обновить", m_devicesGroup);
+    m_ejectButton = new QPushButton("Извлечь", m_devicesGroup);
+    m_backButton = new QPushButton("В главное меню", m_devicesGroup);
+
+    controlButtonsLayout->addWidget(m_refreshButton);
+    controlButtonsLayout->addWidget(m_ejectButton);
+    controlButtonsLayout->addStretch();
+    controlButtonsLayout->addWidget(m_backButton);
+
+    devicesLayout->addWidget(m_devicesList);
+    devicesLayout->addLayout(controlButtonsLayout);
+
+    parentLayout->addWidget(m_devicesGroup);
+}
+
+void Lab5Window::setupInfoPanel(QHBoxLayout *parentLayout)
+{
+    m_infoGroup = new QGroupBox("Свойства устройства", m_centralWidget);
+    QVBoxLayout *infoLayout = new QVBoxLayout(m_infoGroup);
+
+    m_deviceInfoLabel = new QLabel("Выберите устройство из списка", m_infoGroup);
+    m_deviceInfoLabel->setWordWrap(true);
+    m_deviceInfoLabel->setMinimumHeight(150);
+
+    m_statusLabel = new QLabel("Ожидание действий", m_infoGroup);
+    m_statusLabel->setAlignment(Qt::AlignCenter);
+    m_statusLabel->setMinimumHeight(30);
+
+    infoLayout->addWidget(m_deviceInfoLabel);
+    infoLayout->addWidget(m_statusLabel);
+
+    parentLayout->addWidget(m_infoGroup);
+}
+
+void Lab5Window::initializeCharacterAnimation()
+{
+    qDebug() << "Инициализация анимации USB мониторинга...";
+
+    m_characterAnimation = new CharacterAnimation(this);
+    m_characterAnimation->setFixedSize(150, 150);
+    m_characterAnimation->setBackgroundColor(Qt::transparent);
+
+    // Пробуем разные пути к спрайтам
+    QStringList spritePaths = {
+        "C:/Users/atyme/OneDrive/Документы/db/AnimationLab/resources/images/l5.png",
+        ":/resources/images/l5.png",
+        "resources/images/l5.png",
+        "C:/Users/atyme/OneDrive/Документы/db/AnimationLab/resources/images/lab5.png",
+        ":/resources/images/lab5.png",
+        "resources/images/lab5.png",
+        "C:/Users/atyme/OneDrive/Документы/db/AnimationLab/resources/images/usb_animation.png",
+        ":/resources/images/usb_animation.png"
+    };
+
+    bool spriteLoaded = false;
+
+    // Пробуем разные размеры кадров как в 4-й лабораторной
+    QList<QPair<int, int>> frameSizes = {
+        {1200, 680},  // Оригинальный размер
+        {300, 340},  // В 2 раза меньше
+        {200, 227},  // В 3 раза меньше
+        {150, 170},  // В 4 раза меньше
+        {100, 113},  // В 6 раз меньше
+        {1130, 1130} // Как в 4-й лабораторной
+    };
+
+    for (const QString& path : spritePaths) {
+        for (const auto& frameSize : frameSizes) {
+            int frameWidth = frameSize.first;
+            int frameHeight = frameSize.second;
+
+            qDebug() << "Попытка загрузки:" << path << "с размером кадра:" << frameWidth << "x" << frameHeight;
+
+            if (m_characterAnimation->loadSpriteSheet(path, frameWidth, frameHeight)) {
+                spriteLoaded = true;
+                qDebug() << "УСПЕХ: Спрайт загружен! Размер кадра:" << frameWidth << "x" << frameHeight;
+
+                // Настройка анимации как в 4-й лабораторной
+                m_characterAnimation->setScaleFactor(0.18); // Масштабирование как в камерной анимации
+                m_characterAnimation->setAnimationSpeed(150); // Скорость анимации
+                m_characterAnimation->setFixedSize(150, 150); // Фиксированный размер
+
+                break;
+            }
+        }
+        if (spriteLoaded) break;
+    }
+
+    if (!spriteLoaded) {
+        qDebug() << "Не удалось загрузить анимацию. Создаем заглушку.";
+
+        // Создаем информативную заглушку
+        QWidget *debugWidget = new QWidget(this);
+        debugWidget->setFixedSize(120, 120);
+        debugWidget->setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #4A90E2, stop:1 #357ABD); border: 2px solid #2C5AA0; border-radius: 10px;");
+
+        QLabel *debugLabel = new QLabel("USB\nMONITOR", debugWidget);
+        debugLabel->setAlignment(Qt::AlignCenter);
+        debugLabel->setStyleSheet("color: white; font-size: 14px; font-weight: bold; background: transparent;");
+        debugLabel->resize(120, 120);
+
+        debugWidget->setVisible(false);
+        m_characterAnimation = reinterpret_cast<CharacterAnimation*>(debugWidget);
+    }
+
+    updateAnimationPosition();
+    m_characterAnimation->raise();
+    m_characterAnimation->hide();
+
+    qDebug() << "Анимация USB мониторинга инициализирована. Размер:" << m_characterAnimation->size();
+}
+
+void Lab5Window::updateAnimationPosition()
+{
+    if (m_characterAnimation) {
+        // Позиционирование в правом нижнем углу как в 4-й лабораторной
+        int x = width() - m_characterAnimation->width() - 20;  // 20px отступ справа
+        int y = height() - m_characterAnimation->height() - 20; // 20px отступ снизу
+
+        // Проверяем, чтобы не вышло за границы
+        if (x < 0) x = 20;
+        if (y < 0) y = 20;
+
+        m_characterAnimation->move(x, y);
+        m_characterAnimation->raise();
+
+        qDebug() << "Анимация позиционирована: (" << x << "," << y
+                 << "), размер:" << m_characterAnimation->size();
+    }
+}
+
+void Lab5Window::setupSignalHandlers()
+{
+    connect(m_refreshButton, &QPushButton::clicked, this, &Lab5Window::refreshDeviceList);
+    connect(m_ejectButton, &QPushButton::clicked, this, &Lab5Window::handleDeviceEjection);
+    connect(m_devicesList, &QListWidget::itemClicked, this, &Lab5Window::showDeviceDetails);
+    connect(m_backButton, &QPushButton::clicked, this, &Lab5Window::returnToMainMenu);
+
+    connect(m_usbManager, &USBManager::devicesUpdated, this, &Lab5Window::updateDeviceDisplay);
+    connect(m_usbManager, &USBManager::deviceConnected, this, &Lab5Window::onDeviceConnected);
+    connect(m_usbManager, &USBManager::deviceDisconnected, this, &Lab5Window::onDeviceDisconnected);
+    connect(m_usbManager, &USBManager::ejectionResult, this, &Lab5Window::onEjectionComplete);
+}
+
+void Lab5Window::applyCustomStyles()
+{
+    const QString buttonStyle =
         "QPushButton {"
         "padding: 8px 15px; font-size: 14px; font-weight: bold;"
         "background-color: #D2B48C; color: #8B4513; border-radius: 5px;"
         "border: 2px solid #A0522D;"
         "}"
         "QPushButton:hover { background-color: #BC8F8F; }"
-        "QPushButton:pressed { background-color: #A0522D; color: white; }"
-        );
+        "QPushButton:pressed { background-color: #A0522D; color: white; }";
 
-    controlLayout->addWidget(new QLabel("Устройства:", controlGroup));
-    controlLayout->addWidget(deviceComboBox);
-    controlLayout->addWidget(safeUnmountButton);
-    controlLayout->addWidget(unsafeUnmountButton);
-    controlLayout->addWidget(refreshButton);
-    controlLayout->addStretch();
+    m_refreshButton->setStyleSheet(buttonStyle);
+    m_ejectButton->setStyleSheet(buttonStyle);
+    m_backButton->setStyleSheet(buttonStyle);
 
-    // Группа вывода
-    QGroupBox *outputGroup = new QGroupBox("Мониторинг USB событий", centralWidget);
-    outputGroup->setStyleSheet("QGroupBox { font-weight: bold; color: #8B4513; }");
-
-    QVBoxLayout *outputLayout = new QVBoxLayout(outputGroup);
-
-    outputTextEdit = new QTextEdit(outputGroup);
-    outputTextEdit->setStyleSheet(
-        "QTextEdit {"
+    m_devicesList->setStyleSheet(
+        "QListWidget {"
         "background-color: white; border: 2px solid #A0522D; border-radius: 5px;"
-        "font-family: 'Courier New'; font-size: 12px; padding: 10px;"
+        "font-family: 'Segoe UI'; font-size: 12px; padding: 5px;"
         "}"
-        );
-    outputTextEdit->setReadOnly(true);
-
-    outputLayout->addWidget(outputTextEdit);
-
-    // Статус
-    statusLabel = new QLabel("Мониторинг запущен...", centralWidget);
-    statusLabel->setStyleSheet("font-size: 14px; color: #8B4513; padding: 5px;");
-
-    // Кнопка назад
-    backButton = new QPushButton("Назад в меню", centralWidget);
-    backButton->setStyleSheet(
-        "QPushButton {"
-        "padding: 10px 20px; font-size: 14px; font-weight: bold;"
-        "background-color: #DEB887; color: #8B4513; border-radius: 5px;"
-        "border: 2px solid #A0522D;"
+        "QListWidget::item {"
+        "padding: 8px; border-bottom: 1px solid #D2B48C;"
         "}"
-        "QPushButton:hover { background-color: #CD853F; }"
-        "QPushButton:pressed { background-color: #A0522D; color: white; }"
-        );
+        "QListWidget::item:selected {"
+        "background-color: #D2B48C; color: #8B4513;"
+        "}");
 
-    // Добавляем все в главный layout
-    mainLayout->addWidget(titleLabel);
-    mainLayout->addWidget(controlGroup);
-    mainLayout->addWidget(outputGroup, 1);
-    mainLayout->addWidget(statusLabel);
-    mainLayout->addWidget(backButton);
+    m_deviceInfoLabel->setStyleSheet(
+        "QLabel {"
+        "background-color: rgba(210, 180, 140, 0.2);"
+        "border: 2px solid #A0522D; border-radius: 5px;"
+        "padding: 15px; font-size: 12px; line-height: 1.4;"
+        "color: #654321;"
+        "}");
 
-    // Подключаем сигналы
-    connect(safeUnmountButton, &QPushButton::clicked, this, &Lab5Window::onSafeUnmountClicked);
-    connect(unsafeUnmountButton, &QPushButton::clicked, this, &Lab5Window::onUnsafeUnmountClicked);
-    connect(refreshButton, &QPushButton::clicked, this, &Lab5Window::onRefreshClicked);
-    connect(backButton, &QPushButton::clicked, this, &Lab5Window::onBackClicked);
+    m_statusLabel->setStyleSheet(
+        "QLabel {"
+        "background-color: rgba(139, 69, 19, 0.1);"
+        "border: 1px solid #A0522D; border-radius: 3px;"
+        "padding: 5px; font-size: 11px;"
+        "color: #8B4513;"
+        "}");
 
-    // Таймер для обновления статуса
-    statusTimer = new QTimer(this);
-    connect(statusTimer, &QTimer::timeout, this, [this]() {
-        static int counter = 0;
-        QString status = QString("Мониторинг активен... [%1]").arg(++counter);
-        statusLabel->setText(status);
-    });
+    m_devicesGroup->setStyleSheet("QGroupBox { font-weight: bold; color: #8B4513; }");
+    m_infoGroup->setStyleSheet("QGroupBox { font-weight: bold; color: #8B4513; }");
 }
 
-void Lab5Window::startUsbMonitoring()
+void Lab5Window::initializeAnimation()
 {
-    outputTextEdit->append("=== Запущен мониторинг USB устройств ===");
-#ifdef Q_OS_WIN
-    outputTextEdit->append("Система отслеживает подключение/отключение USB устройств");
-    outputTextEdit->append("Подключите или отключите USB устройство для тестирования");
-#else
-    outputTextEdit->append("Режим имитации (только для Windows)");
-    outputTextEdit->append("Настоящий мониторинг доступен только в Windows");
-#endif
-    outputTextEdit->append("========================================");
-    outputTextEdit->append("ДЛЯ ТЕСТИРОВАНИЯ ОТКАЗА:");
-    outputTextEdit->append("- Откройте файл на флешке и не закрывайте");
-    outputTextEdit->append("- Попробуйте безопасное извлечение");
-    outputTextEdit->append("- Должен появиться ОТКАЗ из-за использования устройства");
-    outputTextEdit->append("========================================\n");
-
-    usbMonitorThread = new UsbMonitorThread(this);
-    connect(usbMonitorThread, &UsbMonitorThread::deviceConnected,
-            this, &Lab5Window::onUsbDeviceConnected);
-    connect(usbMonitorThread, &UsbMonitorThread::deviceDisconnected,
-            this, &Lab5Window::onUsbDeviceDisconnected);
-    connect(usbMonitorThread, &UsbMonitorThread::deviceListUpdated,
-            this, &Lab5Window::onUsbDeviceListUpdated);
-
-    usbMonitorThread->start();
-    statusTimer->start(1000);
+    // Инициализация анимации выполнена в initializeCharacterAnimation()
 }
 
-void Lab5Window::stopUsbMonitoring()
+void Lab5Window::centerOnScreen()
 {
-    if (statusTimer) {
-        statusTimer->stop();
+    QScreen *primaryScreen = QGuiApplication::primaryScreen();
+    if (!primaryScreen) return;
+
+    QRect screenGeometry = primaryScreen->availableGeometry();
+    int x = (screenGeometry.width() - width()) / 2;
+    int y = (screenGeometry.height() - height()) / 2;
+
+    x = qMax(0, x);
+    y = qMax(0, y);
+    x = qMin(screenGeometry.width() - width(), x);
+    y = qMin(screenGeometry.height() - height(), y);
+
+    move(x, y);
+    qDebug() << "Окно центрировано на экране: (" << x << "," << y << ")";
+}
+
+void Lab5Window::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+    qDebug() << "Размер окна изменен на:" << width() << "x" << height();
+    updateAnimationPosition();
+}
+
+void Lab5Window::showEvent(QShowEvent *event)
+{
+    QMainWindow::showEvent(event);
+    qDebug() << "Окно показано";
+    updateAnimationPosition();
+}
+
+void Lab5Window::refreshDeviceList()
+{
+    qDebug() << "Обновление списка устройств...";
+    m_usbManager->refreshDevices();
+    m_statusLabel->setText("Список устройств обновлен");
+}
+
+void Lab5Window::handleDeviceEjection()
+{
+    QListWidgetItem* currentItem = m_devicesList->currentItem();
+    if (!currentItem) {
+        QMessageBox::warning(this, "Внимание", "Сначала выберите устройство из списка");
+        return;
     }
 
-    if (usbMonitorThread) {
-        usbMonitorThread->stopMonitoring();
-        usbMonitorThread->quit();
-        usbMonitorThread->wait(3000);
-        delete usbMonitorThread;
-        usbMonitorThread = nullptr;
+    QString deviceId = currentItem->data(Qt::UserRole).toString();
+    qDebug() << "Попытка извлечения устройства:" << deviceId;
+    m_usbManager->ejectDevice(deviceId.toStdWString());
+}
+
+void Lab5Window::showDeviceDetails(QListWidgetItem* item)
+{
+    if (!item) return;
+
+    QString deviceName = item->text();
+    m_currentDeviceId = item->data(Qt::UserRole).toString();
+
+    auto devices = m_usbManager->getDevices();
+    auto deviceIterator = devices.find(m_currentDeviceId.toStdWString());
+
+    if (deviceIterator != devices.end()) {
+        QString deviceInfo = QString("Устройство: %1\n\n"
+                                     "Идентификатор производителя: %2\n"
+                                     "Идентификатор устройства: %3\n\n"
+                                     "Производитель: %4")
+                                 .arg(deviceName)
+                                 .arg(QString::fromStdWString(deviceIterator->second.vendorId))
+                                 .arg(QString::fromStdWString(deviceIterator->second.deviceId))
+                                 .arg(QString::fromStdWString(deviceIterator->second.manufacturer));
+
+        m_deviceInfoLabel->setText(deviceInfo);
+        qDebug() << "Показана информация об устройстве:" << deviceName;
     }
 }
 
-void Lab5Window::onUsbDeviceConnected(const QString &deviceInfo)
+void Lab5Window::updateDeviceDisplay()
 {
-    QString timestamp = QTime::currentTime().toString("[hh:mm:ss]");
-    outputTextEdit->append(timestamp + " " + deviceInfo);
-    outputTextEdit->append(">>> Действие: Устройство подключено");
-
-    QScrollBar *scrollBar = outputTextEdit->verticalScrollBar();
-    scrollBar->setValue(scrollBar->maximum());
+    refreshDeviceListUI();
 }
 
-void Lab5Window::onUsbDeviceDisconnected(const QString &deviceInfo)
+void Lab5Window::onDeviceConnected(const QString& deviceName)
 {
-    QString timestamp = QTime::currentTime().toString("[hh:mm:ss]");
-    outputTextEdit->append(timestamp + " " + deviceInfo);
-    outputTextEdit->append(">>> Действие: Устройство отключено");
-
-    QScrollBar *scrollBar = outputTextEdit->verticalScrollBar();
-    scrollBar->setValue(scrollBar->maximum());
+    qDebug() << "=== USB УСТРОЙСТВО ПОДКЛЮЧЕНО ===" << deviceName;
+    m_statusLabel->setText("Подключено: " + deviceName);
+    startConnectionAnimation();
+    refreshDeviceListUI();
 }
 
-void Lab5Window::onUsbDeviceListUpdated(const QStringList &devices)
+void Lab5Window::onDeviceDisconnected(const QString& deviceName)
 {
-    deviceComboBox->clear();
-    if (devices.isEmpty()) {
-        deviceComboBox->addItem("USB устройства не найдены");
-        safeUnmountButton->setEnabled(false);
-        unsafeUnmountButton->setEnabled(false);
+    qDebug() << "=== USB УСТРОЙСТВО ОТКЛЮЧЕНО ===" << deviceName;
+    if (!m_statusLabel->text().contains("извлечено")) {
+        m_statusLabel->setText("Отключено: " + deviceName);
+    }
+    startDisconnectionAnimation();
+
+    auto devices = m_usbManager->getDevices();
+    if (devices.find(m_currentDeviceId.toStdWString()) == devices.end()) {
+        m_currentDeviceId.clear();
+        m_deviceInfoLabel->setText("Выберите устройство для просмотра информации");
+    }
+
+    refreshDeviceListUI();
+}
+
+void Lab5Window::onEjectionComplete(const QString& message)
+{
+    qDebug() << "Результат извлечения:" << message;
+    m_statusLabel->setText(message);
+    if (message.contains("извлечено")) {
+        m_currentDeviceId.clear();
+        m_deviceInfoLabel->setText("Выберите устройство для просмотра информации");
+        refreshDeviceListUI();
+    }
+}
+
+void Lab5Window::refreshDeviceListUI()
+{
+    m_devicesList->clear();
+
+    auto devices = m_usbManager->getDevices();
+    int selectedIndex = -1;
+    int index = 0;
+
+    for (const auto& devicePair : devices) {
+        QString deviceName = QString::fromStdWString(devicePair.second.name);
+        QString deviceId = QString::fromStdWString(devicePair.first);
+
+        QListWidgetItem* item = new QListWidgetItem(deviceName);
+        item->setData(Qt::UserRole, deviceId);
+        m_devicesList->addItem(item);
+
+        if (deviceId == m_currentDeviceId) {
+            selectedIndex = index;
+        }
+        index++;
+    }
+
+    if (selectedIndex >= 0) {
+        m_devicesList->setCurrentRow(selectedIndex);
+        showDeviceDetails(m_devicesList->currentItem());
+    } else if (m_devicesList->count() > 0) {
+        m_devicesList->setCurrentRow(0);
+        showDeviceDetails(m_devicesList->currentItem());
     } else {
-        deviceComboBox->addItems(devices);
-        safeUnmountButton->setEnabled(true);
-        unsafeUnmountButton->setEnabled(true);
+        m_deviceInfoLabel->setText("Устройства не обнаружены");
+        m_currentDeviceId.clear();
     }
+
+    qDebug() << "Список устройств обновлен. Найдено устройств:" << m_devicesList->count();
 }
 
-void Lab5Window::onSafeUnmountClicked()
+void Lab5Window::returnToMainMenu()
 {
-    QString selectedDevice = deviceComboBox->currentText();
-    if (selectedDevice.isEmpty() || selectedDevice == "USB устройства не найдены") {
-        QMessageBox::warning(this, "Предупреждение", "Выберите устройство для извлечения");
-        return;
-    }
-
-    QString timestamp = QTime::currentTime().toString("[hh:mm:ss]");
-    outputTextEdit->append(timestamp + " === ЗАПРОС БЕЗОПАСНОГО ИЗВЛЕЧЕНИЯ ===");
-    outputTextEdit->append("Устройство: " + selectedDevice);
-    outputTextEdit->append("Проверка возможности извлечения...");
-    outputTextEdit->append("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-
-    QString result = usbMonitorThread->ejectDevice(selectedDevice);
-
-    // Разбиваем результат на строки для красивого вывода
-    QStringList resultLines = result.split('\n');
-    for (const QString& line : resultLines) {
-        outputTextEdit->append(line);
-    }
-
-    outputTextEdit->append("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-
-    QScrollBar *scrollBar = outputTextEdit->verticalScrollBar();
-    scrollBar->setValue(scrollBar->maximum());
-}
-
-void Lab5Window::onUnsafeUnmountClicked()
-{
-    QString selectedDevice = deviceComboBox->currentText();
-    if (selectedDevice.isEmpty() || selectedDevice == "USB устройства не найдены") {
-        QMessageBox::warning(this, "Предупреждение", "Выберите устройство для извлечения");
-        return;
-    }
-
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::warning(this, "ПРЕДУПРЕЖДЕНИЕ",
-                                 "НЕБЕЗОПАСНОЕ ИЗВЛЕЧЕНИЕ!\n\n"
-                                 "Это может привести к:\n"
-                                 "• Потере данных\n"
-                                 "• Повреждению файлов\n"
-                                 "• Коррупции файловой системы\n\n"
-                                 "Вы уверены, что хотите продолжить?",
-                                 QMessageBox::Yes | QMessageBox::No);
-
-    if (reply != QMessageBox::Yes) {
-        return;
-    }
-
-    QString timestamp = QTime::currentTime().toString("[hh:mm:ss]");
-    outputTextEdit->append(timestamp + " === ЗАПРОС НЕБЕЗОПАСНОГО ИЗВЛЕЧЕНИЯ ===");
-    outputTextEdit->append("Устройство: " + selectedDevice);
-    outputTextEdit->append("⚠️  ВНИМАНИЕ: РИСК ПОВРЕЖДЕНИЯ ДАННЫХ!");
-    outputTextEdit->append("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-
-    // Имитация небезопасного извлечения
-    outputTextEdit->append("Принудительное отключение устройства...");
-    outputTextEdit->append("Обход проверок безопасности...");
-    outputTextEdit->append("Игнорирование открытых файлов...");
-    outputTextEdit->append("✅ УСТРОЙСТВО ПРИНУДИТЕЛЬНО ОТКЛЮЧЕНО");
-    outputTextEdit->append("⚠️  Статус: Данные могут быть повреждены");
-
-    outputTextEdit->append("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-
-    QScrollBar *scrollBar = outputTextEdit->verticalScrollBar();
-    scrollBar->setValue(scrollBar->maximum());
-}
-
-void Lab5Window::onRefreshClicked()
-{
-    outputTextEdit->append(QTime::currentTime().toString("[hh:mm:ss]") + " Обновление списка устройств...");
-}
-
-void Lab5Window::onBackClicked()
-{
-    stopUsbMonitoring();
+    qDebug() << "Возврат в главное меню";
     emit backToMain();
     close();
 }
 
-void Lab5Window::closeEvent(QCloseEvent *event)
+void Lab5Window::startConnectionAnimation()
 {
-    stopUsbMonitoring();
-    emit backToMain();
-    event->accept();
+    qDebug() << ">>> ЗАПУСК АНИМАЦИИ ПОДКЛЮЧЕНИЯ USB";
+
+    if (m_characterAnimation) {
+        m_characterAnimation->show();
+        m_characterAnimation->raise();
+
+        // Проверяем тип объекта
+        CharacterAnimation* animation = qobject_cast<CharacterAnimation*>(m_characterAnimation);
+        if (animation) {
+            qDebug() << "Запуск CharacterAnimation для подключения USB...";
+            qDebug() << " - Размер:" << animation->size();
+            qDebug() << " - Позиция:" << animation->pos();
+            qDebug() << " - Видимость:" << animation->isVisible();
+
+            animation->startAnimation();
+            qDebug() << "Анимация подключения USB ЗАПУЩЕНА";
+
+        } else {
+            qDebug() << "Используется ЗАГЛУШКА анимации для подключения";
+            QWidget* debugWidget = qobject_cast<QWidget*>(m_characterAnimation);
+            if (debugWidget) {
+                debugWidget->setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #4CAF50, stop:1 #45a049); border: 2px solid #2E7D32; border-radius: 10px;");
+                QLabel* label = debugWidget->findChild<QLabel*>();
+                if (label) {
+                    label->setText("USB\n✓");
+                    label->setStyleSheet("color: white; font-weight: bold; font-size: 14px; background: transparent;");
+                }
+                debugWidget->show();
+            }
+        }
+
+        // Скрываем через 3 секунды (немного дольше для USB)
+        QTimer::singleShot(3000, this, [this]() {
+            qDebug() << "<<< Скрытие анимации подключения USB";
+            if (m_characterAnimation && m_characterAnimation->isVisible()) {
+                CharacterAnimation* animation = qobject_cast<CharacterAnimation*>(m_characterAnimation);
+                if (animation) {
+                    animation->stopAnimation();
+                }
+                m_characterAnimation->hide();
+            }
+        });
+    } else {
+        qDebug() << "ОШИБКА: m_characterAnimation is null";
+    }
+}
+
+void Lab5Window::startDisconnectionAnimation()
+{
+    qDebug() << ">>> ЗАПУСК АНИМАЦИИ ОТКЛЮЧЕНИЯ USB";
+
+    if (m_characterAnimation) {
+        m_characterAnimation->show();
+        m_characterAnimation->raise();
+
+        CharacterAnimation* animation = qobject_cast<CharacterAnimation*>(m_characterAnimation);
+        if (animation) {
+            qDebug() << "Запуск CharacterAnimation для отключения USB...";
+            animation->startAnimation();
+            qDebug() << "Анимация отключения USB ЗАПУЩЕНА";
+        } else {
+            qDebug() << "Используется ЗАГЛУШКА анимации для отключения USB";
+            QWidget* debugWidget = qobject_cast<QWidget*>(m_characterAnimation);
+            if (debugWidget) {
+                debugWidget->setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #FF9800, stop:1 #F57C00); border: 2px solid #E65100; border-radius: 10px;");
+                QLabel* label = debugWidget->findChild<QLabel*>();
+                if (label) {
+                    label->setText("USB\n✗");
+                    label->setStyleSheet("color: white; font-weight: bold; font-size: 14px; background: transparent;");
+                }
+                debugWidget->show();
+            }
+        }
+
+        // Скрываем через 3 секунды
+        QTimer::singleShot(3000, this, [this]() {
+            qDebug() << "<<< Скрытие анимации отключения USB";
+            if (m_characterAnimation && m_characterAnimation->isVisible()) {
+                CharacterAnimation* animation = qobject_cast<CharacterAnimation*>(m_characterAnimation);
+                if (animation) {
+                    animation->stopAnimation();
+                }
+                m_characterAnimation->hide();
+            }
+        });
+    } else {
+        qDebug() << "ОШИБКА: m_characterAnimation is null";
+    }
 }

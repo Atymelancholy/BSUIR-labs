@@ -2,102 +2,114 @@
 #define LAB5WINDOW_H
 
 #include <QMainWindow>
-#include <QTextEdit>
-#include <QPushButton>
-#include <QComboBox>
-#include <QLabel>
-#include <QTimer>
-#include <QThread>
-#include <QMutex>
-#include <QTime>
-#include <QScrollBar>
-#include <QCloseEvent>
-#include <QMessageBox>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGroupBox>
-#include <QDebug>
-#include <map>
-#include <string>
+#include <QListWidgetItem>
 
-// Предварительное объявление Windows типов
-typedef unsigned long DWORD;
+// Предварительное объявление классов для уменьшения зависимостей
+class USBManager;
+class CharacterAnimation;
+class QWidget;
+class QGroupBox;
+class QListWidget;
+class QLabel;
+class QPushButton;
+class QHBoxLayout;
+class QResizeEvent;
+class QShowEvent;
 
-class UsbMonitorThread;
-
+/**
+ * @class Lab5Window
+ * @brief Главное окно приложения для мониторинга USB устройств
+ *
+ * Окно предоставляет интерфейс для просмотра подключенных USB устройств,
+ * получения информации о них и безопасного извлечения.
+ */
 class Lab5Window : public QMainWindow
 {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Конструктор главного окна
+     * @param parent Родительский виджет
+     */
     explicit Lab5Window(QWidget *parent = nullptr);
+
+    /**
+     * @brief Деструктор
+     */
     ~Lab5Window();
 
-signals:
-    void backToMain();
-    void usbDeviceConnected(const QString &deviceInfo);
-    void usbDeviceDisconnected(const QString &deviceInfo);
-    void usbDeviceListUpdated(const QStringList &devices);
-
 protected:
-    void closeEvent(QCloseEvent *event) override;
+    /**
+     * @brief Обработчик изменения размера окна
+     */
+    void resizeEvent(QResizeEvent *event) override;
+
+    /**
+     * @brief Обработчик события показа окна
+     */
+    void showEvent(QShowEvent *event) override;
 
 private slots:
-    void onBackClicked();
-    void onSafeUnmountClicked();
-    void onUnsafeUnmountClicked();
-    void onRefreshClicked();
-    void onUsbDeviceConnected(const QString &deviceInfo);
-    void onUsbDeviceDisconnected(const QString &deviceInfo);
-    void onUsbDeviceListUpdated(const QStringList &devices);
+    // Слоты для управления USB устройствами
+    void refreshDeviceList();
+    void handleDeviceEjection();
+    void showDeviceDetails(QListWidgetItem* item);
+    void returnToMainMenu();
+
+    // Слоты для обработки сигналов от USBManager
+    void updateDeviceDisplay();
+    void onDeviceConnected(const QString& deviceName);
+    void onDeviceDisconnected(const QString& deviceName);
+    void onEjectionComplete(const QString& message);
 
 private:
-    void setupUI();
-    void startUsbMonitoring();
-    void stopUsbMonitoring();
+    // Методы инициализации интерфейса
+    void initializeInterface();
+    void setupDevicesPanel(QHBoxLayout *parentLayout);
+    void setupInfoPanel(QHBoxLayout *parentLayout);
+    void setupSignalHandlers();
+    void applyCustomStyles();
+    void centerOnScreen();
 
-    QTextEdit *outputTextEdit;
-    QComboBox *deviceComboBox;
-    QPushButton *safeUnmountButton;
-    QPushButton *unsafeUnmountButton;
-    QPushButton *refreshButton;
-    QPushButton *backButton;
-    QLabel *statusLabel;
+    // Методы работы с анимацией
+    void initializeCharacterAnimation();
+    void initializeAnimation();
+    void updateAnimationPosition();
+    void startConnectionAnimation();
+    void startDisconnectionAnimation();
 
-    UsbMonitorThread *usbMonitorThread;
-    QTimer *statusTimer;
-};
+    // Вспомогательные методы
+    void refreshDeviceListUI();
 
-// Поток для мониторинга USB
-class UsbMonitorThread : public QThread
-{
-    Q_OBJECT
+private:
+    // Менеджер USB устройств
+    USBManager *m_usbManager;
 
-public:
-    explicit UsbMonitorThread(QObject *parent = nullptr);
-    ~UsbMonitorThread();
+    // Анимационный компонент
+    CharacterAnimation *m_characterAnimation;
 
-    void stopMonitoring();
-    QString ejectDevice(const QString &deviceName);
+    // Основные виджеты интерфейса
+    QWidget *m_centralWidget;
+    QGroupBox *m_devicesGroup;
+    QGroupBox *m_infoGroup;
+    QListWidget *m_devicesList;
+    QLabel *m_deviceInfoLabel;
+    QLabel *m_statusLabel;
+
+    // Кнопки управления
+    QPushButton *m_refreshButton;
+    QPushButton *m_ejectButton;
+    QPushButton *m_backButton;
+
+    // Текущее выбранное устройство
+    QString m_currentDeviceId;
 
 signals:
-    void deviceConnected(const QString &deviceInfo);
-    void deviceDisconnected(const QString &deviceInfo);
-    void deviceListUpdated(const QStringList &devices);
-
-protected:
-    void run() override;
-
-private:
-    bool m_stopMonitoring;
-    QMutex m_mutex;
-
-    void checkUsbDevices();
-    int enumerateUsbDevices(bool printInfo = false, bool updateList = false);
-    QString simulateEjectDevice(const QString &deviceName, bool safeEject);
-    std::map<std::wstring, std::wstring> m_previousDevices;
-    std::map<std::wstring, std::wstring> m_currentDevices;
-    std::map<std::wstring, DWORD> m_deviceInstances;
+    /**
+     * @brief Сигнал для возврата в главное меню
+     */
+    void backToMain();
 };
 
 #endif // LAB5WINDOW_H

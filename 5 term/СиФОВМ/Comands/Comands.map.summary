@@ -1,0 +1,15 @@
+Analysis & Synthesis Status : Successful - Tue Nov 11 10:48:32 2025
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : Comands
+Top-level Entity Name : comands
+Family : Stratix II
+Logic utilization : N/A
+    Combinational ALUTs : 63
+    Dedicated logic registers : 41
+Total registers : 41
+Total pins : 61
+Total virtual pins : 0
+Total block memory bits : 640
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

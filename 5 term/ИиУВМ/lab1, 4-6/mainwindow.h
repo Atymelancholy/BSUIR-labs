@@ -10,6 +10,7 @@ class MainWindow;
 class Lab1Window;
 class Lab4Window;
 class Lab5Window;
+class Lab6Window;  // Добавляем предварительное объявление
 class QLabel;
 class QPushButton;
 
@@ -36,7 +37,7 @@ private slots:
     void showLab3Window();
     void showLab4Window();
     void showLab5Window();
-    void showLab6Window();
+    void showLab6Window();  // Добавляем объявление
     void backToMain();
 
 private:
@@ -48,6 +49,7 @@ private:
     Lab1Window *m_lab1Window;
     Lab4Window *m_lab4Window;
     Lab5Window *m_lab5Window;
+    Lab6Window *m_lab6Window;  // Добавляем указатель
     QLabel *characterImageLabel;
     QLabel *titleLabel;
 

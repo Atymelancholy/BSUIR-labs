@@ -13,9 +13,11 @@ SOURCES += \
     lab1window.cpp \
     lab4window.cpp \
     lab5window.cpp \
+    lab6window.cpp \
     main.cpp \
     mainwindow.cpp \
-    stepbutton.cpp
+    stepbutton.cpp \
+    usbmanager.cpp
 
 HEADERS += \
     battery.h \
@@ -23,8 +25,10 @@ HEADERS += \
     lab1window.h \
     lab4window.h \
     lab5window.h \
+    lab6window.h \
     mainwindow.h \
-    stepbutton.h
+    stepbutton.h \
+    usbmanager.h
 
 FORMS += \
     mainwindow.ui
@@ -35,4 +39,8 @@ RESOURCES += \
 win32 {
     LIBS += -lPowrProf
     LIBS += -lsetupapi
+    # Библиотеки для REAL Bluetooth
+    LIBS += -lws2_32
+    LIBS += -lBthprops
+    LIBS += -lrpcrt4
 }

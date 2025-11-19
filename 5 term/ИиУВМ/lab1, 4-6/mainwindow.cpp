@@ -3,6 +3,7 @@
 #include "lab1window.h"
 #include "lab4window.h"
 #include "lab5window.h"
+#include "lab6window.h"
 
 #include <QPropertyAnimation>
 #include <QEasingCurve>
@@ -21,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_lab1Window(nullptr)
     , m_lab4Window(nullptr)
     , m_lab5Window(nullptr)
+    , m_lab6Window(nullptr)  // В списке инициализации
     , characterImageLabel(nullptr)
     , titleLabel(nullptr)
 {
@@ -41,6 +43,7 @@ MainWindow::~MainWindow()
     delete m_lab1Window;
     delete m_lab4Window;
     delete m_lab5Window;
+    delete m_lab6Window;
     delete characterImageLabel;
     delete titleLabel;
 
@@ -187,11 +190,18 @@ void MainWindow::showLab5Window()
     m_lab5Window->activateWindow();
 }
 
+
+
 void MainWindow::showLab6Window()
 {
-    QMessageBox::information(this, "В разработке", "Лабораторная работа 6 находится в разработке");
+    if (!m_lab6Window) {
+        m_lab6Window = new Lab6Window(this);
+        connect(m_lab6Window, &Lab6Window::backToMain, this, &MainWindow::backToMain);
+    }
+    m_lab6Window->show();
+    m_lab6Window->raise();
+    m_lab6Window->activateWindow();
 }
-
 void MainWindow::showLab2Window()
 {
     QMessageBox::information(this, "В разработке", "Лабораторная работа 2 находится в разработке.\n\nЧтобы просмотреть работоспособность, откройте Virtual Box");
@@ -207,6 +217,7 @@ void MainWindow::backToMain()
     if (m_lab1Window) m_lab1Window->hide();
     if (m_lab4Window) m_lab4Window->hide();
     if (m_lab5Window) m_lab5Window->hide();
+    if (m_lab6Window) m_lab6Window->hide();
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)
