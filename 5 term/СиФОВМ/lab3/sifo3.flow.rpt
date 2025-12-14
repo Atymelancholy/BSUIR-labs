@@ -1,5 +1,5 @@
 Flow report for sifo3
-Fri Oct 31 15:36:59 2025
+Fri Dec 12 16:34:05 2025
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Flow Summary                                                            ;
 +-------------------------------+-----------------------------------------+
-; Flow Status                   ; Successful - Fri Oct 31 15:36:59 2025   ;
+; Flow Status                   ; Successful - Fri Dec 12 16:34:05 2025   ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
 ; Revision Name                 ; sifo3                                   ;
 ; Top-level Entity Name         ; sifo33                                  ;
@@ -64,100 +64,100 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/31/2025 15:36:48 ;
+; Start date & time ; 12/12/2025 16:33:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; sifo3               ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                  ;
-+------------------------------------+-------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                         ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+-------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 2545929661743.176191420801904 ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_FF                        ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_FF                        ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_MUX                       ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_DECODE                    ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_DECODE                    ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_BUSTRI                    ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_COUNTER                   ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_COUNTER                   ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_COUNTER                   ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_COUNTER                   ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_COUNTER                   ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_DECODE                    ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; LPM_DECODE                    ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                           ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_dff0.tdf                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_dff0.bsf                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_dff0_inst.tdf             ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_dff0.inc                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_dff1.tdf                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_dff1.bsf                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_dff1.inc                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_mux4.tdf                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_mux4.bsf                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_mux4_inst.tdf             ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_mux4.inc                  ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode3.tdf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode3.bsf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode3_inst.tdf          ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode3.inc               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode4.tdf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode4.bsf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode4_inst.tdf          ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode4.inc               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_bustri0.tdf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_bustri0.bsf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_bustri0_inst.tdf          ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_bustri0.inc               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter0.tdf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter0.bsf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter0_inst.tdf         ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter0.inc              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter3.tdf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter3.bsf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter3_inst.tdf         ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter3.inc              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter1.tdf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter1.bsf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter1_inst.tdf         ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter1.inc              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter5.tdf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter5.bsf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter5_inst.tdf         ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter5.inc              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter6.tdf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter6.bsf              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter6_inst.tdf         ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_counter6.inc              ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode5.tdf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode5.bsf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode5_inst.tdf          ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode5.inc               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode0.tdf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode0.bsf               ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode0_inst.tdf          ; --            ; --          ; --             ;
-; MISC_FILE                          ; lpm_decode0.inc               ; --            ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                      ; --            ; sifo33      ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                        ; --            ; sifo33      ; Top            ;
-; TOP_LEVEL_ENTITY                   ; sifo33                        ; sifo3         ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                           ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+-------------------------------+---------------+-------------+----------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                    ;
++------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 238046471523384.176554643316284 ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_FF                          ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_FF                          ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_MUX                         ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_DECODE                      ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_DECODE                      ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_BUSTRI                      ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_COUNTER                     ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_COUNTER                     ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_COUNTER                     ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_COUNTER                     ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_COUNTER                     ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_DECODE                      ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_DECODE                      ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_dff0.tdf                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_dff0.bsf                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_dff0_inst.tdf               ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_dff0.inc                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_dff1.tdf                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_dff1.bsf                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_dff1.inc                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_mux4.tdf                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_mux4.bsf                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_mux4_inst.tdf               ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_mux4.inc                    ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode3.tdf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode3.bsf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode3_inst.tdf            ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode3.inc                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode4.tdf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode4.bsf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode4_inst.tdf            ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode4.inc                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_bustri0.tdf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_bustri0.bsf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_bustri0_inst.tdf            ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_bustri0.inc                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter0.tdf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter0.bsf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter0_inst.tdf           ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter0.inc                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter3.tdf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter3.bsf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter3_inst.tdf           ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter3.inc                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter1.tdf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter1.bsf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter1_inst.tdf           ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter1.inc                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter5.tdf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter5.bsf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter5_inst.tdf           ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter5.inc                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter6.tdf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter6.bsf                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter6_inst.tdf           ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_counter6.inc                ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode5.tdf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode5.bsf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode5_inst.tdf            ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode5.inc                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode0.tdf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode0.bsf                 ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode0_inst.tdf            ; --            ; --          ; --             ;
+; MISC_FILE                          ; lpm_decode0.inc                 ; --            ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                        ; --            ; sifo33      ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; sifo33      ; Top            ;
+; TOP_LEVEL_ENTITY                   ; sifo33                          ; sifo3         ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+---------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -165,11 +165,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 241 MB              ; 00:00:02                           ;
-; Fitter                  ; 00:00:04     ; 1.0                     ; 289 MB              ; 00:00:03                           ;
-; Assembler               ; 00:00:02     ; 1.0                     ; 248 MB              ; 00:00:01                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 178 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:08     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 241 MB              ; 00:00:02                           ;
+; Fitter                  ; 00:00:05     ; 1.0                     ; 289 MB              ; 00:00:03                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 248 MB              ; 00:00:01                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 179 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:09     ; --                      ; --                  ; 00:00:06                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
