@@ -1,0 +1,11 @@
+(
+	q_sig[]
+) = lpm_dff0	(
+	.aload = aload_sig,
+	.clock = clock_sig,
+	.data[] = data_sig[],
+	.enable = enable_sig
+)
+RETURNS (
+	.q[]
+);

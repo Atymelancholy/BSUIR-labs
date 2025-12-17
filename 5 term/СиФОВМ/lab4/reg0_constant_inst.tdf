@@ -1,0 +1,8 @@
+(
+	result_sig[]
+) = reg0_constant	(
+
+)
+RETURNS (
+	.result[]
+);

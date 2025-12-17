@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Lab_4">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|CU:inst|lpm_decode1:inst2|lpm_decode:lpm_decode_component" CBX_FILE_NAME="decode_u7f.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|BUSMUX:inst17|LPM_MUX:$00000" CBX_FILE_NAME="mux_vnc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|lpm_add_sub0:inst6|lpm_add_sub:lpm_add_sub_component" CBX_FILE_NAME="add_sub_bvh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|lpm_decode0:inst13|lpm_decode:lpm_decode_component" CBX_FILE_NAME="decode_0sf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|reg0_constant:inst1|lpm_constant:lpm_constant_component" CBX_FILE_NAME="lpm_constant_ui6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|reg2_constant:inst3|lpm_constant:lpm_constant_component" CBX_FILE_NAME="lpm_constant_mh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|CU:inst|lpm_counter0:inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_4pi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|BUSMUX:inst10|LPM_MUX:$00000" CBX_FILE_NAME="mux_vnc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|LPM_RAM_DQ:inst8|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_md91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|CU:inst|lpm_counter1:inst4|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_nki.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|BUSMUX:inst15|LPM_MUX:$00000" CBX_FILE_NAME="mux_vnc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|lpm_mux0:inst4|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_d4e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|reg1_constant:inst2|lpm_constant:lpm_constant_component" CBX_FILE_NAME="lpm_constant_vi6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|reg3_constant:inst8|lpm_constant:lpm_constant_component" CBX_FILE_NAME="lpm_constant_nh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|LPM_ROM:inst1|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_crv.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|CU:inst|BUSMUX:inst33|LPM_MUX:$00000" CBX_FILE_NAME="mux_tnc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|CU:inst|lpm_mux1:inst34|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_b4e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|BUSMUX:inst12|LPM_MUX:$00000" CBX_FILE_NAME="mux_vnc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab_4|GPR:inst2|lpm_add_sub0:inst5|lpm_add_sub:lpm_add_sub_component" CBX_FILE_NAME="add_sub_bvh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
