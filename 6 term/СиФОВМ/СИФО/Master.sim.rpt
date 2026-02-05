@@ -1,0 +1,468 @@
+Simulator report for Master
+Sun Feb 01 15:51:22 2026
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 253 nodes    ;
+; Simulation Coverage         ;      50.93 % ;
+; Total Number of Transitions ; 3330         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      50.93 % ;
+; Total nodes checked                                 ; 253          ;
+; Total output ports checked                          ; 269          ;
+; Total output ports with complete 1/0-value coverage ; 137          ;
+; Total output ports with no 1/0-value coverage       ; 32           ;
+; Total output ports with no 1-value coverage         ; 114          ;
+; Total output ports with no 0-value coverage         ; 50           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                                                               ;
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                                ; Output Port Name                                                                                                            ; Output Port Type ;
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+------------------+
+; |Block7|busy1                                                                                                            ; |Block7|busy1                                                                                                               ; pin_out          ;
+; |Block7|inst45                                                                                                           ; |Block7|inst45                                                                                                              ; out0             ;
+; |Block7|CLK                                                                                                              ; |Block7|CLK                                                                                                                 ; out              ;
+; |Block7|Set_request[3]                                                                                                   ; |Block7|Set_request[3]                                                                                                      ; out              ;
+; |Block7|Set_request[2]                                                                                                   ; |Block7|Set_request[2]                                                                                                      ; out              ;
+; |Block7|Set_request[1]                                                                                                   ; |Block7|Set_request[1]                                                                                                      ; out              ;
+; |Block7|Set_request[0]                                                                                                   ; |Block7|Set_request[0]                                                                                                      ; out              ;
+; |Block7|inst46                                                                                                           ; |Block7|inst46                                                                                                              ; out0             ;
+; |Block7|inst44                                                                                                           ; |Block7|inst44                                                                                                              ; out0             ;
+; |Block7|inst47                                                                                                           ; |Block7|inst47                                                                                                              ; out0             ;
+; |Block7|busy2                                                                                                            ; |Block7|busy2                                                                                                               ; pin_out          ;
+; |Block7|busy3                                                                                                            ; |Block7|busy3                                                                                                               ; pin_out          ;
+; |Block7|busy4                                                                                                            ; |Block7|busy4                                                                                                               ; pin_out          ;
+; |Block7|Address[2]                                                                                                       ; |Block7|Address[2]                                                                                                          ; pin_out          ;
+; |Block7|Address[1]                                                                                                       ; |Block7|Address[1]                                                                                                          ; pin_out          ;
+; |Block7|Address[0]                                                                                                       ; |Block7|Address[0]                                                                                                          ; pin_out          ;
+; |Block7|Address_bus[2]                                                                                                   ; |Block7|Address_bus[2]                                                                                                      ; out0             ;
+; |Block7|Address_bus[1]                                                                                                   ; |Block7|Address_bus[1]                                                                                                      ; out0             ;
+; |Block7|Address_bus[0]                                                                                                   ; |Block7|Address_bus[0]                                                                                                      ; out0             ;
+; |Block7|Data[2]                                                                                                          ; |Block7|Data[2]                                                                                                             ; pin_out          ;
+; |Block7|Data[1]                                                                                                          ; |Block7|Data[1]                                                                                                             ; pin_out          ;
+; |Block7|Data[0]                                                                                                          ; |Block7|Data[0]                                                                                                             ; pin_out          ;
+; |Block7|Data_bus[2]                                                                                                      ; |Block7|Data_bus[2]                                                                                                         ; out0             ;
+; |Block7|Data_bus[1]                                                                                                      ; |Block7|Data_bus[1]                                                                                                         ; out0             ;
+; |Block7|Data_bus[0]                                                                                                      ; |Block7|Data_bus[0]                                                                                                         ; out0             ;
+; |Block7|Out3[2]                                                                                                          ; |Block7|Out3[2]                                                                                                             ; pin_out          ;
+; |Block7|Out3[1]                                                                                                          ; |Block7|Out3[1]                                                                                                             ; pin_out          ;
+; |Block7|Out3[0]                                                                                                          ; |Block7|Out3[0]                                                                                                             ; pin_out          ;
+; |Block7|Out4[0]                                                                                                          ; |Block7|Out4[0]                                                                                                             ; pin_out          ;
+; |Block7|Block6:inst14|inst8                                                                                              ; |Block7|Block6:inst14|inst8                                                                                                 ; out0             ;
+; |Block7|Block6:inst14|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0]   ; |Block7|Block6:inst14|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0]      ; out0             ;
+; |Block7|Block6:inst14|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]          ; |Block7|Block6:inst14|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]             ; out0             ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                           ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                              ; out              ;
+; |Block7|Block6:inst13|inst8                                                                                              ; |Block7|Block6:inst13|inst8                                                                                                 ; out0             ;
+; |Block7|Block6:inst13|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0]   ; |Block7|Block6:inst13|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0]      ; out0             ;
+; |Block7|Block6:inst13|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]          ; |Block7|Block6:inst13|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]             ; out0             ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]                                           ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]                                              ; out              ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                           ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                              ; out              ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                           ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                              ; out              ;
+; |Block7|Block6:inst10|inst8                                                                                              ; |Block7|Block6:inst10|inst8                                                                                                 ; out0             ;
+; |Block7|Block6:inst10|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0]   ; |Block7|Block6:inst10|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0]      ; out0             ;
+; |Block7|Block6:inst10|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]          ; |Block7|Block6:inst10|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]             ; out0             ;
+; |Block7|Block5:inst41|inst                                                                                               ; |Block7|Block5:inst41|inst                                                                                                  ; regout           ;
+; |Block7|Block5:inst41|inst~0                                                                                             ; |Block7|Block5:inst41|inst~0                                                                                                ; out0             ;
+; |Block7|Block5:inst41|inst11                                                                                             ; |Block7|Block5:inst41|inst11                                                                                                ; out0             ;
+; |Block7|Block5:inst41|inst36                                                                                             ; |Block7|Block5:inst41|inst36                                                                                                ; out              ;
+; |Block7|Block5:inst41|inst12                                                                                             ; |Block7|Block5:inst41|inst12                                                                                                ; out0             ;
+; |Block7|Block5:inst41|inst20                                                                                             ; |Block7|Block5:inst41|inst20                                                                                                ; out0             ;
+; |Block7|Block5:inst41|inst22                                                                                             ; |Block7|Block5:inst41|inst22                                                                                                ; out0             ;
+; |Block7|Block5:inst41|inst9                                                                                              ; |Block7|Block5:inst41|inst9                                                                                                 ; out0             ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0       ; sumout           ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0~COUT  ; cout             ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1    ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1       ; sumout           ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1    ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1~COUT  ; cout             ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2    ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2       ; sumout           ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[2]  ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]                ; regout           ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[1]  ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[1]                ; regout           ;
+; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[0]  ; |Block7|Block5:inst41|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]                ; regout           ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0   ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0      ; sumout           ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0   ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0~COUT ; cout             ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1   ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1      ; sumout           ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1   ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1~COUT ; cout             ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2   ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2      ; sumout           ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[2] ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[2]               ; regout           ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[1] ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[1]               ; regout           ;
+; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[0] ; |Block7|Block5:inst41|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[0]               ; regout           ;
+; |Block7|Master:inst43|inst                                                                                               ; |Block7|Master:inst43|inst                                                                                                  ; regout           ;
+; |Block7|Master:inst43|inst~0                                                                                             ; |Block7|Master:inst43|inst~0                                                                                                ; out0             ;
+; |Block7|Master:inst43|inst11                                                                                             ; |Block7|Master:inst43|inst11                                                                                                ; out0             ;
+; |Block7|Master:inst43|inst36                                                                                             ; |Block7|Master:inst43|inst36                                                                                                ; out              ;
+; |Block7|Master:inst43|inst7                                                                                              ; |Block7|Master:inst43|inst7                                                                                                 ; out0             ;
+; |Block7|Master:inst43|inst12                                                                                             ; |Block7|Master:inst43|inst12                                                                                                ; out0             ;
+; |Block7|Master:inst43|inst9                                                                                              ; |Block7|Master:inst43|inst9                                                                                                 ; out0             ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0       ; sumout           ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0~COUT  ; cout             ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1    ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1       ; sumout           ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1    ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1~COUT  ; cout             ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2    ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2       ; sumout           ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[2]  ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]                ; regout           ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[1]  ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[1]                ; regout           ;
+; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[0]  ; |Block7|Master:inst43|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]                ; regout           ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0   ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0      ; sumout           ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0   ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0~COUT ; cout             ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1   ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1      ; sumout           ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1   ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1~COUT ; cout             ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2   ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2      ; sumout           ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[2] ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[2]               ; regout           ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[1] ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[1]               ; regout           ;
+; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[0] ; |Block7|Master:inst43|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[0]               ; regout           ;
+; |Block7|Block3:inst42|inst                                                                                               ; |Block7|Block3:inst42|inst                                                                                                  ; regout           ;
+; |Block7|Block3:inst42|inst~0                                                                                             ; |Block7|Block3:inst42|inst~0                                                                                                ; out0             ;
+; |Block7|Block3:inst42|inst11                                                                                             ; |Block7|Block3:inst42|inst11                                                                                                ; out0             ;
+; |Block7|Block3:inst42|inst36                                                                                             ; |Block7|Block3:inst42|inst36                                                                                                ; out              ;
+; |Block7|Block3:inst42|inst12                                                                                             ; |Block7|Block3:inst42|inst12                                                                                                ; out0             ;
+; |Block7|Block3:inst42|inst5                                                                                              ; |Block7|Block3:inst42|inst5                                                                                                 ; out0             ;
+; |Block7|Block3:inst42|inst22                                                                                             ; |Block7|Block3:inst42|inst22                                                                                                ; out0             ;
+; |Block7|Block3:inst42|inst9                                                                                              ; |Block7|Block3:inst42|inst9                                                                                                 ; out0             ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0       ; sumout           ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0    ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0~COUT  ; cout             ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1    ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1       ; sumout           ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1    ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1~COUT  ; cout             ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2    ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2       ; sumout           ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[2]  ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]                ; regout           ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[1]  ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[1]                ; regout           ;
+; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[0]  ; |Block7|Block3:inst42|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]                ; regout           ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0   ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0      ; sumout           ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0   ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0~COUT ; cout             ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1   ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1      ; sumout           ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1   ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1~COUT ; cout             ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2   ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2      ; sumout           ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[2] ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[2]               ; regout           ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[1] ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[1]               ; regout           ;
+; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[0] ; |Block7|Block3:inst42|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[0]               ; regout           ;
+; |Block7|Block4:inst|inst                                                                                                 ; |Block7|Block4:inst|inst                                                                                                    ; regout           ;
+; |Block7|Block4:inst|inst~0                                                                                               ; |Block7|Block4:inst|inst~0                                                                                                  ; out0             ;
+; |Block7|Block4:inst|inst11                                                                                               ; |Block7|Block4:inst|inst11                                                                                                  ; out0             ;
+; |Block7|Block4:inst|inst36                                                                                               ; |Block7|Block4:inst|inst36                                                                                                  ; out              ;
+; |Block7|Block4:inst|inst7                                                                                                ; |Block7|Block4:inst|inst7                                                                                                   ; out0             ;
+; |Block7|Block4:inst|inst20                                                                                               ; |Block7|Block4:inst|inst20                                                                                                  ; out0             ;
+; |Block7|Block4:inst|inst12                                                                                               ; |Block7|Block4:inst|inst12                                                                                                  ; out0             ;
+; |Block7|Block4:inst|inst9                                                                                                ; |Block7|Block4:inst|inst9                                                                                                   ; out0             ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0      ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0         ; sumout           ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0      ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita0~COUT    ; cout             ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1      ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1         ; sumout           ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1      ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita1~COUT    ; cout             ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2      ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_comb_bita2         ; sumout           ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[2]    ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[2]                  ; regout           ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[1]    ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[1]                  ; regout           ;
+; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|counter_reg_bit1a[0]    ; |Block7|Block4:inst|lpm_counter0:inst6|lpm_counter:lpm_counter_component|cntr_poi:auto_generated|safe_q[0]                  ; regout           ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0     ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0        ; sumout           ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0     ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita0~COUT   ; cout             ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1     ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1        ; sumout           ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1     ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita1~COUT   ; cout             ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2     ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_comb_bita2        ; sumout           ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[2]   ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[2]                 ; regout           ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[1]   ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[1]                 ; regout           ;
+; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|counter_reg_bit1a[0]   ; |Block7|Block4:inst|lpm_counter4:inst35|lpm_counter:lpm_counter_component|cntr_7oi:auto_generated|safe_q[0]                 ; regout           ;
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                               ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; Node Name                                                                        ; Output Port Name                                                                 ; Output Port Type ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+; |Block7|Data[7]                                                                  ; |Block7|Data[7]                                                                  ; pin_out          ;
+; |Block7|Data[6]                                                                  ; |Block7|Data[6]                                                                  ; pin_out          ;
+; |Block7|Data[5]                                                                  ; |Block7|Data[5]                                                                  ; pin_out          ;
+; |Block7|Data[4]                                                                  ; |Block7|Data[4]                                                                  ; pin_out          ;
+; |Block7|Data[3]                                                                  ; |Block7|Data[3]                                                                  ; pin_out          ;
+; |Block7|Data_bus[7]                                                              ; |Block7|Data_bus[7]                                                              ; out0             ;
+; |Block7|Data_bus[6]                                                              ; |Block7|Data_bus[6]                                                              ; out0             ;
+; |Block7|Data_bus[5]                                                              ; |Block7|Data_bus[5]                                                              ; out0             ;
+; |Block7|Data_bus[4]                                                              ; |Block7|Data_bus[4]                                                              ; out0             ;
+; |Block7|Data_bus[3]                                                              ; |Block7|Data_bus[3]                                                              ; out0             ;
+; |Block7|Out0[7]                                                                  ; |Block7|Out0[7]                                                                  ; pin_out          ;
+; |Block7|Out0[6]                                                                  ; |Block7|Out0[6]                                                                  ; pin_out          ;
+; |Block7|Out0[5]                                                                  ; |Block7|Out0[5]                                                                  ; pin_out          ;
+; |Block7|Out0[4]                                                                  ; |Block7|Out0[4]                                                                  ; pin_out          ;
+; |Block7|Out0[3]                                                                  ; |Block7|Out0[3]                                                                  ; pin_out          ;
+; |Block7|Out0[2]                                                                  ; |Block7|Out0[2]                                                                  ; pin_out          ;
+; |Block7|Out0[0]                                                                  ; |Block7|Out0[0]                                                                  ; pin_out          ;
+; |Block7|Out1[7]                                                                  ; |Block7|Out1[7]                                                                  ; pin_out          ;
+; |Block7|Out1[6]                                                                  ; |Block7|Out1[6]                                                                  ; pin_out          ;
+; |Block7|Out1[5]                                                                  ; |Block7|Out1[5]                                                                  ; pin_out          ;
+; |Block7|Out1[4]                                                                  ; |Block7|Out1[4]                                                                  ; pin_out          ;
+; |Block7|Out1[3]                                                                  ; |Block7|Out1[3]                                                                  ; pin_out          ;
+; |Block7|Out1[2]                                                                  ; |Block7|Out1[2]                                                                  ; pin_out          ;
+; |Block7|Out1[1]                                                                  ; |Block7|Out1[1]                                                                  ; pin_out          ;
+; |Block7|Out1[0]                                                                  ; |Block7|Out1[0]                                                                  ; pin_out          ;
+; |Block7|Out2[7]                                                                  ; |Block7|Out2[7]                                                                  ; pin_out          ;
+; |Block7|Out2[6]                                                                  ; |Block7|Out2[6]                                                                  ; pin_out          ;
+; |Block7|Out2[5]                                                                  ; |Block7|Out2[5]                                                                  ; pin_out          ;
+; |Block7|Out2[4]                                                                  ; |Block7|Out2[4]                                                                  ; pin_out          ;
+; |Block7|Out2[3]                                                                  ; |Block7|Out2[3]                                                                  ; pin_out          ;
+; |Block7|Out2[2]                                                                  ; |Block7|Out2[2]                                                                  ; pin_out          ;
+; |Block7|Out2[1]                                                                  ; |Block7|Out2[1]                                                                  ; pin_out          ;
+; |Block7|Out2[0]                                                                  ; |Block7|Out2[0]                                                                  ; pin_out          ;
+; |Block7|Out3[7]                                                                  ; |Block7|Out3[7]                                                                  ; pin_out          ;
+; |Block7|Out3[6]                                                                  ; |Block7|Out3[6]                                                                  ; pin_out          ;
+; |Block7|Out3[5]                                                                  ; |Block7|Out3[5]                                                                  ; pin_out          ;
+; |Block7|Out3[4]                                                                  ; |Block7|Out3[4]                                                                  ; pin_out          ;
+; |Block7|Out3[3]                                                                  ; |Block7|Out3[3]                                                                  ; pin_out          ;
+; |Block7|Out4[7]                                                                  ; |Block7|Out4[7]                                                                  ; pin_out          ;
+; |Block7|Out4[6]                                                                  ; |Block7|Out4[6]                                                                  ; pin_out          ;
+; |Block7|Out4[5]                                                                  ; |Block7|Out4[5]                                                                  ; pin_out          ;
+; |Block7|Out4[4]                                                                  ; |Block7|Out4[4]                                                                  ; pin_out          ;
+; |Block7|Out4[3]                                                                  ; |Block7|Out4[3]                                                                  ; pin_out          ;
+; |Block7|Out4[2]                                                                  ; |Block7|Out4[2]                                                                  ; pin_out          ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; out              ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; out              ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; out              ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; out              ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; out              ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; out              ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; out              ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; out              ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; out              ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; out              ;
+; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; |Block7|Block6:inst13|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; out              ;
+; |Block7|Block6:inst12|inst8                                                      ; |Block7|Block6:inst12|inst8                                                      ; out0             ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]   ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]   ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]   ; out              ;
+; |Block7|Block6:inst11|inst8                                                      ; |Block7|Block6:inst11|inst8                                                      ; out0             ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]   ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]   ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]   ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]   ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]   ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]   ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]   ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]   ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]   ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]   ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]   ; out              ;
+; |Block7|Block5:inst41|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2] ; |Block7|Block5:inst41|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2] ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7] ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7] ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6] ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6] ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5] ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5] ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4] ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4] ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3] ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3] ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2] ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2] ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1] ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1] ; out              ;
+; |Block7|Master:inst43|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2] ; |Block7|Master:inst43|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2] ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7] ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7] ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6] ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6] ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5] ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5] ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4] ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4] ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3] ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3] ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1] ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1] ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0] ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1] ; |Block7|Block3:inst42|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0] ; |Block7|Block3:inst42|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7] ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6] ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5] ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4] ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3] ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3] ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2] ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2] ; out              ;
+; |Block7|Block4:inst|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2]   ; |Block7|Block4:inst|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1]   ; |Block7|Block4:inst|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0]   ; |Block7|Block4:inst|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7]   ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[7]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6]   ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[6]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5]   ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[5]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4]   ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[4]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3]   ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[3]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2]   ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2]   ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0]   ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0]   ; out              ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                                                                           ;
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                              ; Output Port Name                                                                                                       ; Output Port Type ;
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+------------------+
+; |Block7|Out0[1]                                                                                                        ; |Block7|Out0[1]                                                                                                        ; pin_out          ;
+; |Block7|Out1[7]                                                                                                        ; |Block7|Out1[7]                                                                                                        ; pin_out          ;
+; |Block7|Out1[6]                                                                                                        ; |Block7|Out1[6]                                                                                                        ; pin_out          ;
+; |Block7|Out1[5]                                                                                                        ; |Block7|Out1[5]                                                                                                        ; pin_out          ;
+; |Block7|Out1[4]                                                                                                        ; |Block7|Out1[4]                                                                                                        ; pin_out          ;
+; |Block7|Out1[3]                                                                                                        ; |Block7|Out1[3]                                                                                                        ; pin_out          ;
+; |Block7|Out1[2]                                                                                                        ; |Block7|Out1[2]                                                                                                        ; pin_out          ;
+; |Block7|Out1[1]                                                                                                        ; |Block7|Out1[1]                                                                                                        ; pin_out          ;
+; |Block7|Out1[0]                                                                                                        ; |Block7|Out1[0]                                                                                                        ; pin_out          ;
+; |Block7|Out2[7]                                                                                                        ; |Block7|Out2[7]                                                                                                        ; pin_out          ;
+; |Block7|Out2[6]                                                                                                        ; |Block7|Out2[6]                                                                                                        ; pin_out          ;
+; |Block7|Out2[5]                                                                                                        ; |Block7|Out2[5]                                                                                                        ; pin_out          ;
+; |Block7|Out2[4]                                                                                                        ; |Block7|Out2[4]                                                                                                        ; pin_out          ;
+; |Block7|Out2[3]                                                                                                        ; |Block7|Out2[3]                                                                                                        ; pin_out          ;
+; |Block7|Out2[2]                                                                                                        ; |Block7|Out2[2]                                                                                                        ; pin_out          ;
+; |Block7|Out2[1]                                                                                                        ; |Block7|Out2[1]                                                                                                        ; pin_out          ;
+; |Block7|Out2[0]                                                                                                        ; |Block7|Out2[0]                                                                                                        ; pin_out          ;
+; |Block7|Out4[1]                                                                                                        ; |Block7|Out4[1]                                                                                                        ; pin_out          ;
+; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; |Block7|Block6:inst14|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0] ; |Block7|Block6:inst12|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0] ; out0             ;
+; |Block7|Block6:inst12|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]        ; |Block7|Block6:inst12|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]        ; out0             ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; out              ;
+; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                         ; |Block7|Block6:inst12|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0] ; |Block7|Block6:inst11|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|aneb_result_wire[0] ; out0             ;
+; |Block7|Block6:inst11|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]        ; |Block7|Block6:inst11|lpm_compare0:inst3|lpm_compare:lpm_compare_component|cmpr_aig:auto_generated|data_wire[0]        ; out0             ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[7]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[6]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[5]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[4]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[3]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[2]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; out              ;
+; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                         ; |Block7|Block6:inst11|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[0]                                         ; out              ;
+; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; |Block7|Block6:inst10|lpm_bustri2:inst|lpm_bustri:lpm_bustri_component|dout[1]                                         ; out              ;
+; |Block7|Block5:inst41|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1]                                       ; |Block7|Block5:inst41|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1]                                       ; out              ;
+; |Block7|Block5:inst41|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0]                                       ; |Block7|Block5:inst41|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0]                                       ; out              ;
+; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0]                                       ; |Block7|Block5:inst41|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0]                                       ; out              ;
+; |Block7|Master:inst43|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1]                                       ; |Block7|Master:inst43|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[1]                                       ; out              ;
+; |Block7|Master:inst43|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0]                                       ; |Block7|Master:inst43|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[0]                                       ; out              ;
+; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2]                                       ; |Block7|Master:inst43|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[2]                                       ; out              ;
+; |Block7|Block3:inst42|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2]                                       ; |Block7|Block3:inst42|lpm_bustri0:inst15|lpm_bustri:lpm_bustri_component|dout[2]                                       ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1]                                       ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1]                                       ; out              ;
+; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0]                                       ; |Block7|Block3:inst42|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[0]                                       ; out              ;
+; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1]                                         ; |Block7|Block4:inst|lpm_bustri1:inst16|lpm_bustri:lpm_bustri_component|dout[1]                                         ; out              ;
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Sun Feb 01 15:51:22 2026
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off LAB1 -c Master
+Info: Using vector source file "C:/Users/atyme/OneDrive/ƒÓÍÛÏÂÌÚ˚/GitHub/BSUIR-labs/6 term/—Ë‘Œ¬Ã/—»‘Œ/Master.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of Master.vwf called Master.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found clock-sensitive change during active clock edge at time 50.0 ns on register "|Block7|Master:inst43|inst"
+Warning: Found clock-sensitive change during active clock edge at time 50.0 ns on register "|Block7|Block4:inst|inst"
+Warning: Found clock-sensitive change during active clock edge at time 170.0 ns on register "|Block7|Block3:inst42|inst"
+Warning: Found clock-sensitive change during active clock edge at time 450.0 ns on register "|Block7|Block5:inst41|inst"
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      50.93 %
+Info: Number of transitions in simulation is 3330
+Info: Vector file Master.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 155 megabytes
+    Info: Processing ended: Sun Feb 01 15:51:22 2026
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

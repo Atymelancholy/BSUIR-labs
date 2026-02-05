@@ -1,0 +1,10 @@
+(
+	q_sig[]
+) = lpm_counter2	(
+	.clk_en = clk_en_sig,
+	.clock = clock_sig,
+	.sclr = sclr_sig
+)
+RETURNS (
+	.q[]
+);
