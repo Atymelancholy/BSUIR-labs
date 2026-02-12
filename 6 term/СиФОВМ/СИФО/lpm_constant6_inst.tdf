@@ -1,8 +1,0 @@
-(
-	result_sig[]
-) = lpm_constant6	(
-
-)
-RETURNS (
-	.result[]
-);
