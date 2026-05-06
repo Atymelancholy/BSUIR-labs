@@ -33,7 +33,6 @@ RU: В данном репозитории представлены лабора
 ## 6 семестр
 - [Производственная практика](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%A2%D0%B5%D1%85%D0%BD)
 - [Структурная и функциональная организация вычислительных машин_КП](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%A1%D0%B8%D0%A4%D0%9E%D0%92%D0%9C%20%D0%9A%D0%9F)
-- [Структурная и функциональная организация вычислительных машин](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%A1%D0%B8%D0%A4%D0%9E%D0%92%D0%9C)
 - [Администрирование компьютерных сетей](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%90%D0%9A%D0%A1)
 - [Базы данных](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%91%D0%94)
 - [Сетевое системное программное обеспечение и распределенные системы](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%A1%D0%A1%D0%9F%D0%9E%D0%B8%D0%A0%D0%A1)
