@@ -38,4 +38,3 @@ RU: В данном репозитории представлены лабора
 - [Жизненный цикл разработки программного обеспечения](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%96%D0%A6%D0%A0%D0%9F%D0%9E)
 - [Системный анализ](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%A1%D0%90)
 - [Цифровая обработка сигналов и изображений](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%A6%D0%9E%D0%A1%D0%B8%D0%98)
-- [Основы бизнеса и права в сфере инфокоммуникационных технологий](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%9E%D0%91%D0%B8%D0%9F%D0%B2%D0%A1%D0%98%D0%A2)
