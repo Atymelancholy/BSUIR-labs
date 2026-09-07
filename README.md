@@ -38,3 +38,8 @@ RU: В данном репозитории представлены лабора
 - [Жизненный цикл разработки программного обеспечения](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%96%D0%A6%D0%A0%D0%9F%D0%9E)
 - [Системный анализ](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%A1%D0%90)
 - [Цифровая обработка сигналов и изображений](https://github.com/Atymelancholy/BSUIR-labs/tree/main/6%20term/%D0%A6%D0%9E%D0%A1%D0%B8%D0%98)
+
+## 7 семестр
+- [Цифровая обработка сигналов и изображений](https://github.com/Atymelancholy/Digital-signal-and-image-processing-final-countdown)
+- [Сетевое системное программное обеспечение и распределенные системы](https://github.com/Atymelancholy/Network-system-software-and-distributed-systems-2)
+- [Микропроцессорные средства и системы]()
