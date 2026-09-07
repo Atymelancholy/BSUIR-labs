@@ -42,4 +42,4 @@ RU: В данном репозитории представлены лабора
 ## 7 семестр
 - [Цифровая обработка сигналов и изображений](https://github.com/Atymelancholy/Digital-signal-and-image-processing-final-countdown)
 - [Сетевое системное программное обеспечение и распределенные системы](https://github.com/Atymelancholy/Network-system-software-and-distributed-systems-2)
-- [Микропроцессорные средства и системы]()
+- [Микропроцессорные средства и системы](https://github.com/Atymelancholy/BSUIR-labs/tree/main/7%20term/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%BD%D1%8B%D0%B5%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B0%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B)
