@@ -3,7 +3,7 @@
 ## 🎓 Belarusian State University of Informatics and Radioelectronics (BSUIR) - БГУИР
 
 ## Faculty of Computer Systems and Networks (FKSiS) - ФКСиС  
-## Specialty of Computing Machines, Systems and Networks (VMSiS) - ВМСиС 2023-2027 (надеюсь доживу) г.
+## Specialty of Computing Machines, Systems and Networks (VMSiS) - ВМСиС 2023-2027 г.
 
 EN: This repository presents laboratory work of the specialty "Computing machines, systems and networks". Not all works presented here are completely correct and may not correspond to your task.  
 RU: В данном репозитории представлены лабораторные работы по специальности "Вычислительные машины, системы и сети". Не все представленные здесь работы полностью корректны и могут не соответствовать вашей задаче.  
@@ -43,3 +43,6 @@ RU: В данном репозитории представлены лабора
 - [Цифровая обработка сигналов и изображений](https://github.com/Atymelancholy/Digital-signal-and-image-processing-final-countdown)
 - [Сетевое системное программное обеспечение и распределенные системы](https://github.com/Atymelancholy/Network-system-software-and-distributed-systems-2)
 - [Микропроцессорные средства и системы](https://github.com/Atymelancholy/BSUIR-labs/tree/main/7%20term/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%BD%D1%8B%D0%B5%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B0%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B)
+- [Оборудование компьютерных сетей_КП](https://github.com/Atymelancholy/BSUIR-labs/tree/main/7%20term/%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D1%85%20%D1%81%D0%B5%D1%82%D0%B5%D0%B9%2C%20%D0%9A%D0%9F)
+
+## Диплом
